@@ -2,6 +2,7 @@
 #include <nlohmann/json.hpp>
 #include <iostream>
 #include "Parser.h"
+#include "Cursor.h"
 #define KEYPREFSIZE 11
 std::string keyPrefs[KEYPREFSIZE]{
     "~local_player",
@@ -28,7 +29,7 @@ int main(){
         
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
     for(it->SeekToFirst();it->Valid();it->Next()){
-        std::cout << (it->key().ToString()) << "\n";
+        //std::cout << (it->key().ToString()) << "\n";
         bool chunkKey = true;
         for(int i=0;i<KEYPREFSIZE;i++){
             if(it->key().ToString().contains(keyPrefs[i])){
@@ -37,7 +38,16 @@ int main(){
         }
 
         if(chunkKey){
-            it->value().ToString();
+            std::string chunkdata = it->key().ToString();
+            Cursor cursor((uint8_t*)chunkdata.data(),0);
+            //std::cout << "KEY:" << it->key().ToString() << "\n";
+            std::cout << "X:" << (int)cursor.readu32();
+            std::cout << " Z:" << (int)cursor.readu32() << "\n";
+
+             uint32_t dimension = cursor.readu32();
+            // std::cout << "Dimension:" << dimension << '\n';
+
+            std::cout << "RecordType:" << (uint32_t)cursor.readu8() << "\n";
         }
     }
 
