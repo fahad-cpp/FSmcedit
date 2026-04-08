@@ -28,6 +28,7 @@ int main(){
     }
         
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
+
     for(it->SeekToFirst();it->Valid();it->Next()){
         //std::cout << (it->key().ToString()) << "\n";
         bool chunkKey = true;
@@ -38,16 +39,13 @@ int main(){
         }
 
         if(chunkKey){
-            std::string chunkdata = it->key().ToString();
-            Cursor cursor((uint8_t*)chunkdata.data(),0);
+            Cursor cursor((uint8_t*)it->key().data(),0);
             //std::cout << "KEY:" << it->key().ToString() << "\n";
             std::cout << "X:" << (int)cursor.readu32();
             std::cout << " Z:" << (int)cursor.readu32() << "\n";
 
-             uint32_t dimension = cursor.readu32();
-            // std::cout << "Dimension:" << dimension << '\n';
-
-            std::cout << "RecordType:" << (uint32_t)cursor.readu8() << "\n";
+            //std::cout << "Dimension ID :" << cursor.readu32() << "\n";
+            std::cout << "Record Type Flag :" << (uint32_t)cursor.readu8() << "\n";
         }
     }
 
