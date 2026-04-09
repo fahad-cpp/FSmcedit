@@ -17,6 +17,37 @@ std::string keyPrefs[KEYPREFSIZE]{
     "mobevents",
     "scoreboard"
 };
+
+std::map<uint8_t,std::string> tagName{
+    //Terrain & Biome Data
+    {43,"Data3D"},
+    {44,"Version"},
+    {45,"Data2D"},
+    {46,"Data2DLegacy"},
+    {47,"SubChunkPrefix"},
+    {48,"LegacyTerrain"},
+    //Entity & Block Entity Data
+    {49,"BlockEntity"},
+    {50,"Entity"},
+    {51,"PendingTicks"},
+    {58,"RandomTicks"},
+    //World State & Features
+    {52,"LegacyBlockExtraData"},
+    {53,"BiomeState"},
+    {54,"FinalizedState"},
+    {56,"BorderBlocks"},
+    {57,"HardcodedSpawners"},
+    {59,"Checksums"},
+    {61,"MetaDataHash"},
+    {62,"GeneratedPreCavesAndCliffsBlending"},
+    {63,"BlendingBiomeHeight"},
+    {64,"BlendingData"},
+    {65,"ActorDigestVersion"},
+    //Legacy & Deprecated Records
+    {55,"ConversionData"},
+    {118,"LegacyVersion"},
+};
+
 int main(){
     leveldb::DB* db;
     leveldb::Options options;
@@ -30,7 +61,6 @@ int main(){
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
 
     for(it->SeekToFirst();it->Valid();it->Next()){
-        //std::cout << (it->key().ToString()) << "\n";
         bool chunkKey = true;
         for(int i=0;i<KEYPREFSIZE;i++){
             if(it->key().ToString().contains(keyPrefs[i])){
@@ -39,13 +69,21 @@ int main(){
         }
 
         if(chunkKey){
-            Cursor cursor((uint8_t*)it->key().data(),0);
-            //std::cout << "KEY:" << it->key().ToString() << "\n";
-            std::cout << "X:" << (int)cursor.readu32();
-            std::cout << " Z:" << (int)cursor.readu32() << "\n";
 
-            //std::cout << "Dimension ID :" << cursor.readu32() << "\n";
-            std::cout << "Record Type Flag :" << (uint32_t)cursor.readu8() << "\n";
+            uint32_t keySize = it->key().size();
+            uint8_t *data = (uint8_t*)malloc(keySize);
+            memcpy(data,it->key().data(),keySize);
+
+            Cursor cursor(data,0);
+            std::cout << "Chunk:\n";
+            std::cout << "\tX:" << (int)cursor.readu32() << "\n";
+            std::cout << "\tZ:" << (int)cursor.readu32() << "\n";
+            
+            uint8_t record = cursor.readu8();
+            std::string recordName = tagName[record];
+            std::cout << "\tRecord :" << recordName << "\n";
+
+            free(data);
         }
     }
 

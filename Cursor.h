@@ -12,4 +12,9 @@ class Cursor{
     uint8_t readu8();
     uint16_t readu16();
     uint32_t readu32();
+
+    uint16_t readBEu16();
+    uint32_t readBEu32();
+
+    void skip(uint32_t count);
 };
