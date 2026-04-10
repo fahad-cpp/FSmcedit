@@ -6,6 +6,9 @@ Chunk:
 	X:16
 	Z:6
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:16
 	Z:6
@@ -13,7 +16,7 @@ Chunk:
 Chunk:
 	X:16
 	Z:6
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:17
 	Z:3
@@ -22,6 +25,9 @@ Chunk:
 	X:17
 	Z:3
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:17
 	Z:3
@@ -29,7 +35,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:3
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:17
 	Z:4
@@ -38,6 +44,9 @@ Chunk:
 	X:17
 	Z:4
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:17
 	Z:4
@@ -45,7 +54,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:4
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:17
 	Z:5
@@ -54,6 +63,9 @@ Chunk:
 	X:17
 	Z:5
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:17
 	Z:5
@@ -61,7 +73,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:5
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:17
 	Z:6
@@ -70,6 +82,9 @@ Chunk:
 	X:17
 	Z:6
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:17
 	Z:6
@@ -77,7 +92,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:6
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:17
 	Z:7
@@ -86,6 +101,9 @@ Chunk:
 	X:17
 	Z:7
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:17
 	Z:7
@@ -93,7 +111,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:7
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:18
 	Z:3
@@ -102,6 +120,9 @@ Chunk:
 	X:18
 	Z:3
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:18
 	Z:3
@@ -109,7 +130,7 @@ Chunk:
 Chunk:
 	X:18
 	Z:3
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:18
 	Z:5
@@ -118,6 +139,9 @@ Chunk:
 	X:18
 	Z:5
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:18
 	Z:5
@@ -125,7 +149,7 @@ Chunk:
 Chunk:
 	X:18
 	Z:5
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:18
 	Z:6
@@ -134,6 +158,9 @@ Chunk:
 	X:18
 	Z:6
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:18
 	Z:6
@@ -141,7 +168,7 @@ Chunk:
 Chunk:
 	X:18
 	Z:6
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:18
 	Z:7
@@ -150,6 +177,9 @@ Chunk:
 	X:18
 	Z:7
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:18
 	Z:7
@@ -157,7 +187,7 @@ Chunk:
 Chunk:
 	X:18
 	Z:7
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:19
 	Z:6
@@ -166,6 +196,9 @@ Chunk:
 	X:19
 	Z:6
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:19
 	Z:6
@@ -173,7 +206,7 @@ Chunk:
 Chunk:
 	X:19
 	Z:6
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:19
 	Z:7
@@ -182,6 +215,9 @@ Chunk:
 	X:19
 	Z:7
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:19
 	Z:7
@@ -193,7 +229,7 @@ Chunk:
 Chunk:
 	X:19
 	Z:7
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:19
 	Z:8
@@ -202,6 +238,9 @@ Chunk:
 	X:19
 	Z:8
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:19
 	Z:8
@@ -209,7 +248,7 @@ Chunk:
 Chunk:
 	X:19
 	Z:8
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:20
 	Z:2
@@ -229,7 +268,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:2
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:20
 	Z:3
@@ -238,6 +277,9 @@ Chunk:
 	X:20
 	Z:3
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:20
 	Z:3
@@ -245,7 +287,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:3
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:20
 	Z:4
@@ -269,7 +311,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:4
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:20
 	Z:5
@@ -286,6 +328,9 @@ Chunk:
 	X:20
 	Z:5
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:20
 	Z:5
@@ -297,7 +342,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:5
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:20
 	Z:6
@@ -314,6 +359,9 @@ Chunk:
 	X:20
 	Z:6
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:20
 	Z:6
@@ -321,7 +369,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:6
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:20
 	Z:7
@@ -330,6 +378,9 @@ Chunk:
 	X:20
 	Z:7
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:20
 	Z:7
@@ -341,7 +392,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:7
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:21
 	Z:2
@@ -365,7 +416,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:2
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:21
 	Z:3
@@ -374,6 +425,9 @@ Chunk:
 	X:21
 	Z:3
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:21
 	Z:3
@@ -381,7 +435,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:3
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:21
 	Z:6
@@ -390,6 +444,9 @@ Chunk:
 	X:21
 	Z:6
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:21
 	Z:6
@@ -397,7 +454,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:6
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:21
 	Z:7
@@ -406,6 +463,9 @@ Chunk:
 	X:21
 	Z:7
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:21
 	Z:7
@@ -413,7 +473,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:7
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:21
 	Z:8
@@ -422,6 +482,9 @@ Chunk:
 	X:21
 	Z:8
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:21
 	Z:8
@@ -429,7 +492,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:8
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:22
 	Z:1
@@ -458,6 +521,9 @@ Chunk:
 	X:22
 	Z:2
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:22
 	Z:2
@@ -469,7 +535,7 @@ Chunk:
 Chunk:
 	X:22
 	Z:2
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:22
 	Z:6
@@ -478,6 +544,9 @@ Chunk:
 	X:22
 	Z:6
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:22
 	Z:6
@@ -485,7 +554,7 @@ Chunk:
 Chunk:
 	X:22
 	Z:6
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:22
 	Z:7
@@ -494,6 +563,9 @@ Chunk:
 	X:22
 	Z:7
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:22
 	Z:7
@@ -501,7 +573,7 @@ Chunk:
 Chunk:
 	X:22
 	Z:7
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:22
 	Z:8
@@ -510,6 +582,9 @@ Chunk:
 	X:22
 	Z:8
 	Record :BlockEntity
+Parsing NBT...
+ID: 10
+nameLength: 0
 Chunk:
 	X:22
 	Z:8
@@ -517,7 +592,7 @@ Chunk:
 Chunk:
 	X:22
 	Z:8
-	Record :
+	Record :InvalidRecord
 Chunk:
 	X:22
 	Z:9

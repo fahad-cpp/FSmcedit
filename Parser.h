@@ -1,2 +1,3 @@
+#include <iostream>
 //TODO: Implement NBT Parser
-void parseNBT();
+void parseNBT(const uint8_t* data);

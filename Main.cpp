@@ -62,6 +62,7 @@ int main(){
 
     for(it->SeekToFirst();it->Valid();it->Next()){
         bool chunkKey = true;
+        //Temporary (TODO:Handle all cases)
         for(int i=0;i<KEYPREFSIZE;i++){
             if(it->key().ToString().contains(keyPrefs[i])){
                 chunkKey = false;
@@ -71,19 +72,29 @@ int main(){
         if(chunkKey){
 
             uint32_t keySize = it->key().size();
-            uint8_t *data = (uint8_t*)malloc(keySize);
-            memcpy(data,it->key().data(),keySize);
+            uint8_t *keyData = (uint8_t*)malloc(keySize);
+            memcpy(keyData,it->key().data(),keySize);
 
-            Cursor cursor(data,0);
+            uint32_t valueSize = it->value().size();
+            uint8_t *valueData = (uint8_t*)malloc(valueSize);
+            memcpy(valueData,it->value().data(),valueSize);
+
+            Cursor cursor(keyData,0);
             std::cout << "Chunk:\n";
             std::cout << "\tX:" << (int)cursor.readu32() << "\n";
             std::cout << "\tZ:" << (int)cursor.readu32() << "\n";
             
             uint8_t record = cursor.readu8();
-            std::string recordName = tagName[record];
+
+            std::string recordName = tagName.find(record) == tagName.end()?"InvalidRecord":tagName[record];
             std::cout << "\tRecord :" << recordName << "\n";
 
-            free(data);
+            if(recordName == "BlockEntity"){
+                parseNBT(valueData);
+            }
+
+            free(valueData);
+            free(keyData);
         }
     }
 
