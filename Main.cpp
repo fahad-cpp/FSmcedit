@@ -52,7 +52,7 @@ int main(){
     leveldb::DB* db;
     leveldb::Options options;
     options.create_if_missing = false;
-    leveldb::Status status = leveldb::DB::Open(options,"tmp/testdb",&db);
+    leveldb::Status status = leveldb::DB::Open(options,"tmp/testworld/db",&db);
     if(!status.ok()){
         std::cerr << status.ToString() << "\n";
         return 1;
@@ -79,7 +79,7 @@ int main(){
             uint8_t *valueData = (uint8_t*)malloc(valueSize);
             memcpy(valueData,it->value().data(),valueSize);
 
-            Cursor cursor(keyData,0);
+            Cursor cursor(keyData);
             std::cout << "Chunk:\n";
             std::cout << "\tX:" << (int)cursor.readu32() << "\n";
             std::cout << "\tZ:" << (int)cursor.readu32() << "\n";
