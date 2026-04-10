@@ -6,97 +6,140 @@ Chunk:
 	X:16
 	Z:6
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: List
-Name:Items
+NBT START
+(Compound)
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
+NBT END
+NBT START
+(List)Items
+List size:0
+List END
+NBT END
+NBT START
+(List)Items
+List size:0
+List END
+NBT END
+NBT START
+(List)Items
+List size:0
+List END
+NBT END
+NBT START
+(List)Items
+List size:0
+List END
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:16
 	Z:6
@@ -113,57 +156,58 @@ Chunk:
 	X:17
 	Z:3
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT START
+(Compound)
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:17
 	Z:3
@@ -180,137 +224,202 @@ Chunk:
 	X:17
 	Z:4
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT START
+(Compound)
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
+NBT END
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
 Compound END
+NBT END
+Compound END
+NBT END
 Chunk:
 	X:17
 	Z:4
@@ -327,57 +436,58 @@ Chunk:
 	X:17
 	Z:5
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT START
+(Compound)
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:17
 	Z:5
@@ -394,41 +504,42 @@ Chunk:
 	X:17
 	Z:6
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT START
+(Compound)
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:17
 	Z:6
@@ -445,49 +556,50 @@ Chunk:
 	X:17
 	Z:7
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT START
+(Compound)
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:17
 	Z:7
@@ -504,49 +616,50 @@ Chunk:
 	X:18
 	Z:3
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT START
+(Compound)
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:18
 	Z:3
@@ -563,29 +676,58 @@ Chunk:
 	X:18
 	Z:5
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: String
-Name:LootTable
-
-Parsing NBT...
-Type: String
-Name:LootTable
-
-Parsing NBT...
-Type: String
-Name:LootTable
-
-Parsing NBT...
-Type: String
-Name:LootTable
-
-Parsing NBT...
-Type: String
-Name:LootTable
-
+NBT START
+(Compound)
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:18
 	Z:5
@@ -602,41 +744,42 @@ Chunk:
 	X:18
 	Z:6
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT START
+(Compound)
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:18
 	Z:6
@@ -653,29 +796,30 @@ Chunk:
 	X:18
 	Z:7
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:color
+NBT START
+(Compound)
+NBT START
+(Byte)color
 14
-Parsing NBT...
-Type: Byte
-Name:color
+NBT END
+NBT START
+(Byte)color
 14
-Parsing NBT...
-Type: Byte
-Name:color
+NBT END
+NBT START
+(Byte)color
 14
-Parsing NBT...
-Type: Byte
-Name:color
+NBT END
+NBT START
+(Byte)color
 14
-Parsing NBT...
-Type: Byte
-Name:color
+NBT END
+NBT START
+(Byte)color
 14
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:18
 	Z:7
@@ -692,69 +836,70 @@ Chunk:
 	X:19
 	Z:6
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT START
+(Compound)
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
-Parsing NBT...
-Type: Long
-Name:cooldown_end_at
+NBT END
+NBT START
+(Long)cooldown_end_at
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:19
 	Z:6
@@ -771,29 +916,34 @@ Chunk:
 	X:19
 	Z:7
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: String
-Name:LootTable
-
-Parsing NBT...
-Type: String
-Name:LootTable
-
-Parsing NBT...
-Type: String
-Name:LootTable
-
-Parsing NBT...
-Type: String
-Name:LootTable
-
-Parsing NBT...
-Type: String
-Name:LootTable
-
+NBT START
+(Compound)
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
+NBT START
+(String)LootTable
+loot_tables/pots/trial_chambers/corridor.json
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:19
 	Z:7
@@ -814,33 +964,34 @@ Chunk:
 	X:19
 	Z:8
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT START
+(Compound)
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:19
 	Z:8
@@ -877,21 +1028,25 @@ Chunk:
 	X:20
 	Z:3
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: List
-Name:Items
+NBT START
+(Compound)
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:20
 	Z:3
@@ -940,45 +1095,46 @@ Chunk:
 	X:20
 	Z:5
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT START
+(Compound)
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:20
 	Z:5
@@ -1007,17 +1163,274 @@ Chunk:
 	X:20
 	Z:6
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: List
-Name:Occupants
-List END
-Parsing NBT...
-Type: List
-Name:Occupants
-List END
+NBT START
+(Compound)
+NBT START
+(List)Occupants
+List size:3
+Compound:NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
 Compound END
+Compound:Compound END
+Compound:Compound END
+List END
+NBT END
+NBT START
+(List)Occupants
+List size:3
+Compound:NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+Compound END
+Compound:Compound END
+Compound:Compound END
+List END
+NBT END
+NBT START
+(List)Occupants
+List size:3
+Compound:NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+NBT START
+(String)ActorIdentifier
+minecraft:bee<>
+NBT END
+Compound END
+Compound:Compound END
+Compound:Compound END
+List END
+NBT END
+Compound END
+NBT END
 Chunk:
 	X:20
 	Z:6
@@ -1034,393 +1447,522 @@ Chunk:
 	X:20
 	Z:7
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT START
+(Compound)
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
-Parsing NBT...
-Type: Compound
-Name:config
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
-Parsing NBT...
-Type: Float
-Name:activation_range
+NBT END
+NBT START
+(Float)activation_range
 64
+NBT END
 Compound END
+NBT END
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
 Compound END
+NBT END
+NBT START
+(Compound)config
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+NBT START
+(Float)activation_range
+64
+NBT END
+Compound END
+NBT END
+Compound END
+NBT END
 Chunk:
 	X:20
 	Z:7
@@ -1465,21 +2007,22 @@ Chunk:
 	X:21
 	Z:3
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT START
+(Compound)
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:21
 	Z:3
@@ -1496,33 +2039,34 @@ Chunk:
 	X:21
 	Z:6
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT START
+(Compound)
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:21
 	Z:6
@@ -1539,33 +2083,34 @@ Chunk:
 	X:21
 	Z:7
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT START
+(Compound)
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
-Parsing NBT...
-Type: Byte
-Name:Findable
+NBT END
+NBT START
+(Byte)Findable
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:21
 	Z:7
@@ -1582,237 +2127,295 @@ Chunk:
 	X:21
 	Z:8
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: List
-Name:Items
+NBT START
+(Compound)
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:21
 	Z:8
@@ -1849,57 +2452,58 @@ Chunk:
 	X:22
 	Z:2
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT START
+(Compound)
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
-Parsing NBT...
-Type: Short
-Name:CookTime
+NBT END
+NBT START
+(Short)CookTime
 0
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:22
 	Z:2
@@ -1920,237 +2524,295 @@ Chunk:
 	X:22
 	Z:6
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: List
-Name:Items
+NBT START
+(Compound)
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:22
 	Z:6
@@ -2167,61 +2829,75 @@ Chunk:
 	X:22
 	Z:7
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: List
-Name:Items
+NBT START
+(Compound)
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:22
 	Z:7
@@ -2238,193 +2914,240 @@ Chunk:
 	X:22
 	Z:8
 	Record :BlockEntity
-Parsing NBT...
-Type: Compound
-Parsing NBT...
-Type: List
-Name:Items
+NBT START
+(Compound)
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
-Parsing NBT...
-Type: List
-Name:Items
+NBT END
+NBT START
+(List)Items
+List size:0
 List END
+NBT END
 Compound END
+NBT END
 Chunk:
 	X:22
 	Z:8

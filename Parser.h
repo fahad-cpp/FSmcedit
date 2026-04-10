@@ -22,6 +22,7 @@ uint32_t parseNBT(const uint8_t* data);
 uint32_t parseCompound(const uint8_t* data);
 uint32_t getItemSize(uint8_t tag);
 void parseList(Cursor&);
+void parseTag(uint8_t tagID,Cursor& cursor);
 uint8_t parseByte(Cursor& cursor);
 uint16_t parseShort(Cursor& cursor);
 uint32_t parseInt(Cursor& cursor);
