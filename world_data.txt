@@ -2,7 +2,7 @@ Chunk:
 	X:16
 	Z:6
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:16
 	Z:6
@@ -12,8 +12,8 @@ Chunk:
 (Int)LootTableSeed:0
 (String)id:Dispenser
 (Byte)isMovable:1
-(Int)x:1
-(Int)y:223
+(Int)x:257
+(Int)y:-33
 (Int)z:111
 Chunk:
 	X:16
@@ -27,7 +27,7 @@ Chunk:
 	X:17
 	Z:3
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:17
 	Z:3
@@ -35,11 +35,11 @@ Chunk:
 (Compound):(Byte)Findable:0
 (List)Items:List size:0
 (String)LootTable:loot_tables/chests/trial_chambers/reward.json
-(Int)LootTableSeed:153
+(Int)LootTableSeed:473791385
 (String)id:Chest
 (Byte)isMovable:1
-(Int)x:27
-(Int)y:225
+(Int)x:283
+(Int)y:-31
 (Int)z:54
 Chunk:
 	X:17
@@ -53,13 +53,13 @@ Chunk:
 	X:17
 	Z:4
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:17
 	Z:4
 	Record :BlockEntity
-(Compound):(Compound)config:(Float)activation_range:64
-(Float)deactivation_range:64
+(Compound):(Compound)config:(Float)activation_range:4.000000
+(Float)deactivation_range:4.500000
 (Compound)key_item:(Byte)Count:1
 (Short)Damage:0
 (String)Name:minecraft:ominous_trial_key
@@ -76,7 +76,7 @@ Chunk:
 	X:17
 	Z:5
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:17
 	Z:5
@@ -84,11 +84,11 @@ Chunk:
 (Compound):(Byte)Findable:0
 (List)Items:List size:0
 (String)LootTable:loot_tables/chests/trial_chambers/reward.json
-(Int)LootTableSeed:176
+(Int)LootTableSeed:-1318234704
 (String)id:Chest
 (Byte)isMovable:1
-(Int)x:31
-(Int)y:207
+(Int)x:287
+(Int)y:-49
 (Int)z:94
 Chunk:
 	X:17
@@ -102,7 +102,7 @@ Chunk:
 	X:17
 	Z:6
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:17
 	Z:6
@@ -113,8 +113,8 @@ Chunk:
 (Int)LootTableSeed:0
 (String)id:Barrel
 (Byte)isMovable:1
-(Int)x:23
-(Int)y:225
+(Int)x:279
+(Int)y:-31
 (Int)z:103
 Chunk:
 	X:17
@@ -128,13 +128,13 @@ Chunk:
 	X:17
 	Z:7
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:17
 	Z:7
 	Record :BlockEntity
-(Compound):(Compound)config:(Float)activation_range:64
-(Float)deactivation_range:64
+(Compound):(Compound)config:(Float)activation_range:4.000000
+(Float)deactivation_range:4.500000
 (Compound)key_item:(Byte)Count:1
 (Short)Damage:0
 (String)Name:minecraft:trial_key
@@ -151,13 +151,13 @@ Chunk:
 	X:18
 	Z:3
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:18
 	Z:3
 	Record :BlockEntity
-(Compound):(Compound)config:(Float)activation_range:64
-(Float)deactivation_range:64
+(Compound):(Compound)config:(Float)activation_range:4.000000
+(Float)deactivation_range:4.500000
 (Compound)key_item:(Byte)Count:1
 (Short)Damage:0
 (String)Name:minecraft:trial_key
@@ -174,7 +174,7 @@ Chunk:
 	X:18
 	Z:5
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:18
 	Z:5
@@ -200,7 +200,7 @@ Chunk:
 	X:18
 	Z:6
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:18
 	Z:6
@@ -211,8 +211,8 @@ Chunk:
 (Int)LootTableSeed:0
 (String)id:Barrel
 (Byte)isMovable:1
-(Int)x:34
-(Int)y:220
+(Int)x:290
+(Int)y:-36
 (Int)z:96
 Chunk:
 	X:18
@@ -226,7 +226,7 @@ Chunk:
 	X:18
 	Z:7
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:18
 	Z:7
@@ -234,8 +234,8 @@ Chunk:
 (Compound):(Byte)color:14
 (String)id:Bed
 (Byte)isMovable:1
-(Int)x:34
-(Int)y:223
+(Int)x:290
+(Int)y:-33
 (Int)z:126
 Chunk:
 	X:18
@@ -249,7 +249,7 @@ Chunk:
 	X:19
 	Z:6
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:19
 	Z:6
@@ -277,7 +277,7 @@ Chunk:
 	X:19
 	Z:7
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:19
 	Z:7
@@ -307,7 +307,7 @@ Chunk:
 	X:19
 	Z:8
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:19
 	Z:8
@@ -316,8 +316,8 @@ Chunk:
 (List)Items:List size:0
 (String)id:Barrel
 (Byte)isMovable:1
-(Int)x:58
-(Int)y:236
+(Int)x:314
+(Int)y:-20
 (Int)z:128
 Chunk:
 	X:19
@@ -335,7 +335,7 @@ Chunk:
 	X:20
 	Z:2
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:20
 	Z:2
@@ -352,7 +352,7 @@ Chunk:
 	X:20
 	Z:3
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:20
 	Z:3
@@ -361,7 +361,7 @@ Chunk:
 (Int)TransferCooldown:0
 (String)id:Hopper
 (Byte)isMovable:1
-(Int)x:79
+(Int)x:335
 (Int)y:76
 (Int)z:56
 Chunk:
@@ -380,7 +380,7 @@ Chunk:
 	X:20
 	Z:4
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:20
 	Z:4
@@ -405,7 +405,7 @@ Chunk:
 	X:20
 	Z:5
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:20
 	Z:5
@@ -438,7 +438,7 @@ Chunk:
 	X:20
 	Z:6
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:20
 	Z:6
@@ -467,13 +467,13 @@ Chunk:
 	X:20
 	Z:7
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:20
 	Z:7
 	Record :BlockEntity
-(Compound):(Compound)config:(Float)activation_range:64
-(Float)deactivation_range:64
+(Compound):(Compound)config:(Float)activation_range:4.000000
+(Float)deactivation_range:4.500000
 (Compound)key_item:(Byte)Count:1
 (Short)Damage:0
 (String)Name:minecraft:ominous_trial_key
@@ -498,7 +498,7 @@ Chunk:
 	X:21
 	Z:2
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:21
 	Z:2
@@ -519,7 +519,7 @@ Chunk:
 	X:21
 	Z:3
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:21
 	Z:3
@@ -529,9 +529,9 @@ Chunk:
 (String)id:Chest
 (Byte)isMovable:1
 (Byte)pairlead:1
-(Int)pairx:80
+(Int)pairx:336
 (Int)pairz:56
-(Int)x:81
+(Int)x:337
 (Int)y:76
 (Int)z:56
 Chunk:
@@ -546,7 +546,7 @@ Chunk:
 	X:21
 	Z:6
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:21
 	Z:6
@@ -555,8 +555,8 @@ Chunk:
 (List)Items:List size:0
 (String)id:Barrel
 (Byte)isMovable:1
-(Int)x:95
-(Int)y:217
+(Int)x:351
+(Int)y:-39
 (Int)z:105
 Chunk:
 	X:21
@@ -570,7 +570,7 @@ Chunk:
 	X:21
 	Z:7
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:21
 	Z:7
@@ -579,8 +579,8 @@ Chunk:
 (List)Items:List size:0
 (String)id:Barrel
 (Byte)isMovable:1
-(Int)x:83
-(Int)y:222
+(Int)x:339
+(Int)y:-34
 (Int)z:121
 Chunk:
 	X:21
@@ -594,7 +594,7 @@ Chunk:
 	X:21
 	Z:8
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:21
 	Z:8
@@ -604,8 +604,8 @@ Chunk:
 (Int)LootTableSeed:0
 (String)id:Dispenser
 (Byte)isMovable:1
-(Int)x:84
-(Int)y:223
+(Int)x:340
+(Int)y:-33
 (Int)z:129
 Chunk:
 	X:21
@@ -619,7 +619,7 @@ Chunk:
 	X:22
 	Z:1
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:22
 	Z:1
@@ -636,7 +636,7 @@ Chunk:
 	X:22
 	Z:2
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:22
 	Z:2
@@ -651,7 +651,7 @@ Chunk:
 (List)Items:List size:0
 (String)id:BrewingStand
 (Byte)isMovable:1
-(Int)x:107
+(Int)x:363
 (Int)y:79
 (Int)z:32
 Chunk:
@@ -670,7 +670,7 @@ Chunk:
 	X:22
 	Z:6
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:22
 	Z:6
@@ -680,8 +680,8 @@ Chunk:
 (Int)LootTableSeed:0
 (String)id:Dispenser
 (Byte)isMovable:1
-(Int)x:102
-(Int)y:218
+(Int)x:358
+(Int)y:-38
 (Int)z:106
 Chunk:
 	X:22
@@ -695,7 +695,7 @@ Chunk:
 	X:22
 	Z:7
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:22
 	Z:7
@@ -705,8 +705,8 @@ Chunk:
 (Int)LootTableSeed:0
 (String)id:Dispenser
 (Byte)isMovable:1
-(Int)x:110
-(Int)y:223
+(Int)x:366
+(Int)y:-33
 (Int)z:124
 Chunk:
 	X:22
@@ -720,7 +720,7 @@ Chunk:
 	X:22
 	Z:8
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:22
 	Z:8
@@ -730,8 +730,8 @@ Chunk:
 (Int)LootTableSeed:0
 (String)id:Dispenser
 (Byte)isMovable:1
-(Int)x:107
-(Int)y:218
+(Int)x:363
+(Int)y:-38
 (Int)z:132
 Chunk:
 	X:22
@@ -745,7 +745,7 @@ Chunk:
 	X:22
 	Z:9
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:22
 	Z:9
@@ -762,7 +762,7 @@ Chunk:
 	X:23
 	Z:5
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:23
 	Z:5
@@ -775,7 +775,7 @@ Chunk:
 	X:23
 	Z:6
 	Record :Version
-Version:*
+(Byte)42
 Chunk:
 	X:23
 	Z:6

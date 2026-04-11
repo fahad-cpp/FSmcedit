@@ -1,4 +1,5 @@
 #include "Parser.h"
+
 uint32_t parseNBT(const uint8_t* data) {
     //std::cout << "NBT START\n";
     Cursor cursor(data, 0);
@@ -47,9 +48,9 @@ void parseTag(uint8_t tagID,Cursor& cursor){
     }else if(tagID == 4){
         std::cout << parseLong(cursor) << "\n";
     }else if(tagID == 5){
-        std::cout << parseFloat(cursor) << "\n";
+        std::cout << std::fixed << parseFloat(cursor) << "\n";
     }else if(tagID == 6){
-        std::cout << parseDouble(cursor) << "\n";
+        std::cout << std::fixed << parseDouble(cursor) << "\n";
     }else if(tagID == 7){
         std::vector<char> byteArray = parseByteArray(cursor);
     }else if(tagID == 8){
@@ -77,23 +78,29 @@ uint8_t parseByte(Cursor& cursor){
 }
 
 uint16_t parseShort(Cursor& cursor){
-    return (int)cursor.readBEu16();
+    return (int)cursor.readu16();
 }
 
-uint32_t parseInt(Cursor& cursor){
+int parseInt(Cursor& cursor){
     return (int)cursor.readu32();
 }
 
 uint64_t parseLong(Cursor& cursor){
-    return (long long)cursor.readBEu64();
+    return (long long)cursor.readu64();
 }
 
 float parseFloat(Cursor& cursor){
-    return (float)cursor.readBEu32();
+    float res = 0.f;
+    uint32_t readValue = cursor.readu32();
+    std::memcpy(&res,&readValue,sizeof(float));
+    return res;
 }
 
 double parseDouble(Cursor& cursor){
-    return (double)cursor.readBEu64();
+    double res = 0.0;
+    uint64_t readValue = cursor.readu64();
+    std::memcpy(&res,&readValue,sizeof(double));
+    return res;
 }
 
 std::vector<char> parseByteArray(Cursor& cursor){

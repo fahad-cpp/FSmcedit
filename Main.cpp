@@ -94,7 +94,7 @@ int main(){
                 parseNBT(valueData);
             }else if(recordName == "Version"){
                 uint8_t version = valueCursor.readu8();
-                std::cout << "Version:" << version << "\n";
+                std::cout << "(Byte)" << (int)version << "\n";
             }
 
             free(valueData);

@@ -2,6 +2,7 @@
 #define PARSER_H
 #include <iostream>
 #include <vector>
+#include <cstring>
 #include "Cursor.h"
 const static std::string types[13] = {
     "END",
@@ -25,7 +26,7 @@ void parseList(Cursor&);
 void parseTag(uint8_t tagID,Cursor& cursor);
 uint8_t parseByte(Cursor& cursor);
 uint16_t parseShort(Cursor& cursor);
-uint32_t parseInt(Cursor& cursor);
+int parseInt(Cursor& cursor);
 uint64_t parseLong(Cursor& cursor);
 float parseFloat(Cursor& cursor);
 double parseDouble(Cursor& cursor);
