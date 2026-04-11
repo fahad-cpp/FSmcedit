@@ -12,6 +12,8 @@ class Cursor{
         this->offset = offset;
     }
 
+    uint8_t peeku8();
+
     uint8_t readu8();
     uint16_t readu16();
     uint32_t readu32();

@@ -89,8 +89,12 @@ int main(){
             std::string recordName = tagName.find(record) == tagName.end()?"InvalidRecord":tagName[record];
             std::cout << "\tRecord :" << recordName << "\n";
 
-            if(recordName == "BlockEntity"){
+            Cursor valueCursor(valueData);
+            if(recordName == "BlockEntity" || recordName == "Entity" || recordName == "RandomTicks"){
                 parseNBT(valueData);
+            }else if(recordName == "Version"){
+                uint8_t version = valueCursor.readu8();
+                std::cout << "Version:" << version << "\n";
             }
 
             free(valueData);

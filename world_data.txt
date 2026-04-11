@@ -2,144 +2,19 @@ Chunk:
 	X:16
 	Z:6
 	Record :Version
+Version:*
 Chunk:
 	X:16
 	Z:6
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-Compound END
-NBT END
+(Compound):(List)Items:List size:0
+(String)LootTable:loot_tables/dispensers/trial_chambers/chamber.json
+(Int)LootTableSeed:0
+(String)id:Dispenser
+(Byte)isMovable:1
+(Int)x:1
+(Int)y:223
+(Int)z:111
 Chunk:
 	X:16
 	Z:6
@@ -152,62 +27,20 @@ Chunk:
 	X:17
 	Z:3
 	Record :Version
+Version:*
 Chunk:
 	X:17
 	Z:3
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Byte)Findable:0
+(List)Items:List size:0
+(String)LootTable:loot_tables/chests/trial_chambers/reward.json
+(Int)LootTableSeed:153
+(String)id:Chest
+(Byte)isMovable:1
+(Int)x:27
+(Int)y:225
+(Int)z:54
 Chunk:
 	X:17
 	Z:3
@@ -220,206 +53,17 @@ Chunk:
 	X:17
 	Z:4
 	Record :Version
+Version:*
 Chunk:
 	X:17
 	Z:4
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-Compound END
-NBT END
+(Compound):(Compound)config:(Float)activation_range:64
+(Float)deactivation_range:64
+(Compound)key_item:(Byte)Count:1
+(Short)Damage:0
+(String)Name:minecraft:ominous_trial_key
+(Byte)WasPickedUp:0
 Chunk:
 	X:17
 	Z:4
@@ -432,62 +76,20 @@ Chunk:
 	X:17
 	Z:5
 	Record :Version
+Version:*
 Chunk:
 	X:17
 	Z:5
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Byte)Findable:0
+(List)Items:List size:0
+(String)LootTable:loot_tables/chests/trial_chambers/reward.json
+(Int)LootTableSeed:176
+(String)id:Chest
+(Byte)isMovable:1
+(Int)x:31
+(Int)y:207
+(Int)z:94
 Chunk:
 	X:17
 	Z:5
@@ -500,46 +102,20 @@ Chunk:
 	X:17
 	Z:6
 	Record :Version
+Version:*
 Chunk:
 	X:17
 	Z:6
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Byte)Findable:0
+(List)Items:List size:0
+(String)LootTable:loot_tables/chests/trial_chambers/corridor.json
+(Int)LootTableSeed:0
+(String)id:Barrel
+(Byte)isMovable:1
+(Int)x:23
+(Int)y:225
+(Int)z:103
 Chunk:
 	X:17
 	Z:6
@@ -552,54 +128,17 @@ Chunk:
 	X:17
 	Z:7
 	Record :Version
+Version:*
 Chunk:
 	X:17
 	Z:7
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-Compound END
-NBT END
+(Compound):(Compound)config:(Float)activation_range:64
+(Float)deactivation_range:64
+(Compound)key_item:(Byte)Count:1
+(Short)Damage:0
+(String)Name:minecraft:trial_key
+(Byte)WasPickedUp:0
 Chunk:
 	X:17
 	Z:7
@@ -612,54 +151,17 @@ Chunk:
 	X:18
 	Z:3
 	Record :Version
+Version:*
 Chunk:
 	X:18
 	Z:3
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-Compound END
-NBT END
+(Compound):(Compound)config:(Float)activation_range:64
+(Float)deactivation_range:64
+(Compound)key_item:(Byte)Count:1
+(Short)Damage:0
+(String)Name:minecraft:trial_key
+(Byte)WasPickedUp:0
 Chunk:
 	X:18
 	Z:3
@@ -672,62 +174,20 @@ Chunk:
 	X:18
 	Z:5
 	Record :Version
+Version:*
 Chunk:
 	X:18
 	Z:5
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-Compound END
-NBT END
+(Compound):(String)LootTable:loot_tables/pots/trial_chambers/corridor.json
+(Int)LootTableSeed:0
+(Byte)animation:0
+(String)id:DecoratedPot
+(Byte)isMovable:1
+(Compound)item:(Byte)Count:0
+(Short)Damage:0
+(String)Name:
+(Byte)WasPickedUp:0
 Chunk:
 	X:18
 	Z:5
@@ -740,46 +200,20 @@ Chunk:
 	X:18
 	Z:6
 	Record :Version
+Version:*
 Chunk:
 	X:18
 	Z:6
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Byte)Findable:0
+(List)Items:List size:0
+(String)LootTable:loot_tables/chests/trial_chambers/corridor.json
+(Int)LootTableSeed:0
+(String)id:Barrel
+(Byte)isMovable:1
+(Int)x:34
+(Int)y:220
+(Int)z:96
 Chunk:
 	X:18
 	Z:6
@@ -792,34 +226,17 @@ Chunk:
 	X:18
 	Z:7
 	Record :Version
+Version:*
 Chunk:
 	X:18
 	Z:7
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)color
-14
-NBT END
-NBT START
-(Byte)color
-14
-NBT END
-NBT START
-(Byte)color
-14
-NBT END
-NBT START
-(Byte)color
-14
-NBT END
-NBT START
-(Byte)color
-14
-NBT END
-Compound END
-NBT END
+(Compound):(Byte)color:14
+(String)id:Bed
+(Byte)isMovable:1
+(Int)x:34
+(Int)y:223
+(Int)z:126
 Chunk:
 	X:18
 	Z:7
@@ -832,74 +249,22 @@ Chunk:
 	X:19
 	Z:6
 	Record :Version
+Version:*
 Chunk:
 	X:19
 	Z:6
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-NBT START
-(Long)cooldown_end_at
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Long)cooldown_end_at:0
+(List)current_mobs:List size:0
+(String)id:TrialSpawner
+(Byte)isMovable:1
+(Long)next_mob_spawns_at:0
+(String)normal_config:minecraft:trial_chamber/ranged/poison_skeleton/normal
+(String)ominous_config:minecraft:trial_chamber/ranged/poison_skeleton/ominous
+(List)registered_players:List size:0
+(Int)required_player_range:14
+(Compound)spawn_data:(String)TypeId:minecraft:bogged
+(Int)Weight:1
 Chunk:
 	X:19
 	Z:6
@@ -912,38 +277,20 @@ Chunk:
 	X:19
 	Z:7
 	Record :Version
+Version:*
 Chunk:
 	X:19
 	Z:7
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-NBT START
-(String)LootTable
-loot_tables/pots/trial_chambers/corridor.json
-NBT END
-Compound END
-NBT END
+(Compound):(String)LootTable:loot_tables/pots/trial_chambers/corridor.json
+(Int)LootTableSeed:0
+(Byte)animation:0
+(String)id:DecoratedPot
+(Byte)isMovable:1
+(Compound)item:(Byte)Count:0
+(Short)Damage:0
+(String)Name:
+(Byte)WasPickedUp:0
 Chunk:
 	X:19
 	Z:7
@@ -960,38 +307,18 @@ Chunk:
 	X:19
 	Z:8
 	Record :Version
+Version:*
 Chunk:
 	X:19
 	Z:8
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Byte)Findable:0
+(List)Items:List size:0
+(String)id:Barrel
+(Byte)isMovable:1
+(Int)x:58
+(Int)y:236
+(Int)z:128
 Chunk:
 	X:19
 	Z:8
@@ -1008,6 +335,7 @@ Chunk:
 	X:20
 	Z:2
 	Record :Version
+Version:*
 Chunk:
 	X:20
 	Z:2
@@ -1024,29 +352,18 @@ Chunk:
 	X:20
 	Z:3
 	Record :Version
+Version:*
 Chunk:
 	X:20
 	Z:3
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-Compound END
-NBT END
+(Compound):(List)Items:List size:0
+(Int)TransferCooldown:0
+(String)id:Hopper
+(Byte)isMovable:1
+(Int)x:79
+(Int)y:76
+(Int)z:56
 Chunk:
 	X:20
 	Z:3
@@ -1063,6 +380,7 @@ Chunk:
 	X:20
 	Z:4
 	Record :Version
+Version:*
 Chunk:
 	X:20
 	Z:4
@@ -1087,6 +405,7 @@ Chunk:
 	X:20
 	Z:5
 	Record :Version
+Version:*
 Chunk:
 	X:20
 	Z:5
@@ -1095,47 +414,11 @@ Chunk:
 	X:20
 	Z:5
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-Compound END
-NBT END
-Chunk:
+(Compound):(Byte)Findable:0
+(List)Items:List size:12
+Compound:(Compound)Block:(String)name:minecraft:pale_oak_log
+(Compound)states:(String)pillar_axis:y
+Compound:Compound:Compound:Compound:Compound:Compound:Compound:Compound:Compound:Compound:Compound:Chunk:
 	X:20
 	Z:5
 	Record :FinalizedState
@@ -1155,6 +438,7 @@ Chunk:
 	X:20
 	Z:6
 	Record :Version
+Version:*
 Chunk:
 	X:20
 	Z:6
@@ -1163,275 +447,15 @@ Chunk:
 	X:20
 	Z:6
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(List)Occupants
-List size:3
-Compound:NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-Compound END
-Compound:Compound END
-Compound:Compound END
-List END
-NBT END
-NBT START
-(List)Occupants
-List size:3
-Compound:NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-Compound END
-Compound:Compound END
-Compound:Compound END
-List END
-NBT END
-NBT START
-(List)Occupants
-List size:3
-Compound:NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-NBT START
-(String)ActorIdentifier
-minecraft:bee<>
-NBT END
-Compound END
-Compound:Compound END
-Compound:Compound END
-List END
-NBT END
-Compound END
-NBT END
-Chunk:
+(Compound):(List)Occupants:List size:3
+Compound:(String)ActorIdentifier:minecraft:bee<>
+(Compound)SaveData:(Short)Air:0
+(List)Armor:List size:5
+Compound:(Byte)Count:0
+(Short)Damage:0
+(String)Name:
+(Byte)WasPickedUp:0
+Compound:Compound:Compound:Compound:Compound:Compound:Chunk:
 	X:20
 	Z:6
 	Record :FinalizedState
@@ -1443,526 +467,17 @@ Chunk:
 	X:20
 	Z:7
 	Record :Version
+Version:*
 Chunk:
 	X:20
 	Z:7
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-NBT START
-(Compound)config
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-NBT START
-(Float)activation_range
-64
-NBT END
-Compound END
-NBT END
-Compound END
-NBT END
+(Compound):(Compound)config:(Float)activation_range:64
+(Float)deactivation_range:64
+(Compound)key_item:(Byte)Count:1
+(Short)Damage:0
+(String)Name:minecraft:ominous_trial_key
+(Byte)WasPickedUp:0
 Chunk:
 	X:20
 	Z:7
@@ -1983,6 +498,7 @@ Chunk:
 	X:21
 	Z:2
 	Record :Version
+Version:*
 Chunk:
 	X:21
 	Z:2
@@ -2003,26 +519,21 @@ Chunk:
 	X:21
 	Z:3
 	Record :Version
+Version:*
 Chunk:
 	X:21
 	Z:3
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Byte)Findable:0
+(List)Items:List size:0
+(String)id:Chest
+(Byte)isMovable:1
+(Byte)pairlead:1
+(Int)pairx:80
+(Int)pairz:56
+(Int)x:81
+(Int)y:76
+(Int)z:56
 Chunk:
 	X:21
 	Z:3
@@ -2035,38 +546,18 @@ Chunk:
 	X:21
 	Z:6
 	Record :Version
+Version:*
 Chunk:
 	X:21
 	Z:6
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Byte)Findable:0
+(List)Items:List size:0
+(String)id:Barrel
+(Byte)isMovable:1
+(Int)x:95
+(Int)y:217
+(Int)z:105
 Chunk:
 	X:21
 	Z:6
@@ -2079,38 +570,18 @@ Chunk:
 	X:21
 	Z:7
 	Record :Version
+Version:*
 Chunk:
 	X:21
 	Z:7
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-NBT START
-(Byte)Findable
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Byte)Findable:0
+(List)Items:List size:0
+(String)id:Barrel
+(Byte)isMovable:1
+(Int)x:83
+(Int)y:222
+(Int)z:121
 Chunk:
 	X:21
 	Z:7
@@ -2123,299 +594,19 @@ Chunk:
 	X:21
 	Z:8
 	Record :Version
+Version:*
 Chunk:
 	X:21
 	Z:8
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-Compound END
-NBT END
+(Compound):(List)Items:List size:0
+(String)LootTable:loot_tables/dispensers/trial_chambers/chamber.json
+(Int)LootTableSeed:0
+(String)id:Dispenser
+(Byte)isMovable:1
+(Int)x:84
+(Int)y:223
+(Int)z:129
 Chunk:
 	X:21
 	Z:8
@@ -2428,6 +619,7 @@ Chunk:
 	X:22
 	Z:1
 	Record :Version
+Version:*
 Chunk:
 	X:22
 	Z:1
@@ -2444,6 +636,7 @@ Chunk:
 	X:22
 	Z:2
 	Record :Version
+Version:*
 Chunk:
 	X:22
 	Z:2
@@ -2452,58 +645,15 @@ Chunk:
 	X:22
 	Z:2
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-NBT START
-(Short)CookTime
-0
-NBT END
-Compound END
-NBT END
+(Compound):(Short)CookTime:0
+(Short)FuelAmount:0
+(Short)FuelTotal:0
+(List)Items:List size:0
+(String)id:BrewingStand
+(Byte)isMovable:1
+(Int)x:107
+(Int)y:79
+(Int)z:32
 Chunk:
 	X:22
 	Z:2
@@ -2520,299 +670,19 @@ Chunk:
 	X:22
 	Z:6
 	Record :Version
+Version:*
 Chunk:
 	X:22
 	Z:6
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-Compound END
-NBT END
+(Compound):(List)Items:List size:0
+(String)LootTable:loot_tables/dispensers/trial_chambers/chamber.json
+(Int)LootTableSeed:0
+(String)id:Dispenser
+(Byte)isMovable:1
+(Int)x:102
+(Int)y:218
+(Int)z:106
 Chunk:
 	X:22
 	Z:6
@@ -2825,79 +695,19 @@ Chunk:
 	X:22
 	Z:7
 	Record :Version
+Version:*
 Chunk:
 	X:22
 	Z:7
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-Compound END
-NBT END
+(Compound):(List)Items:List size:0
+(String)LootTable:loot_tables/dispensers/trial_chambers/chamber.json
+(Int)LootTableSeed:0
+(String)id:Dispenser
+(Byte)isMovable:1
+(Int)x:110
+(Int)y:223
+(Int)z:124
 Chunk:
 	X:22
 	Z:7
@@ -2910,244 +720,19 @@ Chunk:
 	X:22
 	Z:8
 	Record :Version
+Version:*
 Chunk:
 	X:22
 	Z:8
 	Record :BlockEntity
-NBT START
-(Compound)
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-NBT START
-(List)Items
-List size:0
-List END
-NBT END
-Compound END
-NBT END
+(Compound):(List)Items:List size:0
+(String)LootTable:loot_tables/dispensers/trial_chambers/chamber.json
+(Int)LootTableSeed:0
+(String)id:Dispenser
+(Byte)isMovable:1
+(Int)x:107
+(Int)y:218
+(Int)z:132
 Chunk:
 	X:22
 	Z:8
@@ -3160,6 +745,7 @@ Chunk:
 	X:22
 	Z:9
 	Record :Version
+Version:*
 Chunk:
 	X:22
 	Z:9
@@ -3176,6 +762,7 @@ Chunk:
 	X:23
 	Z:5
 	Record :Version
+Version:*
 Chunk:
 	X:23
 	Z:5
@@ -3188,6 +775,7 @@ Chunk:
 	X:23
 	Z:6
 	Record :Version
+Version:*
 Chunk:
 	X:23
 	Z:6

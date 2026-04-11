@@ -1,6 +1,6 @@
 #include "Parser.h"
 uint32_t parseNBT(const uint8_t* data) {
-    std::cout << "NBT START\n";
+    //std::cout << "NBT START\n";
     Cursor cursor(data, 0);
     uint8_t tagTypeID = cursor.readu8();
     uint16_t nameLength = tagTypeID == 0 ? 0 : cursor.readu16();
@@ -9,20 +9,20 @@ uint32_t parseNBT(const uint8_t* data) {
         return cursor.getOffset();
     }
     std::cout << "(" << types[(int)tagTypeID] << ")";
-    std::cout << cursor.readString(nameLength) << "\n";
+    std::cout << cursor.readString(nameLength) << ":";
     
     parseTag(tagTypeID,cursor);
     
-    std::cout << "NBT END\n";
+    //std::cout << "NBT END\n";
     return cursor.getOffset();
 }
 uint32_t parseCompound(const uint8_t* data){
     Cursor cursor(data,0);
-    while(cursor.readu8() != 0){
-        uint32_t offset = parseNBT(data);
+    while(cursor.peeku8() != 0){
+        uint32_t offset = parseNBT(cursor.getPtr());
         cursor.skip(offset);
     }
-    std::cout << "Compound END\n";
+    //std::cout << "Compound END\n";
     return cursor.getOffset();
 }
 void parseList(Cursor& cursor){
@@ -35,7 +35,7 @@ void parseList(Cursor& cursor){
         parseTag(listTagID,cursor);
     }
 
-    std::cout << "List END\n";
+    //std::cout << "List END\n";
 }
 void parseTag(uint8_t tagID,Cursor& cursor){
     if(tagID == 1){
@@ -81,7 +81,7 @@ uint16_t parseShort(Cursor& cursor){
 }
 
 uint32_t parseInt(Cursor& cursor){
-    return (int)cursor.readBEu32();
+    return (int)cursor.readu32();
 }
 
 uint64_t parseLong(Cursor& cursor){

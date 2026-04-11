@@ -1,4 +1,9 @@
 #include "Cursor.h"
+
+uint8_t Cursor::peeku8(){
+    return ptr[offset];
+}
+
 uint8_t Cursor::readu8(){
     uint8_t res = ptr[offset];
     offset++;
