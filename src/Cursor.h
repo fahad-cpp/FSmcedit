@@ -11,14 +11,15 @@ class Cursor{
         this->ptr = ptr;
         this->offset = offset;
     }
-
+    
+    //Byte
     uint8_t peeku8();
-
     uint8_t readu8();
+    //LE
     uint16_t readu16();
     uint32_t readu32();
     uint64_t readu64();
-    
+    //BE
     uint16_t readBEu16();
     uint32_t readBEu32();
     uint64_t readBEu64();
