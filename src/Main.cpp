@@ -86,10 +86,9 @@ int main() {
 
             uint8_t record = cursor.readu8();
 
-            std::string recordName =
-                tagName.find(record) == tagName.end() ?
-                "InvalidRecord: " + (int)record
-                : tagName.at(record);
+            const std::string recordName =
+                (tagName.find(record) == tagName.end()) ?
+                ("InvalidRecord: " + std::to_string((int)record)) : tagName.at(record);
             std::cout << "\tRecord :" << recordName << "\n";
 
             Cursor valueCursor(valueData);
