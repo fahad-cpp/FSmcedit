@@ -3,8 +3,8 @@
 #include <iostream>
 #include "Parser.h"
 #include "Cursor.h"
-#define KEYPREFSIZE 11
-std::string keyPrefs[KEYPREFSIZE]{
+
+const std::vector<std::string> keyPrefs = {
     "~local_player",
     "player_",
     "VILLAGE_",
@@ -18,7 +18,7 @@ std::string keyPrefs[KEYPREFSIZE]{
     "scoreboard"
 };
 
-std::map<uint8_t,std::string> tagName{
+const std::map<uint8_t, const std::string> tagName{
     //Terrain & Biome Data
     {43,"Data3D"},
     {44,"Version"},
@@ -48,51 +48,55 @@ std::map<uint8_t,std::string> tagName{
     {118,"LegacyVersion"},
 };
 
-int main(){
+int main() {
     leveldb::DB* db;
     leveldb::Options options;
     options.create_if_missing = false;
-    leveldb::Status status = leveldb::DB::Open(options,"tmp/testworld/db",&db);
-    if(!status.ok()){
+    leveldb::Status status = leveldb::DB::Open(options, "tmp/testworld/db", &db);
+    if (!status.ok()) {
         std::cerr << status.ToString() << "\n";
         return 1;
     }
-        
+
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
 
-    for(it->SeekToFirst();it->Valid();it->Next()){
+    for (it->SeekToFirst();it->Valid();it->Next()) {
         bool chunkKey = true;
         //Temporary (TODO:Handle all cases)
-        for(int i=0;i<KEYPREFSIZE;i++){
-            if(it->key().ToString().contains(keyPrefs[i])){
+        for (int i = 0;i < keyPrefs.size();i++) {
+            if (it->key().ToString().contains(keyPrefs[i])) {
                 chunkKey = false;
             }
         }
 
-        if(chunkKey){
+        if (chunkKey) {
 
             uint32_t keySize = it->key().size();
-            uint8_t *keyData = (uint8_t*)malloc(keySize);
-            memcpy(keyData,it->key().data(),keySize);
+            uint8_t* keyData = (uint8_t*)malloc(keySize);
+            memcpy(keyData, it->key().data(), keySize);
 
             uint32_t valueSize = it->value().size();
-            uint8_t *valueData = (uint8_t*)malloc(valueSize);
-            memcpy(valueData,it->value().data(),valueSize);
+            uint8_t* valueData = (uint8_t*)malloc(valueSize);
+            memcpy(valueData, it->value().data(), valueSize);
 
             Cursor cursor(keyData);
             std::cout << "Chunk:\n";
             std::cout << "\tX:" << (int)cursor.readu32() << "\n";
             std::cout << "\tZ:" << (int)cursor.readu32() << "\n";
-            
+
             uint8_t record = cursor.readu8();
 
-            std::string recordName = tagName.find(record) == tagName.end()?"InvalidRecord":tagName[record];
+            std::string recordName =
+                tagName.find(record) == tagName.end() ?
+                "InvalidRecord: " + (int)record
+                : tagName.at(record);
             std::cout << "\tRecord :" << recordName << "\n";
 
             Cursor valueCursor(valueData);
-            if(recordName == "BlockEntity" || recordName == "Entity" || recordName == "RandomTicks"){
+            if (recordName == "BlockEntity" || recordName == "Entity" || recordName == "RandomTicks") {
                 parseNBT(valueData);
-            }else if(recordName == "Version"){
+            }
+            else if (recordName == "Version") {
                 uint8_t version = valueCursor.readu8();
                 std::cout << "(Byte)" << (int)version << "\n";
             }

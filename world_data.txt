@@ -22,7 +22,7 @@ Chunk:
 Chunk:
 	X:16
 	Z:6
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:17
 	Z:3
@@ -48,7 +48,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:3
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:17
 	Z:4
@@ -71,7 +71,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:4
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:17
 	Z:5
@@ -97,7 +97,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:5
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:17
 	Z:6
@@ -123,7 +123,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:6
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:17
 	Z:7
@@ -146,7 +146,7 @@ Chunk:
 Chunk:
 	X:17
 	Z:7
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:18
 	Z:3
@@ -169,7 +169,7 @@ Chunk:
 Chunk:
 	X:18
 	Z:3
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:18
 	Z:5
@@ -195,7 +195,7 @@ Chunk:
 Chunk:
 	X:18
 	Z:5
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:18
 	Z:6
@@ -221,7 +221,7 @@ Chunk:
 Chunk:
 	X:18
 	Z:6
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:18
 	Z:7
@@ -244,7 +244,7 @@ Chunk:
 Chunk:
 	X:18
 	Z:7
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:19
 	Z:6
@@ -272,7 +272,7 @@ Chunk:
 Chunk:
 	X:19
 	Z:6
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:19
 	Z:7
@@ -302,7 +302,7 @@ Chunk:
 Chunk:
 	X:19
 	Z:7
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:19
 	Z:8
@@ -326,7 +326,7 @@ Chunk:
 Chunk:
 	X:19
 	Z:8
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:20
 	Z:2
@@ -347,7 +347,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:2
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:20
 	Z:3
@@ -371,7 +371,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:3
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:20
 	Z:4
@@ -396,7 +396,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:4
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:20
 	Z:5
@@ -429,7 +429,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:5
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:20
 	Z:6
@@ -462,7 +462,7 @@ Compound:Compound:Compound:Compound:Compound:Compound:Chunk:
 Chunk:
 	X:20
 	Z:6
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:20
 	Z:7
@@ -489,7 +489,7 @@ Chunk:
 Chunk:
 	X:20
 	Z:7
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:21
 	Z:2
@@ -514,7 +514,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:2
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:21
 	Z:3
@@ -541,7 +541,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:3
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:21
 	Z:6
@@ -565,7 +565,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:6
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:21
 	Z:7
@@ -589,7 +589,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:7
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:21
 	Z:8
@@ -614,7 +614,7 @@ Chunk:
 Chunk:
 	X:21
 	Z:8
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:22
 	Z:1
@@ -665,7 +665,7 @@ Chunk:
 Chunk:
 	X:22
 	Z:2
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:22
 	Z:6
@@ -690,7 +690,7 @@ Chunk:
 Chunk:
 	X:22
 	Z:6
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:22
 	Z:7
@@ -715,7 +715,7 @@ Chunk:
 Chunk:
 	X:22
 	Z:7
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:22
 	Z:8
@@ -740,7 +740,7 @@ Chunk:
 Chunk:
 	X:22
 	Z:8
-	Record :InvalidRecord
+	Record :teArray
 Chunk:
 	X:22
 	Z:9
