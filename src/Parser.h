@@ -20,7 +20,6 @@ const std::string types[13] = {
     "LongArray"
 };
 uint32_t parseNBT(const uint8_t* data);
-uint32_t getItemSize(uint8_t tag);
 void parseTag(uint8_t tagID, Cursor& cursor);
 void parseCompound(Cursor&);
 void parseList(Cursor&);
