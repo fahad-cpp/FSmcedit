@@ -88,7 +88,7 @@ int main() {
 
             std::string recordName =
                 tagName.find(record) == tagName.end() ?
-                "InvalidRecord: " + (int)record
+                "InvalidRecord:" + std::to_string((int)record)
                 : tagName.at(record);
             std::cout << "\tRecord :" << recordName << "\n";
 
