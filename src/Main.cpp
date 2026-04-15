@@ -79,12 +79,12 @@ int main() {
             uint8_t* valueData = (uint8_t*)malloc(valueSize);
             memcpy(valueData, it->value().data(), valueSize);
 
-            Cursor cursor(keyData);
+            Cursor keyCursor(keyData);
             std::cout << "Chunk:\n";
-            std::cout << "\tX:" << (int)cursor.readu32() << "\n";
-            std::cout << "\tZ:" << (int)cursor.readu32() << "\n";
+            std::cout << "\tX:" << (int)keyCursor.readu32() << "\n";
+            std::cout << "\tZ:" << (int)keyCursor.readu32() << "\n";
 
-            uint8_t record = cursor.readu8();
+            uint8_t record = keyCursor.readu8();
 
             std::string recordName =
                 tagName.find(record) == tagName.end() ?
@@ -99,6 +99,9 @@ int main() {
             else if (recordName == "Version") {
                 uint8_t version = valueCursor.readu8();
                 std::cout << "(Byte)" << (int)version << "\n";
+            }else if(recordName == "SubChunkPrefix"){
+                uint8_t version = valueCursor.readu8();
+                std::cout << "Version:" << (int)version << "\n";
             }
 
             free(valueData);

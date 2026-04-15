@@ -340,6 +340,7 @@ Chunk:
 	X:20
 	Z:2
 	Record :SubChunkPrefix
+Version:9
 Chunk:
 	X:20
 	Z:2
@@ -385,6 +386,7 @@ Chunk:
 	X:20
 	Z:4
 	Record :SubChunkPrefix
+Version:9
 Chunk:
 	X:20
 	Z:4
@@ -410,6 +412,7 @@ Chunk:
 	X:20
 	Z:5
 	Record :SubChunkPrefix
+Version:9
 Chunk:
 	X:20
 	Z:5
@@ -443,6 +446,7 @@ Chunk:
 	X:20
 	Z:6
 	Record :SubChunkPrefix
+Version:9
 Chunk:
 	X:20
 	Z:6
@@ -503,6 +507,7 @@ Chunk:
 	X:21
 	Z:2
 	Record :SubChunkPrefix
+Version:9
 Chunk:
 	X:21
 	Z:2
@@ -641,6 +646,7 @@ Chunk:
 	X:22
 	Z:2
 	Record :SubChunkPrefix
+Version:9
 Chunk:
 	X:22
 	Z:2
