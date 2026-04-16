@@ -13,7 +13,6 @@ uint32_t parseNBT(const uint8_t* data) {
         std::cout << "Invalid type : " << (int)tagTypeID << "\n";
         return cursor.getOffset();
     }
-    std::cout << "(" << types[(int)tagTypeID] << ")";
     std::cout << cursor.readString(nameLength) << ":";
 
     parseTag(tagTypeID, cursor);
@@ -22,6 +21,7 @@ uint32_t parseNBT(const uint8_t* data) {
 }
 //Parse only payload of the NBT
 void parseTag(uint8_t tagID, Cursor& cursor) {
+    std::cout << "(" << types[tagID] << "):";
     if (tagID == 1) {
         std::cout << (int)parseByte(cursor) << "\n";
     }
@@ -72,6 +72,7 @@ void parseCompound(Cursor& cursor) {
         uint32_t offset = parseNBT(cursor.getPtr());
         cursor.skip(offset);
     }
+    cursor.skip(1);
 }
 //Parse a list of NBTs
 void parseList(Cursor& cursor) {
@@ -80,7 +81,6 @@ void parseList(Cursor& cursor) {
     std::cout << "List size:" << size << "\n";
 
     for (int i = 0;i < size;i++) {
-        std::cout << types[listTagID] << ":";
         parseTag(listTagID, cursor);
     }
 }

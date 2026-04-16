@@ -69,44 +69,74 @@ int main() {
             }
         }
 
-        if (chunkKey) {
+        if(!chunkKey)continue;
 
-            uint32_t keySize = it->key().size();
-            uint8_t* keyData = (uint8_t*)malloc(keySize);
-            memcpy(keyData, it->key().data(), keySize);
+        uint32_t keySize = it->key().size();
+        uint8_t* keyData = (uint8_t*)malloc(keySize);
+        memcpy(keyData, it->key().data(), keySize);
 
-            uint32_t valueSize = it->value().size();
-            uint8_t* valueData = (uint8_t*)malloc(valueSize);
-            memcpy(valueData, it->value().data(), valueSize);
+        uint32_t valueSize = it->value().size();
+        uint8_t* valueData = (uint8_t*)malloc(valueSize);
+        memcpy(valueData, it->value().data(), valueSize);
 
-            Cursor keyCursor(keyData);
-            std::cout << "Chunk:\n";
-            std::cout << "\tX:" << (int)keyCursor.readu32() << "\n";
-            std::cout << "\tZ:" << (int)keyCursor.readu32() << "\n";
+        Cursor keyCursor(keyData);
+        std::cout << "Chunk:\n";
+        std::cout << "\tX:" << (int)keyCursor.readu32() << "\n";
+        std::cout << "\tZ:" << (int)keyCursor.readu32() << "\n";
 
-            uint8_t record = keyCursor.readu8();
+        uint8_t record = keyCursor.readu8();
 
-            std::string recordName =
-                tagName.find(record) == tagName.end() ?
-                "InvalidRecord:" + std::to_string((int)record)
-                : tagName.at(record);
-            std::cout << "\tRecord :" << recordName << "\n";
+        std::string recordName =
+            tagName.find(record) == tagName.end() ?
+            "InvalidRecord:" + std::to_string((int)record)
+            : tagName.at(record);
+        std::cout << "\tRecord :" << recordName << "\n";
 
-            Cursor valueCursor(valueData);
-            if (recordName == "BlockEntity" || recordName == "Entity" || recordName == "RandomTicks") {
-                parseNBT(valueData);
-            }
-            else if (recordName == "Version") {
-                uint8_t version = valueCursor.readu8();
-                std::cout << "(Byte)" << (int)version << "\n";
-            }else if(recordName == "SubChunkPrefix"){
-                uint8_t version = valueCursor.readu8();
-                std::cout << "Version:" << (int)version << "\n";
-            }
-
-            free(valueData);
-            free(keyData);
+        Cursor valueCursor(valueData);
+        if (recordName == "BlockEntity" || recordName == "Entity" || recordName == "RandomTicks") {
+            //parseNBT(valueData);
         }
+        else if (recordName == "Version") {
+            uint8_t version = valueCursor.readu8();
+            std::cout << "(Byte)" << (int)version << "\n";
+        }else if(recordName == "SubChunkPrefix"){
+            std::cout << "Size:" << valueSize << "\n";
+            uint8_t version = valueCursor.readu8();
+            std::cout << "Version:" << (int)version << "\n";
+            uint8_t numStorage = 0;
+            if(version == 1){
+                numStorage = 1;
+            }else if(version < 8){
+                std::cout << "Unsupported Version\n";
+                continue;
+            }else{
+                numStorage = valueCursor.readu8();
+            }
+
+            if(version >= 9){
+                valueCursor.skip(1);
+            }
+            for(uint8_t i=0;i<numStorage;i++){
+                uint8_t flags = valueCursor.readu8();
+                uint8_t bitsPerBlock = flags >> 1;
+                uint32_t blocksPerWord = floor(32.f / (float)bitsPerBlock);
+                uint32_t blockStateCount = ceil(4096.f / (float)blocksPerWord);
+                valueCursor.skip(blockStateCount * 4);
+                uint32_t paletteSize = valueCursor.readu32();
+                std::cout << "numStorage:" << (int)numStorage << "\n";
+                std::cout << "bitsPerBlock:" << (int)bitsPerBlock << "\n";
+                std::cout << "blocksPerWord:" << (int)blocksPerWord << "\n";
+                std::cout << "blockStateCount:" << (int)blockStateCount << "\n";
+                std::cout << "pallette size:" << paletteSize << "\n";
+                for(uint32_t j=0;j<paletteSize;j++){
+                    uint32_t offset = parseNBT(valueCursor.getPtr());
+                    valueCursor.skip(offset);
+                }
+            }
+        }
+
+        free(valueData);
+        free(keyData);
     }
 
     delete it;
