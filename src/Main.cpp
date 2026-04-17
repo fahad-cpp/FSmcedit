@@ -1,6 +1,7 @@
 #include <leveldb/db.h>
 #include <nlohmann/json.hpp>
 #include <iostream>
+#include <fstream>
 #include "Parser.h"
 #include "Cursor.h"
 
@@ -47,15 +48,15 @@ const std::map<uint8_t, const std::string> tagName{
     {55,"ConversionData"},
     {118,"LegacyVersion"},
 };
-
-int main() {
+void parseDB(const std::string& dbPath){
     leveldb::DB* db;
     leveldb::Options options;
     options.create_if_missing = false;
-    leveldb::Status status = leveldb::DB::Open(options, "tmp/testworld/db", &db);
+    leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
     if (!status.ok()) {
         std::cerr << status.ToString() << "\n";
-        return 1;
+        assert(false);
+        return;
     }
 
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
@@ -81,8 +82,13 @@ int main() {
 
         Cursor keyCursor(keyData);
         std::cout << "Chunk:\n";
-        std::cout << "\tX:" << (int)keyCursor.readu32() << "\n";
-        std::cout << "\tZ:" << (int)keyCursor.readu32() << "\n";
+        std::cout << keySize << "\n";
+        int x = (int)keyCursor.readu32();
+        int z = (int)keyCursor.readu32();
+        std::cout << "\tX:" << x << "\n";
+        std::cout << "\tZ:" << z << "\n";
+        std::cout << "\tWX:" << x * 16 << "\n";
+        std::cout << "\tWZ:" << z * 16 << "\n";
 
         uint8_t record = keyCursor.readu8();
 
@@ -108,13 +114,15 @@ int main() {
                 numStorage = 1;
             }else if(version < 8){
                 std::cout << "Unsupported Version\n";
+                assert(false);
                 continue;
             }else{
                 numStorage = valueCursor.readu8();
             }
 
             if(version >= 9){
-                valueCursor.skip(1);
+                uint8_t subChunkIndex = valueCursor.readu8();
+                std::cout << "subChunkIndex:"<< (int)subChunkIndex << "\n";
             }
             for(uint8_t i=0;i<numStorage;i++){
                 uint8_t flags = valueCursor.readu8();
@@ -141,5 +149,29 @@ int main() {
 
     delete it;
     delete db;
+}
+void parseDAT(const std::string& path){
+    std::ifstream ifs(path,std::ios::binary | std::ios::ate);
+    uint32_t size = ifs.tellg();
+    ifs.seekg(0);
+    uint8_t* data = (uint8_t*)malloc(size * sizeof(uint8_t));
+    ifs.read((char *)data,size);
+    Cursor cursor(data);
+    uint32_t header = cursor.readu32();
+    uint32_t length = cursor.readu32();
+    if(header != 10){
+        std::cout << "Header:" << header << "\n";
+        std::cout << "Length:" << length << "\n";
+        std::cerr << "Not a valid level.dat file\n";
+        assert(false);
+        return;
+    }
+    parseNBT(cursor.getPtr());
+    free(data);
+    ifs.close();
+}
+int main() {
+    parseDB("tmp/testworld/db");
+    //parseDAT("tmp/testworld/level.dat");
     return 0;
 }

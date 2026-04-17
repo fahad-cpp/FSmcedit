@@ -1,243 +1,412 @@
 Chunk:
+9
 	X:16
 	Z:6
+	WX:256
+	WZ:96
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:16
 	Z:6
+	WX:256
+	WZ:96
 	Record :BlockEntity
 Chunk:
+9
 	X:16
 	Z:6
+	WX:256
+	WZ:96
 	Record :FinalizedState
 Chunk:
+9
 	X:16
 	Z:6
+	WX:256
+	WZ:96
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:17
 	Z:3
+	WX:272
+	WZ:48
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:17
 	Z:3
+	WX:272
+	WZ:48
 	Record :BlockEntity
 Chunk:
+9
 	X:17
 	Z:3
+	WX:272
+	WZ:48
 	Record :FinalizedState
 Chunk:
+9
 	X:17
 	Z:3
+	WX:272
+	WZ:48
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:17
 	Z:4
+	WX:272
+	WZ:64
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:17
 	Z:4
+	WX:272
+	WZ:64
 	Record :BlockEntity
 Chunk:
+9
 	X:17
 	Z:4
+	WX:272
+	WZ:64
 	Record :FinalizedState
 Chunk:
+9
 	X:17
 	Z:4
+	WX:272
+	WZ:64
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:17
 	Z:5
+	WX:272
+	WZ:80
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:17
 	Z:5
+	WX:272
+	WZ:80
 	Record :BlockEntity
 Chunk:
+9
 	X:17
 	Z:5
+	WX:272
+	WZ:80
 	Record :FinalizedState
 Chunk:
+9
 	X:17
 	Z:5
+	WX:272
+	WZ:80
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:17
 	Z:6
+	WX:272
+	WZ:96
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:17
 	Z:6
+	WX:272
+	WZ:96
 	Record :BlockEntity
 Chunk:
+9
 	X:17
 	Z:6
+	WX:272
+	WZ:96
 	Record :FinalizedState
 Chunk:
+9
 	X:17
 	Z:6
+	WX:272
+	WZ:96
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:17
 	Z:7
+	WX:272
+	WZ:112
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:17
 	Z:7
+	WX:272
+	WZ:112
 	Record :BlockEntity
 Chunk:
+9
 	X:17
 	Z:7
+	WX:272
+	WZ:112
 	Record :FinalizedState
 Chunk:
+9
 	X:17
 	Z:7
+	WX:272
+	WZ:112
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:18
 	Z:3
+	WX:288
+	WZ:48
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:18
 	Z:3
+	WX:288
+	WZ:48
 	Record :BlockEntity
 Chunk:
+9
 	X:18
 	Z:3
+	WX:288
+	WZ:48
 	Record :FinalizedState
 Chunk:
+9
 	X:18
 	Z:3
+	WX:288
+	WZ:48
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:18
 	Z:5
+	WX:288
+	WZ:80
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:18
 	Z:5
+	WX:288
+	WZ:80
 	Record :BlockEntity
 Chunk:
+9
 	X:18
 	Z:5
+	WX:288
+	WZ:80
 	Record :FinalizedState
 Chunk:
+9
 	X:18
 	Z:5
+	WX:288
+	WZ:80
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:18
 	Z:6
+	WX:288
+	WZ:96
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:18
 	Z:6
+	WX:288
+	WZ:96
 	Record :BlockEntity
 Chunk:
+9
 	X:18
 	Z:6
+	WX:288
+	WZ:96
 	Record :FinalizedState
 Chunk:
+9
 	X:18
 	Z:6
+	WX:288
+	WZ:96
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:18
 	Z:7
+	WX:288
+	WZ:112
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:18
 	Z:7
+	WX:288
+	WZ:112
 	Record :BlockEntity
 Chunk:
+9
 	X:18
 	Z:7
+	WX:288
+	WZ:112
 	Record :FinalizedState
 Chunk:
+9
 	X:18
 	Z:7
+	WX:288
+	WZ:112
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:19
 	Z:6
+	WX:304
+	WZ:96
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:19
 	Z:6
+	WX:304
+	WZ:96
 	Record :BlockEntity
 Chunk:
+9
 	X:19
 	Z:6
+	WX:304
+	WZ:96
 	Record :FinalizedState
 Chunk:
+9
 	X:19
 	Z:6
+	WX:304
+	WZ:96
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:19
 	Z:7
+	WX:304
+	WZ:112
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:19
 	Z:7
+	WX:304
+	WZ:112
 	Record :BlockEntity
 Chunk:
+9
 	X:19
 	Z:7
+	WX:304
+	WZ:112
 	Record :FinalizedState
 Chunk:
+9
 	X:19
 	Z:7
+	WX:304
+	WZ:112
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:19
 	Z:7
+	WX:304
+	WZ:112
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:19
 	Z:8
+	WX:304
+	WZ:128
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:19
 	Z:8
+	WX:304
+	WZ:128
 	Record :BlockEntity
 Chunk:
+9
 	X:19
 	Z:8
+	WX:304
+	WZ:128
 	Record :FinalizedState
 Chunk:
+9
 	X:19
 	Z:8
+	WX:304
+	WZ:128
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:20
 	Z:2
+	WX:320
+	WZ:32
 	Record :Data3D
 Chunk:
+9
 	X:20
 	Z:2
+	WX:320
+	WZ:32
 	Record :Version
 (Byte)42
 Chunk:
+10
 	X:20
 	Z:2
+	WX:320
+	WZ:32
 	Record :SubChunkPrefix
 Size:3045
 Version:9
+subChunkIndex:5
 numStorage:1
 bitsPerBlock:4
 blocksPerWord:8
@@ -283,45 +452,73 @@ bamboo_leaf_size:(String):no_leaves
 bamboo_stalk_thickness:(String):thick
 version:(Int):18168865
 Chunk:
+9
 	X:20
 	Z:2
+	WX:320
+	WZ:32
 	Record :FinalizedState
 Chunk:
+9
 	X:20
 	Z:2
+	WX:320
+	WZ:32
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:20
 	Z:3
+	WX:320
+	WZ:48
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:20
 	Z:3
+	WX:320
+	WZ:48
 	Record :BlockEntity
 Chunk:
+9
 	X:20
 	Z:3
+	WX:320
+	WZ:48
 	Record :FinalizedState
 Chunk:
+9
 	X:20
 	Z:3
+	WX:320
+	WZ:48
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:20
 	Z:4
+	WX:320
+	WZ:64
 	Record :Data3D
 Chunk:
+9
 	X:20
 	Z:4
+	WX:320
+	WZ:64
 	Record :Version
 (Byte)42
 Chunk:
+10
 	X:20
 	Z:4
+	WX:320
+	WZ:64
 	Record :SubChunkPrefix
 Size:5011
 Version:9
+subChunkIndex:5
 numStorage:1
 bitsPerBlock:5
 blocksPerWord:6
@@ -416,32 +613,51 @@ version:(Int):18168865
 states:(Compound):growth:(Int):4
 version:(Int):18168865
 Chunk:
+9
 	X:20
 	Z:4
+	WX:320
+	WZ:64
 	Record :FinalizedState
 Chunk:
+9
 	X:20
 	Z:4
+	WX:320
+	WZ:64
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:20
 	Z:4
+	WX:320
+	WZ:64
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:20
 	Z:5
+	WX:320
+	WZ:80
 	Record :Data3D
 Chunk:
+9
 	X:20
 	Z:5
+	WX:320
+	WZ:80
 	Record :Version
 (Byte)42
 Chunk:
+10
 	X:20
 	Z:5
+	WX:320
+	WZ:80
 	Record :SubChunkPrefix
 Size:4603
 Version:9
+subChunkIndex:5
 numStorage:1
 bitsPerBlock:5
 blocksPerWord:6
@@ -519,36 +735,58 @@ states:(Compound):facing_direction:(Int):0
 toggle_bit:(Byte):0
 version:(Int):18168865
 Chunk:
+9
 	X:20
 	Z:5
+	WX:320
+	WZ:80
 	Record :BlockEntity
 Chunk:
+9
 	X:20
 	Z:5
+	WX:320
+	WZ:80
 	Record :FinalizedState
 Chunk:
+9
 	X:20
 	Z:5
+	WX:320
+	WZ:80
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:20
 	Z:5
+	WX:320
+	WZ:80
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:20
 	Z:6
+	WX:320
+	WZ:96
 	Record :Data3D
 Chunk:
+9
 	X:20
 	Z:6
+	WX:320
+	WZ:96
 	Record :Version
 (Byte)42
 Chunk:
+10
 	X:20
 	Z:6
+	WX:320
+	WZ:96
 	Record :SubChunkPrefix
 Size:10141
 Version:9
+subChunkIndex:5
 numStorage:1
 bitsPerBlock:8
 blocksPerWord:4
@@ -812,53 +1050,87 @@ powered_bit:(Byte):1
 suspended_bit:(Byte):1
 version:(Int):18168865
 Chunk:
+9
 	X:20
 	Z:6
+	WX:320
+	WZ:96
 	Record :BlockEntity
 Chunk:
+9
 	X:20
 	Z:6
+	WX:320
+	WZ:96
 	Record :FinalizedState
 Chunk:
+9
 	X:20
 	Z:6
+	WX:320
+	WZ:96
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:20
 	Z:7
+	WX:320
+	WZ:112
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:20
 	Z:7
+	WX:320
+	WZ:112
 	Record :BlockEntity
 Chunk:
+9
 	X:20
 	Z:7
+	WX:320
+	WZ:112
 	Record :FinalizedState
 Chunk:
+9
 	X:20
 	Z:7
+	WX:320
+	WZ:112
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:20
 	Z:7
+	WX:320
+	WZ:112
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:21
 	Z:2
+	WX:336
+	WZ:32
 	Record :Data3D
 Chunk:
+9
 	X:21
 	Z:2
+	WX:336
+	WZ:32
 	Record :Version
 (Byte)42
 Chunk:
+10
 	X:21
 	Z:2
+	WX:336
+	WZ:32
 	Record :SubChunkPrefix
 Size:4833
 Version:9
+subChunkIndex:5
 numStorage:1
 bitsPerBlock:5
 blocksPerWord:6
@@ -949,113 +1221,189 @@ version:(Int):18168865
 states:(Compound):torch_facing_direction:(String):west
 version:(Int):18168865
 Chunk:
+9
 	X:21
 	Z:2
+	WX:336
+	WZ:32
 	Record :FinalizedState
 Chunk:
+9
 	X:21
 	Z:2
+	WX:336
+	WZ:32
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:21
 	Z:2
+	WX:336
+	WZ:32
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:21
 	Z:3
+	WX:336
+	WZ:48
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:21
 	Z:3
+	WX:336
+	WZ:48
 	Record :BlockEntity
 Chunk:
+9
 	X:21
 	Z:3
+	WX:336
+	WZ:48
 	Record :FinalizedState
 Chunk:
+9
 	X:21
 	Z:3
+	WX:336
+	WZ:48
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:21
 	Z:6
+	WX:336
+	WZ:96
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:21
 	Z:6
+	WX:336
+	WZ:96
 	Record :BlockEntity
 Chunk:
+9
 	X:21
 	Z:6
+	WX:336
+	WZ:96
 	Record :FinalizedState
 Chunk:
+9
 	X:21
 	Z:6
+	WX:336
+	WZ:96
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:21
 	Z:7
+	WX:336
+	WZ:112
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:21
 	Z:7
+	WX:336
+	WZ:112
 	Record :BlockEntity
 Chunk:
+9
 	X:21
 	Z:7
+	WX:336
+	WZ:112
 	Record :FinalizedState
 Chunk:
+9
 	X:21
 	Z:7
+	WX:336
+	WZ:112
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:21
 	Z:8
+	WX:336
+	WZ:128
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:21
 	Z:8
+	WX:336
+	WZ:128
 	Record :BlockEntity
 Chunk:
+9
 	X:21
 	Z:8
+	WX:336
+	WZ:128
 	Record :FinalizedState
 Chunk:
+9
 	X:21
 	Z:8
+	WX:336
+	WZ:128
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:22
 	Z:1
+	WX:352
+	WZ:16
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:22
 	Z:1
+	WX:352
+	WZ:16
 	Record :FinalizedState
 Chunk:
+9
 	X:22
 	Z:1
+	WX:352
+	WZ:16
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:22
 	Z:2
+	WX:352
+	WZ:32
 	Record :Data3D
 Chunk:
+9
 	X:22
 	Z:2
+	WX:352
+	WZ:32
 	Record :Version
 (Byte)42
 Chunk:
+10
 	X:22
 	Z:2
+	WX:352
+	WZ:32
 	Record :SubChunkPrefix
 Size:7508
 Version:9
+subChunkIndex:5
 numStorage:1
 bitsPerBlock:6
 blocksPerWord:5
@@ -1239,116 +1587,197 @@ version:(Int):18168865
 :(Compound):name:(String):minecraft:iron_bars
 states:(Compound):version:(Int):18168865
 Chunk:
+9
 	X:22
 	Z:2
+	WX:352
+	WZ:32
 	Record :BlockEntity
 Chunk:
+9
 	X:22
 	Z:2
+	WX:352
+	WZ:32
 	Record :FinalizedState
 Chunk:
+9
 	X:22
 	Z:2
+	WX:352
+	WZ:32
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:22
 	Z:2
+	WX:352
+	WZ:32
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:22
 	Z:6
+	WX:352
+	WZ:96
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:22
 	Z:6
+	WX:352
+	WZ:96
 	Record :BlockEntity
 Chunk:
+9
 	X:22
 	Z:6
+	WX:352
+	WZ:96
 	Record :FinalizedState
 Chunk:
+9
 	X:22
 	Z:6
+	WX:352
+	WZ:96
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:22
 	Z:7
+	WX:352
+	WZ:112
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:22
 	Z:7
+	WX:352
+	WZ:112
 	Record :BlockEntity
 Chunk:
+9
 	X:22
 	Z:7
+	WX:352
+	WZ:112
 	Record :FinalizedState
 Chunk:
+9
 	X:22
 	Z:7
+	WX:352
+	WZ:112
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:22
 	Z:8
+	WX:352
+	WZ:128
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:22
 	Z:8
+	WX:352
+	WZ:128
 	Record :BlockEntity
 Chunk:
+9
 	X:22
 	Z:8
+	WX:352
+	WZ:128
 	Record :FinalizedState
 Chunk:
+9
 	X:22
 	Z:8
+	WX:352
+	WZ:128
 	Record :InvalidRecord:119
 Chunk:
+9
 	X:22
 	Z:9
+	WX:352
+	WZ:144
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:22
 	Z:9
+	WX:352
+	WZ:144
 	Record :FinalizedState
 Chunk:
+9
 	X:22
 	Z:9
+	WX:352
+	WZ:144
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:22
 	Z:10
+	WX:352
+	WZ:160
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:23
 	Z:5
+	WX:368
+	WZ:80
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:23
 	Z:5
+	WX:368
+	WZ:80
 	Record :FinalizedState
 Chunk:
+9
 	X:23
 	Z:5
+	WX:368
+	WZ:80
 	Record :ActorDigestVersion
 Chunk:
+9
 	X:23
 	Z:6
+	WX:368
+	WZ:96
 	Record :Version
 (Byte)42
 Chunk:
+9
 	X:23
 	Z:6
+	WX:368
+	WZ:96
 	Record :FinalizedState
 Chunk:
+9
 	X:23
 	Z:6
+	WX:368
+	WZ:96
 	Record :BlendingBiomeHeight
 Chunk:
+9
 	X:23
 	Z:6
+	WX:368
+	WZ:96
 	Record :ActorDigestVersion

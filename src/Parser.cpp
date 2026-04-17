@@ -1,4 +1,6 @@
 #include "Parser.h"
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
 /*Parse NBT with the following structure:
     -1 byte : tagID
     -2 byte : length
@@ -11,6 +13,7 @@ uint32_t parseNBT(const uint8_t* data) {
     uint16_t nameLength = tagTypeID == 0 ? 0 : cursor.readu16();
     if (tagTypeID < 0 || tagTypeID > 12) {
         std::cout << "Invalid type : " << (int)tagTypeID << "\n";
+        assert(false);
         return cursor.getOffset();
     }
     std::cout << cursor.readString(nameLength) << ":";
@@ -64,6 +67,7 @@ void parseTag(uint8_t tagID, Cursor& cursor) {
     }
     else {
         std::cout << "Invalid TAG\n";
+        assert(false);
     }
 }
 //Parse a compund of NBTs
