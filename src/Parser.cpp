@@ -1,6 +1,4 @@
 #include "Parser.h"
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
 /*Parse NBT with the following structure:
     -1 byte : tagID
     -2 byte : length
@@ -21,48 +19,48 @@ void parseNBT(Cursor& cursor) {
 //Parse only payload of the NBT
 void parseTag(uint8_t tagID, Cursor& cursor) {
     std::cout << "(" << types[tagID] << "):";
-    switch(tagID){
-        case 1:{
+    switch (tagID) {
+        case 1: {
             std::cout << (int)parseByte(cursor) << "\n";
         }break;
-        case 2:{
+        case 2: {
             std::cout << (int)parseShort(cursor) << "\n";
         }break;
-        case 3:{
+        case 3: {
             std::cout << parseInt(cursor) << "\n";
         }break;
-        case 4:{
+        case 4: {
             std::cout << parseLong(cursor) << "\n";
         }break;
-        case 5:{
+        case 5: {
             std::cout << std::fixed << parseFloat(cursor) << "\n";
         }break;
-        case 6:{
+        case 6: {
             std::cout << std::fixed << parseDouble(cursor) << "\n";
         }break;
-        case 7:{
+        case 7: {
             std::vector<char> byteArray = parseByteArray(cursor);
         }break;
-        case 8:{
+        case 8: {
             std::cout << parseString(cursor) << "\n";
         }break;
-        case 9:{
+        case 9: {
             parseList(cursor);
         }break;
-        case 10:{
+        case 10: {
             parseCompound(cursor);
         }break;
-        case 11:{
+        case 11: {
             uint32_t size = (int)cursor.readu32();
             std::cout << "size:" << size << "\n";
             cursor.skip(size * 4);
         }break;
-        case 12:{
+        case 12: {
             uint32_t size = (int)cursor.readu32();
             std::cout << "size:" << size << "\n";
             cursor.skip(size * 8);
         }break;
-        default:{
+        default: {
             std::cout << "Invalid TAG\n";
             assert(false);
         }

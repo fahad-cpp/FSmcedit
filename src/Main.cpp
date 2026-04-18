@@ -1,9 +1,11 @@
-#include <leveldb/db.h>
-#include <nlohmann/json.hpp>
+#include <map>
+#include <math.h>
 #include <iostream>
 #include <fstream>
+
+#include <leveldb/db.h>
+
 #include "Parser.h"
-#include "Cursor.h"
 
 const std::vector<std::string> keyPrefs = {
     "~local_player",
@@ -60,7 +62,12 @@ void parseDB(const std::string& dbPath) {
     }
 
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
-
+    it->SeekToFirst();
+    if(!it->Valid()){
+        std::cerr << "Failed to open database\n";
+        std::cerr << it->status().ToString() << "\n";
+        return;
+    }
     for (it->SeekToFirst();it->Valid();it->Next()) {
         bool chunkKey = true;
         //Temporary (TODO:Handle all cases)

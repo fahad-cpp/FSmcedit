@@ -3,7 +3,11 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <nlohmann/json.hpp>
 #include "Cursor.h"
+
+using json = nlohmann::json;
+
 const std::string types[13] = {
     "END",
     "Byte",
@@ -19,6 +23,7 @@ const std::string types[13] = {
     "IntArray",
     "LongArray"
 };
+
 void parseNBT(Cursor& cursor);
 void parseTag(uint8_t tagID, Cursor& cursor);
 void parseCompound(Cursor&);
