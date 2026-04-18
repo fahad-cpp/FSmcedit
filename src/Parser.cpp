@@ -7,20 +7,16 @@ using json = nlohmann::json;
     -length byte string : Name of the NBT
     -payload depending on the tagID
 */
-uint32_t parseNBT(const uint8_t* data) {
-    Cursor cursor(data, 0);
+void parseNBT(Cursor& cursor) {
     uint8_t tagTypeID = cursor.readu8();
     uint16_t nameLength = tagTypeID == 0 ? 0 : cursor.readu16();
     if (tagTypeID < 0 || tagTypeID > 12) {
         std::cout << "Invalid type : " << (int)tagTypeID << "\n";
         assert(false);
-        return cursor.getOffset();
     }
     std::cout << cursor.readString(nameLength) << ":";
 
     parseTag(tagTypeID, cursor);
-
-    return cursor.getOffset();
 }
 //Parse only payload of the NBT
 void parseTag(uint8_t tagID, Cursor& cursor) {
@@ -73,8 +69,7 @@ void parseTag(uint8_t tagID, Cursor& cursor) {
 //Parse a compund of NBTs
 void parseCompound(Cursor& cursor) {
     while (cursor.peeku8() != 0) {
-        uint32_t offset = parseNBT(cursor.getPtr());
-        cursor.skip(offset);
+        parseNBT(cursor);
     }
     cursor.skip(1);
 }

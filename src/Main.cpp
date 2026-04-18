@@ -48,7 +48,7 @@ const std::map<uint8_t, const std::string> tagName{
     {55,"ConversionData"},
     {118,"LegacyVersion"},
 };
-void parseDB(const std::string& dbPath){
+void parseDB(const std::string& dbPath) {
     leveldb::DB* db;
     leveldb::Options options;
     options.create_if_missing = false;
@@ -66,11 +66,22 @@ void parseDB(const std::string& dbPath){
         //Temporary (TODO:Handle all cases)
         for (int i = 0;i < keyPrefs.size();i++) {
             if (it->key().ToString().contains(keyPrefs[i])) {
+                std::cout << "KEY:" << it->key().ToString() << "\n";
                 chunkKey = false;
             }
         }
-
-        if(!chunkKey)continue;
+        if (it->key().ToString() == "~local_player") {
+            Cursor cursor((uint8_t*)it->value().data());
+            parseNBT(cursor);
+        }
+        else if (it->key().ToString().contains("actorprefix")) {
+            Cursor cursor((uint8_t*)it->key().data(), 11);
+            uint64_t id = cursor.readu64();
+            std::cout << "id:" << id << "\n";
+            Cursor valueCursor((uint8_t*)it->value().data());
+            parseNBT(valueCursor);
+        }
+        if (!chunkKey)continue;
 
         uint32_t keySize = it->key().size();
         uint8_t* keyData = (uint8_t*)malloc(keySize);
@@ -81,14 +92,14 @@ void parseDB(const std::string& dbPath){
         memcpy(valueData, it->value().data(), valueSize);
 
         Cursor keyCursor(keyData);
-        std::cout << "Chunk:\n";
-        std::cout << keySize << "\n";
+        std::cout << "Chunk:";
+        //std::cout << "keySize:" << keySize << "\n";
         int x = (int)keyCursor.readu32();
         int z = (int)keyCursor.readu32();
-        std::cout << "\tX:" << x << "\n";
+        std::cout << "\tX:" << x;
         std::cout << "\tZ:" << z << "\n";
-        std::cout << "\tWX:" << x * 16 << "\n";
-        std::cout << "\tWZ:" << z * 16 << "\n";
+        // std::cout << "\tWX:" << x * 16;
+        // std::cout << "\tWZ:" << z * 16 << "\n";
 
         uint8_t record = keyCursor.readu8();
 
@@ -100,31 +111,34 @@ void parseDB(const std::string& dbPath){
 
         Cursor valueCursor(valueData);
         if (recordName == "BlockEntity" || recordName == "Entity" || recordName == "RandomTicks") {
-            //parseNBT(valueData);
+            parseNBT(valueCursor);
         }
         else if (recordName == "Version") {
             uint8_t version = valueCursor.readu8();
             std::cout << "(Byte)" << (int)version << "\n";
-        }else if(recordName == "SubChunkPrefix"){
+        }
+        else if (recordName == "SubChunkPrefix") {
             std::cout << "Size:" << valueSize << "\n";
             uint8_t version = valueCursor.readu8();
             std::cout << "Version:" << (int)version << "\n";
             uint8_t numStorage = 0;
-            if(version == 1){
+            if (version == 1) {
                 numStorage = 1;
-            }else if(version < 8){
+            }
+            else if (version < 8) {
                 std::cout << "Unsupported Version\n";
                 assert(false);
                 continue;
-            }else{
+            }
+            else {
                 numStorage = valueCursor.readu8();
             }
 
-            if(version >= 9){
+            if (version >= 9) {
                 uint8_t subChunkIndex = valueCursor.readu8();
-                std::cout << "subChunkIndex:"<< (int)subChunkIndex << "\n";
+                std::cout << "subChunkIndex:" << (int)subChunkIndex << "\n";
             }
-            for(uint8_t i=0;i<numStorage;i++){
+            for (uint8_t i = 0;i < numStorage;i++) {
                 uint8_t flags = valueCursor.readu8();
                 uint8_t bitsPerBlock = flags >> 1;
                 uint32_t blocksPerWord = floor(32.f / (float)bitsPerBlock);
@@ -136,9 +150,8 @@ void parseDB(const std::string& dbPath){
                 std::cout << "blocksPerWord:" << (int)blocksPerWord << "\n";
                 std::cout << "blockStateCount:" << (int)blockStateCount << "\n";
                 std::cout << "pallette size:" << paletteSize << "\n";
-                for(uint32_t j=0;j<paletteSize;j++){
-                    uint32_t offset = parseNBT(valueCursor.getPtr());
-                    valueCursor.skip(offset);
+                for (uint32_t j = 0;j < paletteSize;j++) {
+                    parseNBT(valueCursor);
                 }
             }
         }
@@ -150,23 +163,23 @@ void parseDB(const std::string& dbPath){
     delete it;
     delete db;
 }
-void parseDAT(const std::string& path){
-    std::ifstream ifs(path,std::ios::binary | std::ios::ate);
+void parseDAT(const std::string& path) {
+    std::ifstream ifs(path, std::ios::binary | std::ios::ate);
     uint32_t size = ifs.tellg();
     ifs.seekg(0);
     uint8_t* data = (uint8_t*)malloc(size * sizeof(uint8_t));
-    ifs.read((char *)data,size);
+    ifs.read((char*)data, size);
     Cursor cursor(data);
     uint32_t header = cursor.readu32();
     uint32_t length = cursor.readu32();
-    if(header != 10){
+    if (header != 10) {
         std::cout << "Header:" << header << "\n";
         std::cout << "Length:" << length << "\n";
         std::cerr << "Not a valid level.dat file\n";
         assert(false);
         return;
     }
-    parseNBT(cursor.getPtr());
+    parseNBT(cursor);
     free(data);
     ifs.close();
 }
