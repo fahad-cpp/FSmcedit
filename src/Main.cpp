@@ -76,10 +76,23 @@ void parseDB(const std::string& dbPath) {
         }
         else if (it->key().ToString().contains("actorprefix")) {
             Cursor cursor((uint8_t*)it->key().data(), 11);
-            uint64_t id = cursor.readu64();
+            int64_t id = (int64_t)cursor.readu64();
             std::cout << "id:" << id << "\n";
             Cursor valueCursor((uint8_t*)it->value().data());
             parseNBT(valueCursor);
+        }else if (it->key().ToString().contains("digp")) {
+            Cursor cursor((uint8_t*)it->key().data(), 4);
+            int x = cursor.readu32();
+            int y = cursor.readu32();
+            std::cout << "x:" << x << " y:" << y << "\n";
+            Cursor valueCursor((uint8_t*)it->value().data());
+            uint32_t entitySize = it->value().size() / 8;
+            std::vector<int64_t> entityIDs = {};
+            entityIDs.reserve(entitySize);
+            for(int i=0;i<entitySize;i++){
+                entityIDs.emplace_back((int64_t)valueCursor.readu64());
+                std::cout << "ID " << i << ": " << entityIDs.at(i) << "\n";
+            }
         }
         if (!chunkKey)continue;
 

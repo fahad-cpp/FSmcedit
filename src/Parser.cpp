@@ -21,49 +21,51 @@ void parseNBT(Cursor& cursor) {
 //Parse only payload of the NBT
 void parseTag(uint8_t tagID, Cursor& cursor) {
     std::cout << "(" << types[tagID] << "):";
-    if (tagID == 1) {
-        std::cout << (int)parseByte(cursor) << "\n";
-    }
-    else if (tagID == 2) {
-        std::cout << (int)parseShort(cursor) << "\n";
-    }
-    else if (tagID == 3) {
-        std::cout << parseInt(cursor) << "\n";
-    }
-    else if (tagID == 4) {
-        std::cout << parseLong(cursor) << "\n";
-    }
-    else if (tagID == 5) {
-        std::cout << std::fixed << parseFloat(cursor) << "\n";
-    }
-    else if (tagID == 6) {
-        std::cout << std::fixed << parseDouble(cursor) << "\n";
-    }
-    else if (tagID == 7) {
-        std::vector<char> byteArray = parseByteArray(cursor);
-    }
-    else if (tagID == 8) {
-        std::cout << parseString(cursor) << "\n";
-    }
-    else if (tagID == 9) {
-        parseList(cursor);
-    }
-    else if (tagID == 10) {
-        parseCompound(cursor);
-    }
-    else if (tagID == 11) {
-        uint32_t size = (int)cursor.readu32();
-        std::cout << "size:" << size << "\n";
-        cursor.skip(size * 4);
-    }
-    else if (tagID == 12) {
-        uint32_t size = (int)cursor.readu32();
-        std::cout << "size:" << size << "\n";
-        cursor.skip(size * 8);
-    }
-    else {
-        std::cout << "Invalid TAG\n";
-        assert(false);
+    switch(tagID){
+        case 1:{
+            std::cout << (int)parseByte(cursor) << "\n";
+        }break;
+        case 2:{
+            std::cout << (int)parseShort(cursor) << "\n";
+        }break;
+        case 3:{
+            std::cout << parseInt(cursor) << "\n";
+        }break;
+        case 4:{
+            std::cout << parseLong(cursor) << "\n";
+        }break;
+        case 5:{
+            std::cout << std::fixed << parseFloat(cursor) << "\n";
+        }break;
+        case 6:{
+            std::cout << std::fixed << parseDouble(cursor) << "\n";
+        }break;
+        case 7:{
+            std::vector<char> byteArray = parseByteArray(cursor);
+        }break;
+        case 8:{
+            std::cout << parseString(cursor) << "\n";
+        }break;
+        case 9:{
+            parseList(cursor);
+        }break;
+        case 10:{
+            parseCompound(cursor);
+        }break;
+        case 11:{
+            uint32_t size = (int)cursor.readu32();
+            std::cout << "size:" << size << "\n";
+            cursor.skip(size * 4);
+        }break;
+        case 12:{
+            uint32_t size = (int)cursor.readu32();
+            std::cout << "size:" << size << "\n";
+            cursor.skip(size * 8);
+        }break;
+        default:{
+            std::cout << "Invalid TAG\n";
+            assert(false);
+        }
     }
 }
 //Parse a compund of NBTs
