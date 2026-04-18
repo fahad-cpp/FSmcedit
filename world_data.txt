@@ -14645,3 +14645,39 @@ recipe_unlocking:(Compound):unlocked_recipes:(List):List size:518
 (String):minecraft:tuff_stairs
 (String):minecraft:hay_block
 used_contexts:(Int):14
+All chunks
+X:0 Z:5
+X:1 Z:2
+X:1 Z:3
+X:1 Z:4
+X:1 Z:5
+X:1 Z:6
+X:2 Z:2
+X:2 Z:4
+X:2 Z:5
+X:2 Z:6
+X:3 Z:4
+X:3 Z:5
+X:3 Z:6
+X:3 Z:7
+X:4 Z:0
+X:4 Z:2
+X:4 Z:3
+X:4 Z:4
+X:4 Z:5
+X:4 Z:6
+X:5 Z:1
+X:5 Z:2
+X:5 Z:3
+X:5 Z:4
+X:5 Z:5
+X:5 Z:6
+X:5 Z:7
+X:6 Z:0
+X:6 Z:1
+X:6 Z:5
+X:6 Z:6
+X:6 Z:7
+X:6 Z:8
+X:7 Z:4
+X:7 Z:5

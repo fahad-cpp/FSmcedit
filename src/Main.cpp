@@ -4,9 +4,11 @@
 #include <fstream>
 
 #include <leveldb/db.h>
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h"
 
 #include "Parser.h"
-
+std::vector<std::pair<int,int>> chunks = {};
 const std::vector<std::string> keyPrefs = {
     "~local_player",
     "player_",
@@ -62,12 +64,12 @@ void parseDB(const std::string& dbPath) {
     }
 
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
-    it->SeekToFirst();
-    if(!it->Valid()){
-        std::cerr << "Failed to open database\n";
-        std::cerr << it->status().ToString() << "\n";
-        return;
-    }
+    // it->SeekToFirst();
+    // if(!it->Valid()){
+    //     std::cerr << "Failed to open database\n";
+    //     std::cerr << it->status().ToString() << "\n";
+    //     return;
+    // }
     for (it->SeekToFirst();it->Valid();it->Next()) {
         bool chunkKey = true;
         //Temporary (TODO:Handle all cases)
@@ -116,6 +118,9 @@ void parseDB(const std::string& dbPath) {
         //std::cout << "keySize:" << keySize << "\n";
         int x = (int)keyCursor.readu32();
         int z = (int)keyCursor.readu32();
+        if (std::find(chunks.begin(),chunks.end(),std::pair{x,z}) == chunks.end()){
+            chunks.push_back(std::pair{x,z});
+        }
         std::cout << "\tX:" << x;
         std::cout << "\tZ:" << z << "\n";
         // std::cout << "\tWX:" << x * 16;
@@ -203,8 +208,56 @@ void parseDAT(const std::string& path) {
     free(data);
     ifs.close();
 }
+void drawChunkImage(std::vector<std::pair<int,int>> chunks){
+    std::vector<int> xcords = {};
+    std::vector<int> zcords = {};
+    std::cout << "All chunks\n";
+    for(const std::pair<int,int>& chunk : chunks){
+        xcords.push_back(chunk.first);
+        zcords.push_back(chunk.second);
+    }
+    std::sort(zcords.begin(),zcords.end());
+
+    xcords.erase(std::unique(xcords.begin(),xcords.end()),xcords.end());
+    zcords.erase(std::unique(zcords.begin(),zcords.end()),zcords.end());
+
+    int xmin = xcords.at(std::min_element(xcords.begin(),xcords.end()) - xcords.begin());
+    int zmin = zcords.at(std::min_element(zcords.begin(),zcords.end()) - zcords.begin());
+    for(int i=0;i<xcords.size();i++){
+        xcords[i] -= xmin;
+    }
+    for(int i=0;i<zcords.size();i++){
+        zcords[i] -= zmin;
+    }
+    for(int i=0;i<chunks.size();i++){
+        chunks[i] = {chunks[i].first - xmin,chunks[i].second - zmin};
+        std::cout << "X:"<<chunks[i].first<<" Z:" << chunks[i].second << "\n";
+    }
+
+    int xdiff = (xcords.at(xcords.size()-1) - xcords.at(0)) + 1;
+    int zdiff = (zcords.at(xcords.size()-1) - zcords.at(0)) + 1;
+
+    int width = xdiff*16;
+    int height = zdiff*16;
+
+    uint32_t* image = (uint32_t*)malloc(width*height*sizeof(uint32_t));
+    for(int i=0;i<width*height;i++)image[i] = 0x00000000;
+    for(const std::pair<int,int>& chunk : chunks){
+        int xstart=chunk.first*16;
+        int zstart=chunk.second*16;
+        for(int x=xstart;x<(xstart+16);x++){
+            for(int z=zstart;z<(zstart+16);z++){
+                image[width*z + x] = 0xff0000ff;
+            }
+        }
+    }
+    stbi_write_png("chunks.png",width,height,4,image,width*4);
+    free(image);
+
+}
 int main() {
     parseDB("tmp/testworld/db");
+    drawChunkImage(chunks);
     //parseDAT("tmp/testworld/level.dat");
     return 0;
 }
