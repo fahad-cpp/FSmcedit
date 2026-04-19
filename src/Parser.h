@@ -23,11 +23,12 @@ const std::string types[13] = {
     "IntArray",
     "LongArray"
 };
-
-void parseNBT(Cursor& cursor);
-void parseTag(uint8_t tagID, Cursor& cursor);
-void parseCompound(Cursor&);
-void parseList(Cursor&);
+void parseNBT(Cursor& cursor,std::stringstream&,uint32_t depth=0);
+//sequences
+void parseTag(uint8_t tagID, Cursor& cursor,std::stringstream&,uint32_t depth=0);
+void parseCompound(Cursor&,std::stringstream&,uint32_t depth=0);
+void parseList(Cursor&,std::stringstream& ss,uint32_t depth=0);
+//types
 uint8_t parseByte(Cursor& cursor);
 uint16_t parseShort(Cursor& cursor);
 int parseInt(Cursor& cursor);

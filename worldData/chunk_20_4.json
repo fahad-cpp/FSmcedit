@@ -1,0 +1,200 @@
+{
+    "subchunk-5": {
+        "palette": [
+            {
+                "name": "minecraft:stone",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:dirt",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:grass_block",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:air",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:short_grass",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:torch",
+                "states": {
+                    "torch_facing_direction": "top"
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:oak_fence",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:torch",
+                "states": {
+                    "torch_facing_direction": "west"
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:oxeye_daisy",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:pink_tulip",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:orange_tulip",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:cobblestone",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:white_tulip",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:azure_bluet",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:iron_door",
+                "states": {
+                    "door_hinge_bit": 0,
+                    "minecraft:cardinal_direction": "north",
+                    "open_bit": 0,
+                    "upper_block_bit": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:iron_door",
+                "states": {
+                    "door_hinge_bit": 0,
+                    "minecraft:cardinal_direction": "north",
+                    "open_bit": 0,
+                    "upper_block_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:iron_door",
+                "states": {
+                    "door_hinge_bit": 1,
+                    "minecraft:cardinal_direction": "north",
+                    "open_bit": 0,
+                    "upper_block_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:polished_deepslate",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:wooden_pressure_plate",
+                "states": {
+                    "redstone_signal": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:wooden_button",
+                "states": {
+                    "button_pressed_bit": 0,
+                    "facing_direction": 5
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:red_tulip",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:carrots",
+                "states": {
+                    "growth": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:carrots",
+                "states": {
+                    "growth": 2
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:carrots",
+                "states": {
+                    "growth": 3
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:carrots",
+                "states": {
+                    "growth": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:pumpkin_stem",
+                "states": {
+                    "facing_direction": 0,
+                    "growth": 7
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:pumpkin",
+                "states": {
+                    "minecraft:cardinal_direction": "south"
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:pumpkin_stem",
+                "states": {
+                    "facing_direction": 4,
+                    "growth": 7
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:oak_log",
+                "states": {
+                    "pillar_axis": "y"
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:carrots",
+                "states": {
+                    "growth": 4
+                },
+                "version": 18168865
+            }
+        ]
+    }
+}

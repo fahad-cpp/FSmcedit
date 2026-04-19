@@ -81,14 +81,25 @@ void parseDB(const std::string& dbPath) {
         }
         if (it->key().ToString() == "~local_player") {
             Cursor cursor((uint8_t*)it->value().data());
-            parseNBT(cursor);
+            std::stringstream ss;
+            parseNBT(cursor,ss);
+
+            std::ofstream ofs("worldData/player.json");
+            json playerJson = json::parse(ss);
+            ofs << playerJson.dump(4);
+            ofs.close();
         }
         else if (it->key().ToString().contains("actorprefix")) {
             Cursor cursor((uint8_t*)it->key().data(), 11);
             int64_t id = (int64_t)cursor.readu64();
             std::cout << "id:" << id << "\n";
             Cursor valueCursor((uint8_t*)it->value().data());
-            parseNBT(valueCursor);
+            std::stringstream ss;
+            parseNBT(valueCursor,ss);
+
+            //std::cout << ss.str();
+            json actorJson = json::parse(ss);
+
         }else if (it->key().ToString().contains("digp")) {
             Cursor cursor((uint8_t*)it->key().data(), 4);
             int x = cursor.readu32();
@@ -115,6 +126,8 @@ void parseDB(const std::string& dbPath) {
 
         Cursor keyCursor(keyData);
         std::cout << "Chunk:";
+        json entityJson;
+        json chunkJson;
         //std::cout << "keySize:" << keySize << "\n";
         int x = (int)keyCursor.readu32();
         int z = (int)keyCursor.readu32();
@@ -135,14 +148,17 @@ void parseDB(const std::string& dbPath) {
         std::cout << "\tRecord :" << recordName << "\n";
 
         Cursor valueCursor(valueData);
-        if (recordName == "BlockEntity" || recordName == "Entity" || recordName == "RandomTicks") {
-            parseNBT(valueCursor);
+        if (recordName == "BlockEntity" || recordName == "Entity") {
+            std::stringstream ss;
+            parseNBT(valueCursor,ss);
+
+            entityJson = json::parse(ss);
         }
         else if (recordName == "Version") {
             uint8_t version = valueCursor.readu8();
-            std::cout << "(Byte)" << (int)version << "\n";
         }
         else if (recordName == "SubChunkPrefix") {
+            std::stringstream ss;
             std::cout << "Size:" << valueSize << "\n";
             uint8_t version = valueCursor.readu8();
             std::cout << "Version:" << (int)version << "\n";
@@ -158,9 +174,9 @@ void parseDB(const std::string& dbPath) {
             else {
                 numStorage = valueCursor.readu8();
             }
-
+            uint8_t subChunkIndex = 0;
             if (version >= 9) {
-                uint8_t subChunkIndex = valueCursor.readu8();
+                subChunkIndex = valueCursor.readu8();
                 std::cout << "subChunkIndex:" << (int)subChunkIndex << "\n";
             }
             for (uint8_t i = 0;i < numStorage;i++) {
@@ -174,21 +190,35 @@ void parseDB(const std::string& dbPath) {
                 std::cout << "bitsPerBlock:" << (int)bitsPerBlock << "\n";
                 std::cout << "blocksPerWord:" << (int)blocksPerWord << "\n";
                 std::cout << "blockStateCount:" << (int)blockStateCount << "\n";
-                std::cout << "pallette size:" << paletteSize << "\n";
+                std::cout << "palette size:" << paletteSize << "\n";
+                ss << "{\n\t\"palette\":[\n";
                 for (uint32_t j = 0;j < paletteSize;j++) {
-                    parseNBT(valueCursor);
+                    parseNBT(valueCursor,ss,2);
+                    if(j != (paletteSize-1)){
+                        ss << ",\n";
+                    }else{
+                        ss <<'\n';
+                    }
                 }
+                ss << "\t]\n}";
+                
             }
+            
+            std::string key = "subchunk-" + std::to_string(subChunkIndex);
+            chunkJson[key] = json::parse(ss);
+            std::string filename = "worldData/chunk_" + std::to_string(x) + "_" + std::to_string(z) + ".json";
+            std::ofstream ofs(filename);
+            ofs << chunkJson.dump(4);
+            ofs.close();
         }
-
         free(valueData);
         free(keyData);
     }
-
     delete it;
     delete db;
 }
 void parseDAT(const std::string& path) {
+    std::stringstream ss;
     std::ifstream ifs(path, std::ios::binary | std::ios::ate);
     uint32_t size = ifs.tellg();
     ifs.seekg(0);
@@ -204,23 +234,26 @@ void parseDAT(const std::string& path) {
         assert(false);
         return;
     }
-    parseNBT(cursor);
+    parseNBT(cursor,ss);
     free(data);
     ifs.close();
 }
 void drawChunkImage(std::vector<std::pair<int,int>> chunks){
     std::vector<int> xcords = {};
     std::vector<int> zcords = {};
-    std::cout << "All chunks\n";
     for(const std::pair<int,int>& chunk : chunks){
         xcords.push_back(chunk.first);
         zcords.push_back(chunk.second);
     }
+    
+    //xcords is sorted by default
     std::sort(zcords.begin(),zcords.end());
-
+    
+    //Remove Duplicate
     xcords.erase(std::unique(xcords.begin(),xcords.end()),xcords.end());
     zcords.erase(std::unique(zcords.begin(),zcords.end()),zcords.end());
-
+    
+    //offset to make minx=0 minz=0
     int xmin = xcords.at(std::min_element(xcords.begin(),xcords.end()) - xcords.begin());
     int zmin = zcords.at(std::min_element(zcords.begin(),zcords.end()) - zcords.begin());
     for(int i=0;i<xcords.size();i++){
@@ -229,17 +262,19 @@ void drawChunkImage(std::vector<std::pair<int,int>> chunks){
     for(int i=0;i<zcords.size();i++){
         zcords[i] -= zmin;
     }
+    std::cout << "All chunks\n";
     for(int i=0;i<chunks.size();i++){
         chunks[i] = {chunks[i].first - xmin,chunks[i].second - zmin};
         std::cout << "X:"<<chunks[i].first<<" Z:" << chunks[i].second << "\n";
     }
-
+    
     int xdiff = (xcords.at(xcords.size()-1) - xcords.at(0)) + 1;
     int zdiff = (zcords.at(xcords.size()-1) - zcords.at(0)) + 1;
-
+    
     int width = xdiff*16;
     int height = zdiff*16;
-
+    
+    //Render chunks on image
     uint32_t* image = (uint32_t*)malloc(width*height*sizeof(uint32_t));
     for(int i=0;i<width*height;i++)image[i] = 0x00000000;
     for(const std::pair<int,int>& chunk : chunks){
@@ -247,11 +282,11 @@ void drawChunkImage(std::vector<std::pair<int,int>> chunks){
         int zstart=chunk.second*16;
         for(int x=xstart;x<(xstart+16);x++){
             for(int z=zstart;z<(zstart+16);z++){
-                image[width*z + x] = 0xff0000ff;
+                image[width*z + x] = 0xff0000ff; //red
             }
         }
     }
-    stbi_write_png("chunks.png",width,height,4,image,width*4);
+    stbi_write_png("worldData/chunks.png",width,height,4,image,width*4);
     free(image);
 
 }

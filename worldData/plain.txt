@@ -1,0 +1,578 @@
+Chunk:	X:16	Z:6
+	Record :Version
+Chunk:	X:16	Z:6
+	Record :BlockEntity
+Chunk:	X:16	Z:6
+	Record :FinalizedState
+Chunk:	X:16	Z:6
+	Record :InvalidRecord:119
+Chunk:	X:17	Z:3
+	Record :Version
+Chunk:	X:17	Z:3
+	Record :BlockEntity
+Chunk:	X:17	Z:3
+	Record :FinalizedState
+Chunk:	X:17	Z:3
+	Record :InvalidRecord:119
+Chunk:	X:17	Z:4
+	Record :Version
+Chunk:	X:17	Z:4
+	Record :BlockEntity
+Chunk:	X:17	Z:4
+	Record :FinalizedState
+Chunk:	X:17	Z:4
+	Record :InvalidRecord:119
+Chunk:	X:17	Z:5
+	Record :Version
+Chunk:	X:17	Z:5
+	Record :BlockEntity
+Chunk:	X:17	Z:5
+	Record :FinalizedState
+Chunk:	X:17	Z:5
+	Record :InvalidRecord:119
+Chunk:	X:17	Z:6
+	Record :Version
+Chunk:	X:17	Z:6
+	Record :BlockEntity
+Chunk:	X:17	Z:6
+	Record :FinalizedState
+Chunk:	X:17	Z:6
+	Record :InvalidRecord:119
+Chunk:	X:17	Z:7
+	Record :Version
+Chunk:	X:17	Z:7
+	Record :BlockEntity
+Chunk:	X:17	Z:7
+	Record :FinalizedState
+Chunk:	X:17	Z:7
+	Record :InvalidRecord:119
+Chunk:	X:18	Z:3
+	Record :Version
+Chunk:	X:18	Z:3
+	Record :BlockEntity
+Chunk:	X:18	Z:3
+	Record :FinalizedState
+Chunk:	X:18	Z:3
+	Record :InvalidRecord:119
+Chunk:	X:18	Z:5
+	Record :Version
+Chunk:	X:18	Z:5
+	Record :BlockEntity
+Chunk:	X:18	Z:5
+	Record :FinalizedState
+Chunk:	X:18	Z:5
+	Record :ActorDigestVersion
+Chunk:	X:18	Z:5
+	Record :InvalidRecord:119
+Chunk:	X:18	Z:6
+	Record :Version
+Chunk:	X:18	Z:6
+	Record :BlockEntity
+Chunk:	X:18	Z:6
+	Record :PendingTicks
+Chunk:	X:18	Z:6
+	Record :FinalizedState
+Chunk:	X:18	Z:6
+	Record :ActorDigestVersion
+Chunk:	X:18	Z:6
+	Record :InvalidRecord:119
+Chunk:	X:18	Z:7
+	Record :Version
+Chunk:	X:18	Z:7
+	Record :BlockEntity
+Chunk:	X:18	Z:7
+	Record :FinalizedState
+Chunk:	X:18	Z:7
+	Record :InvalidRecord:119
+Chunk:	X:19	Z:5
+	Record :FinalizedState
+Chunk:	X:19	Z:5
+	Record :ActorDigestVersion
+Chunk:	X:19	Z:5
+	Record :InvalidRecord:119
+Chunk:	X:19	Z:6
+	Record :Version
+Chunk:	X:19	Z:6
+	Record :BlockEntity
+Chunk:	X:19	Z:6
+	Record :FinalizedState
+Chunk:	X:19	Z:6
+	Record :ActorDigestVersion
+Chunk:	X:19	Z:6
+	Record :InvalidRecord:119
+Chunk:	X:19	Z:7
+	Record :Version
+Chunk:	X:19	Z:7
+	Record :BlockEntity
+Chunk:	X:19	Z:7
+	Record :FinalizedState
+Chunk:	X:19	Z:7
+	Record :InvalidRecord:119
+Chunk:	X:19	Z:8
+	Record :Version
+Chunk:	X:19	Z:8
+	Record :BlockEntity
+Chunk:	X:19	Z:8
+	Record :FinalizedState
+Chunk:	X:19	Z:8
+	Record :InvalidRecord:119
+Chunk:	X:20	Z:1
+	Record :Data3D
+Chunk:	X:20	Z:1
+	Record :Version
+Chunk:	X:20	Z:1
+	Record :SubChunkPrefix
+Size:3402
+Version:9
+subChunkIndex:5
+numStorage:1
+bitsPerBlock:4
+blocksPerWord:8
+blockStateCount:512
+palette size:14
+Chunk:	X:20	Z:1
+	Record :FinalizedState
+Chunk:	X:20	Z:3
+	Record :Data3D
+Chunk:	X:20	Z:3
+	Record :Version
+Chunk:	X:20	Z:3
+	Record :SubChunkPrefix
+Size:5632
+Version:9
+subChunkIndex:5
+numStorage:1
+bitsPerBlock:6
+blocksPerWord:5
+blockStateCount:820
+palette size:38
+Chunk:	X:20	Z:3
+	Record :BlockEntity
+Chunk:	X:20	Z:3
+	Record :FinalizedState
+Chunk:	X:20	Z:3
+	Record :InvalidRecord:119
+Chunk:	X:20	Z:4
+	Record :Data3D
+Chunk:	X:20	Z:4
+	Record :Version
+Chunk:	X:20	Z:4
+	Record :SubChunkPrefix
+Size:5011
+Version:9
+subChunkIndex:5
+numStorage:1
+bitsPerBlock:5
+blocksPerWord:6
+blockStateCount:683
+palette size:30
+Chunk:	X:20	Z:4
+	Record :FinalizedState
+Chunk:	X:20	Z:4
+	Record :ActorDigestVersion
+Chunk:	X:20	Z:4
+	Record :InvalidRecord:119
+Chunk:	X:20	Z:5
+	Record :Version
+Chunk:	X:20	Z:5
+	Record :BlockEntity
+Chunk:	X:20	Z:5
+	Record :FinalizedState
+Chunk:	X:20	Z:5
+	Record :ActorDigestVersion
+Chunk:	X:20	Z:5
+	Record :InvalidRecord:119
+Chunk:	X:20	Z:6
+	Record :Data3D
+Chunk:	X:20	Z:6
+	Record :Version
+Chunk:	X:20	Z:6
+	Record :SubChunkPrefix
+Size:10141
+Version:9
+subChunkIndex:5
+numStorage:1
+bitsPerBlock:8
+blocksPerWord:4
+blockStateCount:1024
+palette size:82
+Chunk:	X:20	Z:6
+	Record :BlockEntity
+Chunk:	X:20	Z:6
+	Record :FinalizedState
+Chunk:	X:20	Z:6
+	Record :ActorDigestVersion
+Chunk:	X:20	Z:6
+	Record :InvalidRecord:119
+Chunk:	X:20	Z:7
+	Record :Version
+Chunk:	X:20	Z:7
+	Record :BlockEntity
+Chunk:	X:20	Z:7
+	Record :FinalizedState
+Chunk:	X:20	Z:7
+	Record :InvalidRecord:119
+Chunk:	X:21	Z:2
+	Record :Version
+Chunk:	X:21	Z:2
+	Record :FinalizedState
+Chunk:	X:21	Z:2
+	Record :ActorDigestVersion
+Chunk:	X:21	Z:2
+	Record :InvalidRecord:119
+Chunk:	X:21	Z:3
+	Record :Version
+Chunk:	X:21	Z:3
+	Record :BlockEntity
+Chunk:	X:21	Z:3
+	Record :FinalizedState
+Chunk:	X:21	Z:3
+	Record :InvalidRecord:119
+Chunk:	X:21	Z:4
+	Record :Data3D
+Chunk:	X:21	Z:4
+	Record :Version
+Chunk:	X:21	Z:4
+	Record :SubChunkPrefix
+Size:9003
+Version:9
+subChunkIndex:5
+numStorage:1
+bitsPerBlock:6
+blocksPerWord:5
+blockStateCount:820
+palette size:61
+Chunk:	X:21	Z:4
+	Record :FinalizedState
+Chunk:	X:21	Z:4
+	Record :ActorDigestVersion
+Chunk:	X:21	Z:4
+	Record :InvalidRecord:119
+Chunk:	X:21	Z:5
+	Record :Version
+Chunk:	X:21	Z:5
+	Record :FinalizedState
+Chunk:	X:21	Z:5
+	Record :BlendingBiomeHeight
+Chunk:	X:21	Z:5
+	Record :ActorDigestVersion
+Chunk:	X:21	Z:5
+	Record :InvalidRecord:119
+Chunk:	X:21	Z:6
+	Record :Version
+Chunk:	X:21	Z:6
+	Record :BlockEntity
+Chunk:	X:21	Z:6
+	Record :FinalizedState
+Chunk:	X:21	Z:6
+	Record :InvalidRecord:119
+Chunk:	X:21	Z:7
+	Record :Version
+Chunk:	X:21	Z:7
+	Record :BlockEntity
+Chunk:	X:21	Z:7
+	Record :FinalizedState
+Chunk:	X:21	Z:7
+	Record :ActorDigestVersion
+Chunk:	X:21	Z:7
+	Record :InvalidRecord:119
+Chunk:	X:21	Z:8
+	Record :Version
+Chunk:	X:21	Z:8
+	Record :BlockEntity
+Chunk:	X:21	Z:8
+	Record :FinalizedState
+Chunk:	X:21	Z:8
+	Record :InvalidRecord:119
+Chunk:	X:22	Z:1
+	Record :Version
+Chunk:	X:22	Z:1
+	Record :FinalizedState
+Chunk:	X:22	Z:1
+	Record :ActorDigestVersion
+Chunk:	X:22	Z:2
+	Record :Data3D
+Chunk:	X:22	Z:2
+	Record :Version
+Chunk:	X:22	Z:2
+	Record :SubChunkPrefix
+Size:7508
+Version:9
+subChunkIndex:5
+numStorage:1
+bitsPerBlock:6
+blocksPerWord:5
+blockStateCount:820
+palette size:52
+Chunk:	X:22	Z:2
+	Record :BlockEntity
+Chunk:	X:22	Z:2
+	Record :FinalizedState
+Chunk:	X:22	Z:2
+	Record :ActorDigestVersion
+Chunk:	X:22	Z:2
+	Record :InvalidRecord:119
+Chunk:	X:22	Z:6
+	Record :Version
+Chunk:	X:22	Z:6
+	Record :BlockEntity
+Chunk:	X:22	Z:6
+	Record :FinalizedState
+Chunk:	X:22	Z:6
+	Record :InvalidRecord:119
+Chunk:	X:22	Z:7
+	Record :Version
+Chunk:	X:22	Z:7
+	Record :BlockEntity
+Chunk:	X:22	Z:7
+	Record :FinalizedState
+Chunk:	X:22	Z:7
+	Record :InvalidRecord:119
+Chunk:	X:22	Z:8
+	Record :Version
+Chunk:	X:22	Z:8
+	Record :BlockEntity
+Chunk:	X:22	Z:8
+	Record :FinalizedState
+Chunk:	X:22	Z:8
+	Record :InvalidRecord:119
+Chunk:	X:22	Z:9
+	Record :Version
+Chunk:	X:22	Z:9
+	Record :FinalizedState
+Chunk:	X:22	Z:9
+	Record :ActorDigestVersion
+Chunk:	X:23	Z:5
+	Record :Version
+Chunk:	X:23	Z:5
+	Record :FinalizedState
+Chunk:	X:23	Z:5
+	Record :ActorDigestVersion
+Chunk:	X:23	Z:6
+	Record :FinalizedState
+Chunk:	X:23	Z:6
+	Record :ActorDigestVersion
+KEY:AutonomousEntities
+KEY:BiomeData
+KEY:Overworld
+KEY:VILLAGE_Overworld_02a758d8-f6cf-45d6-82b0-e907d8acc8df_DWELLERS
+KEY:VILLAGE_Overworld_02a758d8-f6cf-45d6-82b0-e907d8acc8df_DWELLERS
+KEY:VILLAGE_Overworld_02a758d8-f6cf-45d6-82b0-e907d8acc8df_INFO
+KEY:VILLAGE_Overworld_02a758d8-f6cf-45d6-82b0-e907d8acc8df_INFO
+KEY:VILLAGE_Overworld_02a758d8-f6cf-45d6-82b0-e907d8acc8df_PLAYERS
+KEY:VILLAGE_Overworld_02a758d8-f6cf-45d6-82b0-e907d8acc8df_PLAYERS
+KEY:VILLAGE_Overworld_02a758d8-f6cf-45d6-82b0-e907d8acc8df_POI
+KEY:VILLAGE_Overworld_02a758d8-f6cf-45d6-82b0-e907d8acc8df_POI
+KEY:VILLAGE_Overworld_13607bac-912f-458b-adfa-ae4974b923f0_DWELLERS
+KEY:VILLAGE_Overworld_13607bac-912f-458b-adfa-ae4974b923f0_DWELLERS
+KEY:VILLAGE_Overworld_13607bac-912f-458b-adfa-ae4974b923f0_INFO
+KEY:VILLAGE_Overworld_13607bac-912f-458b-adfa-ae4974b923f0_INFO
+KEY:VILLAGE_Overworld_13607bac-912f-458b-adfa-ae4974b923f0_PLAYERS
+KEY:VILLAGE_Overworld_13607bac-912f-458b-adfa-ae4974b923f0_PLAYERS
+KEY:VILLAGE_Overworld_13607bac-912f-458b-adfa-ae4974b923f0_POI
+KEY:VILLAGE_Overworld_13607bac-912f-458b-adfa-ae4974b923f0_POI
+KEY:VILLAGE_Overworld_427bee55-2e82-446a-aa72-dc5a5b64976e_DWELLERS
+KEY:VILLAGE_Overworld_427bee55-2e82-446a-aa72-dc5a5b64976e_DWELLERS
+KEY:VILLAGE_Overworld_427bee55-2e82-446a-aa72-dc5a5b64976e_INFO
+KEY:VILLAGE_Overworld_427bee55-2e82-446a-aa72-dc5a5b64976e_INFO
+KEY:VILLAGE_Overworld_427bee55-2e82-446a-aa72-dc5a5b64976e_PLAYERS
+KEY:VILLAGE_Overworld_427bee55-2e82-446a-aa72-dc5a5b64976e_PLAYERS
+KEY:VILLAGE_Overworld_427bee55-2e82-446a-aa72-dc5a5b64976e_POI
+KEY:VILLAGE_Overworld_427bee55-2e82-446a-aa72-dc5a5b64976e_POI
+KEY:VILLAGE_Overworld_b588be96-ee5f-4684-b47a-eebd02000466_DWELLERS
+KEY:VILLAGE_Overworld_b588be96-ee5f-4684-b47a-eebd02000466_DWELLERS
+KEY:VILLAGE_Overworld_b588be96-ee5f-4684-b47a-eebd02000466_INFO
+KEY:VILLAGE_Overworld_b588be96-ee5f-4684-b47a-eebd02000466_INFO
+KEY:VILLAGE_Overworld_b588be96-ee5f-4684-b47a-eebd02000466_PLAYERS
+KEY:VILLAGE_Overworld_b588be96-ee5f-4684-b47a-eebd02000466_PLAYERS
+KEY:VILLAGE_Overworld_b588be96-ee5f-4684-b47a-eebd02000466_POI
+KEY:VILLAGE_Overworld_b588be96-ee5f-4684-b47a-eebd02000466_POI
+KEY:WorldClocks
+KEY:actorprefix     À
+id:-3815393309279387648
+KEY:actorprefix     E
+id:4979292338045059072
+KEY:actorprefix     ì
+id:-7846959400706113536
+KEY:actorprefix     Ì
+id:-1361775937292599296
+KEY:actorprefix     ‹
+id:-2593510435361652736
+KEY:actorprefix     )
+id:2955205780535508992
+KEY:actorprefix     ¿
+id:-4611123068373303296
+KEY:actorprefix     ¡
+id:-4539065474335375360
+KEY:actorprefix      
+id:144115188193296384
+KEY:actorprefix      
+id:1080863910686359552
+KEY:actorprefix      $
+id:2594073385482846208
+KEY:actorprefix     
+id:1226949423599190016
+KEY:actorprefix   	  Â
+id:-1943866189012795392
+KEY:actorprefix      v
+id:8502796096693600256
+KEY:actorprefix     u
+id:8431301452609093632
+KEY:actorprefix     m
+id:7855403650259091456
+KEY:actorprefix      V
+id:6196953087513460736
+KEY:actorprefix      è
+id:-8142508126034198528
+KEY:actorprefix      
+id:2233785415460978688
+KEY:actorprefix       
+id:2305843009498906624
+KEY:actorprefix     ˆ
+id:-718324140280381440
+KEY:actorprefix     	Û
+id:-934215447417454592
+KEY:actorprefix     C
+id:4828140275970867200
+KEY:actorprefix     Í
+id:-1583296743544455168
+KEY:actorprefix     ˙
+id:-430093763960897536
+KEY:actorprefix     	
+id:290763651395092480
+KEY:actorprefix     	ë
+id:-7995859662966620160
+KEY:actorprefix      í
+id:-7926335343668756480
+KEY:actorprefix     ª
+id:-4971129563183579136
+KEY:actorprefix     π
+id:-5113837376375881728
+KEY:actorprefix     ⁄
+id:-2732559073386954752
+KEY:actorprefix   !   |
+id:8935141661256712192
+KEY:actorprefix   "  '
+id:2817564517444091904
+KEY:actorprefix   "  z
+id:8798344822592110592
+KEY:actorprefix   &   K
+id:5404319553482129408
+KEY:actorprefix   '   
+id:216172782768095232
+KEY:actorprefix   '   
+id:288230376806023168
+KEY:actorprefix   '   
+id:504403158919806976
+KEY:actorprefix   '   	
+id:648518346995662848
+KEY:digp      
+x:18 y:5
+ID 0: 216172782768095232
+KEY:digp      
+x:18 y:6
+KEY:digp      
+x:19 y:5
+KEY:digp      
+x:19 y:6
+KEY:digp      
+x:20 y:4
+ID 0: 8935141661256712192
+ID 1: -1943866189012795392
+ID 2: 8502796096693600256
+ID 3: 7855403650259091456
+KEY:digp      
+x:20 y:5
+ID 0: 8431301452609093632
+ID 1: -1361775937292599296
+ID 2: 290763651395092480
+ID 3: -5113837376375881728
+ID 4: 2817564517444091904
+ID 5: 5404319553482129408
+ID 6: 288230376806023168
+KEY:digp      
+x:20 y:6
+KEY:digp      
+x:21 y:2
+ID 0: 2955205780535508992
+ID 1: 2233785415460978688
+ID 2: 6196953087513460736
+ID 3: -430093763960897536
+ID 4: -7995859662966620160
+ID 5: -7926335343668756480
+ID 6: -1583296743544455168
+ID 7: 4828140275970867200
+KEY:digp      
+x:21 y:4
+KEY:digp      
+x:21 y:5
+KEY:digp      
+x:21 y:7
+ID 0: 504403158919806976
+KEY:digp      
+x:22 y:1
+ID 0: -8142508126034198528
+ID 1: 1080863910686359552
+ID 2: 2594073385482846208
+ID 3: -4539065474335375360
+ID 4: -2593510435361652736
+ID 5: -4971129563183579136
+ID 6: -2732559073386954752
+KEY:digp      
+x:22 y:2
+ID 0: 144115188193296384
+ID 1: -3815393309279387648
+ID 2: -718324140280381440
+ID 3: 1226949423599190016
+ID 4: -934215447417454592
+ID 5: 2305843009498906624
+ID 6: -4611123068373303296
+ID 7: 648518346995662848
+KEY:digp   	   
+x:22 y:9
+ID 0: 8798344822592110592
+KEY:digp      
+x:23 y:5
+ID 0: 4979292338045059072
+KEY:digp      
+x:23 y:6
+ID 0: -7846959400706113536
+KEY:mobevents
+KEY:scoreboard
+KEY:~local_player
+All chunks
+X:0 Z:5
+X:1 Z:2
+X:1 Z:3
+X:1 Z:4
+X:1 Z:5
+X:1 Z:6
+X:2 Z:2
+X:2 Z:4
+X:2 Z:5
+X:2 Z:6
+X:3 Z:4
+X:3 Z:5
+X:3 Z:6
+X:3 Z:7
+X:4 Z:0
+X:4 Z:2
+X:4 Z:3
+X:4 Z:4
+X:4 Z:5
+X:4 Z:6
+X:5 Z:1
+X:5 Z:2
+X:5 Z:3
+X:5 Z:4
+X:5 Z:5
+X:5 Z:6
+X:5 Z:7
+X:6 Z:0
+X:6 Z:1
+X:6 Z:5
+X:6 Z:6
+X:6 Z:7
+X:6 Z:8
+X:7 Z:4
+X:7 Z:5

@@ -1,0 +1,380 @@
+{
+    "subchunk-5": {
+        "palette": [
+            {
+                "name": "minecraft:air",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:dirt",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:grass_block",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:stone",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:granite",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:short_grass",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:bush",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:white_wool",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:hopper",
+                "states": {
+                    "facing_direction": 0,
+                    "toggle_bit": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:campfire",
+                "states": {
+                    "extinguished": 0,
+                    "minecraft:cardinal_direction": "east"
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:standing_sign",
+                "states": {
+                    "ground_sign_direction": 4
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:polished_deepslate",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:cobbled_deepslate",
+                "states": {},
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:wall_sign",
+                "states": {
+                    "facing_direction": 5
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:wall_sign",
+                "states": {
+                    "facing_direction": 3
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:wall_sign",
+                "states": {
+                    "facing_direction": 4
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:wall_sign",
+                "states": {
+                    "facing_direction": 2
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:standing_sign",
+                "states": {
+                    "ground_sign_direction": 8
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:standing_sign",
+                "states": {
+                    "ground_sign_direction": 12
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:standing_sign",
+                "states": {
+                    "ground_sign_direction": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:lava",
+                "states": {
+                    "liquid_depth": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:fire",
+                "states": {
+                    "age": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 2
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 3
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 4
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 5
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 6
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 7
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 9
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:trapdoor",
+                "states": {
+                    "direction": 0,
+                    "open_bit": 0,
+                    "upside_down_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:trapdoor",
+                "states": {
+                    "direction": 2,
+                    "open_bit": 0,
+                    "upside_down_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:trapdoor",
+                "states": {
+                    "direction": 3,
+                    "open_bit": 0,
+                    "upside_down_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:trapdoor",
+                "states": {
+                    "direction": 1,
+                    "open_bit": 0,
+                    "upside_down_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:trapdoor",
+                "states": {
+                    "direction": 0,
+                    "open_bit": 1,
+                    "upside_down_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:trapdoor",
+                "states": {
+                    "direction": 2,
+                    "open_bit": 1,
+                    "upside_down_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:trapdoor",
+                "states": {
+                    "direction": 3,
+                    "open_bit": 1,
+                    "upside_down_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:bed",
+                "states": {
+                    "direction": 0,
+                    "head_piece_bit": 0,
+                    "occupied_bit": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:bed",
+                "states": {
+                    "direction": 0,
+                    "head_piece_bit": 1,
+                    "occupied_bit": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:bed",
+                "states": {
+                    "direction": 2,
+                    "head_piece_bit": 0,
+                    "occupied_bit": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:bed",
+                "states": {
+                    "direction": 2,
+                    "head_piece_bit": 1,
+                    "occupied_bit": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:trapdoor",
+                "states": {
+                    "direction": 1,
+                    "open_bit": 1,
+                    "upside_down_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:lever",
+                "states": {
+                    "lever_direction": "up_east_west",
+                    "open_bit": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:lever",
+                "states": {
+                    "lever_direction": "up_east_west",
+                    "open_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:lever",
+                "states": {
+                    "lever_direction": "up_north_south",
+                    "open_bit": 0
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:lever",
+                "states": {
+                    "lever_direction": "up_north_south",
+                    "open_bit": 1
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:water",
+                "states": {
+                    "liquid_depth": 8
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:wooden_button",
+                "states": {
+                    "button_pressed_bit": 0,
+                    "facing_direction": 5
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:wooden_button",
+                "states": {
+                    "button_pressed_bit": 1,
+                    "facing_direction": 5
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:torch",
+                "states": {
+                    "torch_facing_direction": "west"
+                },
+                "version": 18168865
+            },
+            {
+                "name": "minecraft:iron_bars",
+                "states": {},
+                "version": 18168865
+            }
+        ]
+    }
+}
