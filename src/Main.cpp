@@ -2,12 +2,11 @@
 #include <math.h>
 #include <iostream>
 #include <fstream>
-
 #include <leveldb/db.h>
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
+#include "NBT.h"
 
-#include "Parser.h"
 std::vector<std::pair<int,int>> chunks = {};
 const std::vector<std::string> keyPrefs = {
     "~local_player",
@@ -53,9 +52,11 @@ const std::map<uint8_t, const std::string> tagName{
     {118,"LegacyVersion"},
 };
 void parseDB(const std::string& dbPath) {
+    using json = nlohmann::json;
     leveldb::DB* db;
     leveldb::Options options;
     options.create_if_missing = false;
+    options.compression = leveldb::kZlibRawCompression;
     leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
     if (!status.ok()) {
         std::cerr << status.ToString() << "\n";
@@ -64,12 +65,22 @@ void parseDB(const std::string& dbPath) {
     }
 
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
-    // it->SeekToFirst();
-    // if(!it->Valid()){
-    //     std::cerr << "Failed to open database\n";
-    //     std::cerr << it->status().ToString() << "\n";
-    //     return;
-    // }
+    it->SeekToFirst();
+    if(!it->Valid() && !it->status().ok()){
+        std::cerr << "Failed to open database\n";
+        std::cerr << it->status().ToString() << "\n";
+        delete it;
+        delete db;
+        //repair
+        leveldb::RepairDB(dbPath,options);
+        status = leveldb::DB::Open(options,dbPath,&db);
+        it = db->NewIterator(leveldb::ReadOptions());
+
+        if(!it->status().ok()){
+            std::cerr << "Still failed after repair\n";
+            return;
+        }
+    }
     for (it->SeekToFirst();it->Valid();it->Next()) {
         bool chunkKey = true;
         //Temporary (TODO:Handle all cases)
@@ -82,7 +93,7 @@ void parseDB(const std::string& dbPath) {
         if (it->key().ToString() == "~local_player") {
             Cursor cursor((uint8_t*)it->value().data());
             std::stringstream ss;
-            parseNBT(cursor,ss);
+            NBT::parseNBT(cursor,ss);
 
             std::ofstream ofs("worldData/player.json");
             json playerJson = json::parse(ss);
@@ -95,9 +106,8 @@ void parseDB(const std::string& dbPath) {
             std::cout << "id:" << id << "\n";
             Cursor valueCursor((uint8_t*)it->value().data());
             std::stringstream ss;
-            parseNBT(valueCursor,ss);
+            NBT::parseNBT(valueCursor,ss);
 
-            //std::cout << ss.str();
             json actorJson = json::parse(ss);
 
         }else if (it->key().ToString().contains("digp")) {
@@ -150,7 +160,7 @@ void parseDB(const std::string& dbPath) {
         Cursor valueCursor(valueData);
         if (recordName == "BlockEntity" || recordName == "Entity") {
             std::stringstream ss;
-            parseNBT(valueCursor,ss);
+            NBT::parseNBT(valueCursor,ss);
 
             entityJson = json::parse(ss);
         }
@@ -159,9 +169,7 @@ void parseDB(const std::string& dbPath) {
         }
         else if (recordName == "SubChunkPrefix") {
             std::stringstream ss;
-            std::cout << "Size:" << valueSize << "\n";
             uint8_t version = valueCursor.readu8();
-            std::cout << "Version:" << (int)version << "\n";
             uint8_t numStorage = 0;
             if (version == 1) {
                 numStorage = 1;
@@ -177,8 +185,8 @@ void parseDB(const std::string& dbPath) {
             uint8_t subChunkIndex = 0;
             if (version >= 9) {
                 subChunkIndex = valueCursor.readu8();
-                std::cout << "subChunkIndex:" << (int)subChunkIndex << "\n";
             }
+            ss << '[';
             for (uint8_t i = 0;i < numStorage;i++) {
                 uint8_t flags = valueCursor.readu8();
                 uint8_t bitsPerBlock = flags >> 1;
@@ -186,14 +194,9 @@ void parseDB(const std::string& dbPath) {
                 uint32_t blockStateCount = ceil(4096.f / (float)blocksPerWord);
                 valueCursor.skip(blockStateCount * 4);
                 uint32_t paletteSize = valueCursor.readu32();
-                std::cout << "numStorage:" << (int)numStorage << "\n";
-                std::cout << "bitsPerBlock:" << (int)bitsPerBlock << "\n";
-                std::cout << "blocksPerWord:" << (int)blocksPerWord << "\n";
-                std::cout << "blockStateCount:" << (int)blockStateCount << "\n";
-                std::cout << "palette size:" << paletteSize << "\n";
                 ss << "{\n\t\"palette\":[\n";
                 for (uint32_t j = 0;j < paletteSize;j++) {
-                    parseNBT(valueCursor,ss,2);
+                    NBT::parseNBT(valueCursor,ss,2);
                     if(j != (paletteSize-1)){
                         ss << ",\n";
                     }else{
@@ -201,11 +204,18 @@ void parseDB(const std::string& dbPath) {
                     }
                 }
                 ss << "\t]\n}";
-                
+                if(i != (numStorage - 1)){
+                    ss << ',';
+                }
             }
-            
+            ss << ']';
             std::string key = "subchunk-" + std::to_string(subChunkIndex);
-            chunkJson[key] = json::parse(ss);
+            try{
+                chunkJson[key] = json::parse(ss);
+            }catch(json::exception e){
+                std::cerr << "Json error:" << e.what() << "\n";
+                return;
+            }
             std::string filename = "worldData/chunk_" + std::to_string(x) + "_" + std::to_string(z) + ".json";
             std::ofstream ofs(filename);
             ofs << chunkJson.dump(4);
@@ -218,6 +228,7 @@ void parseDB(const std::string& dbPath) {
     delete db;
 }
 void parseDAT(const std::string& path) {
+    using json = nlohmann::json;
     std::stringstream ss;
     std::ifstream ifs(path, std::ios::binary | std::ios::ate);
     uint32_t size = ifs.tellg();
@@ -234,11 +245,22 @@ void parseDAT(const std::string& path) {
         assert(false);
         return;
     }
-    parseNBT(cursor,ss);
+    NBT::parseNBT(cursor,ss);
     free(data);
     ifs.close();
+
+    std::ofstream ofs("worldData/level.json");
+    json levelJson;
+    try{
+        levelJson = json::parse(ss);
+    }catch(json::exception e){
+        std::cerr << "Json error" << e.what() << "\n";
+        return;
+    }
+    ofs << levelJson.dump(4);
 }
 void drawChunkImage(std::vector<std::pair<int,int>> chunks){
+    if(!chunks.size())return;
     std::vector<int> xcords = {};
     std::vector<int> zcords = {};
     for(const std::pair<int,int>& chunk : chunks){
@@ -269,7 +291,7 @@ void drawChunkImage(std::vector<std::pair<int,int>> chunks){
     }
     
     int xdiff = (xcords.at(xcords.size()-1) - xcords.at(0)) + 1;
-    int zdiff = (zcords.at(xcords.size()-1) - zcords.at(0)) + 1;
+    int zdiff = (zcords.at(zcords.size()-1) - zcords.at(0)) + 1;
     
     int width = xdiff*16;
     int height = zdiff*16;
@@ -293,6 +315,6 @@ void drawChunkImage(std::vector<std::pair<int,int>> chunks){
 int main() {
     parseDB("tmp/testworld/db");
     drawChunkImage(chunks);
-    //parseDAT("tmp/testworld/level.dat");
+    parseDAT("tmp/testworld/level.dat");
     return 0;
 }

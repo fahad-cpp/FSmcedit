@@ -1,0 +1,54 @@
+{
+    "subchunk-4": [
+        {
+            "palette": [
+                {
+                    "name": "minecraft:air",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:short_grass",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:reeds",
+                    "states": {
+                        "age": 0
+                    },
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:snow_layer",
+                    "states": {
+                        "covered_bit": 0,
+                        "height": 0
+                    },
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:reeds",
+                    "states": {
+                        "age": 1
+                    },
+                    "version": 18168865
+                }
+            ]
+        },
+        {
+            "palette": [
+                {
+                    "name": "minecraft:air",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:short_grass",
+                    "states": {},
+                    "version": 18168865
+                }
+            ]
+        }
+    ]
+}

@@ -8,8 +8,9 @@ Current Progress:
 
 - export parsed world/player data in:
 
-[worldData/plain.txt](worldData/plain.txt) <br>
-[worldData/player.json](worldData/player.json)
+[worldData/level.json](worldData/level.json) <- level.dat<br>
+[worldData/player.json](worldData/player.json) <- ~local_player<br>
+[worldData/plain.txt](worldData/plain.txt) <- FSmcedit.exe stdoutput
 
 - export chunk data in
 

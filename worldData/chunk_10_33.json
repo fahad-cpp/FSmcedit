@@ -1,0 +1,113 @@
+{
+    "subchunk-3": [
+        {
+            "palette": [
+                {
+                    "name": "minecraft:stone",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:dirt",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:grass_block",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:air",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:water",
+                    "states": {
+                        "liquid_depth": 0
+                    },
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:granite",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:copper_ore",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:diorite",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:packed_ice",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:lapis_ore",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:coal_ore",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:short_grass",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:snow_layer",
+                    "states": {
+                        "covered_bit": 0,
+                        "height": 0
+                    },
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:ice",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:snow_layer",
+                    "states": {
+                        "covered_bit": 0,
+                        "height": 1
+                    },
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:snow_layer",
+                    "states": {
+                        "covered_bit": 0,
+                        "height": 2
+                    },
+                    "version": 18168865
+                }
+            ]
+        },
+        {
+            "palette": [
+                {
+                    "name": "minecraft:air",
+                    "states": {},
+                    "version": 18168865
+                },
+                {
+                    "name": "minecraft:short_grass",
+                    "states": {},
+                    "version": 18168865
+                }
+            ]
+        }
+    ]
+}

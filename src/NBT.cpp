@@ -1,11 +1,11 @@
-#include "Parser.h"
+#include "NBT.h"
 /*Parse NBT with the following structure:
     -1 byte : tagID
     -2 byte : length
     -length byte string : Name of the NBT
     -payload depending on the tagID
 */
-void parseNBT(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
+void NBT::parseNBT(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
     uint8_t tagTypeID = cursor.readu8();
     uint16_t nameLength = tagTypeID == 0 ? 0 : cursor.readu16();
     if (tagTypeID < 0 || tagTypeID > 12) {
@@ -22,7 +22,7 @@ void parseNBT(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
     parseTag(tagTypeID, cursor,ss,depth);
 }
 //Parse only payload of the NBT
-void parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss,uint32_t depth) {
+void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss,uint32_t depth) {
     //ss << "(" << types[tagID] << "):";
     switch (tagID) {
         case 1: {
@@ -74,7 +74,7 @@ void parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss,uint32_t depth
     }
 }
 //Parse a compund of NBTs
-void parseCompound(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
+void NBT::parseCompound(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
     if(cursor.peeku8() == 0){
         ss << "{}";
         cursor.skip(1);
@@ -94,7 +94,7 @@ void parseCompound(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
     cursor.skip(1);
 }
 //Parse a list of NBTs
-void parseList(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
+void NBT::parseList(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
     uint8_t listTagID = cursor.readu8();
     uint32_t size = cursor.readu32();
     if(size == 0){
@@ -112,37 +112,37 @@ void parseList(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
     ss << ']';
 }
 
-uint8_t parseByte(Cursor& cursor) {
+uint8_t NBT::parseByte(Cursor& cursor) {
     return (int)cursor.readu8();
 }
 
-uint16_t parseShort(Cursor& cursor) {
+uint16_t NBT::parseShort(Cursor& cursor) {
     return (int)cursor.readu16();
 }
 
-int parseInt(Cursor& cursor) {
+int NBT::parseInt(Cursor& cursor) {
     return (int)cursor.readu32();
 }
 
-uint64_t parseLong(Cursor& cursor) {
+uint64_t NBT::parseLong(Cursor& cursor) {
     return (long long)cursor.readu64();
 }
 
-float parseFloat(Cursor& cursor) {
+float NBT::parseFloat(Cursor& cursor) {
     float res = 0.f;
     uint32_t readValue = cursor.readu32();
     std::memcpy(&res, &readValue, sizeof(float));
     return res;
 }
 
-double parseDouble(Cursor& cursor) {
+double NBT::parseDouble(Cursor& cursor) {
     double res = 0.0;
     uint64_t readValue = cursor.readu64();
     std::memcpy(&res, &readValue, sizeof(double));
     return res;
 }
 
-std::vector<char> parseByteArray(Cursor& cursor) {
+std::vector<char> NBT::parseByteArray(Cursor& cursor) {
     std::vector<char> res;
     uint32_t size = (int)cursor.readu32();
     res.reserve(size);
@@ -154,7 +154,7 @@ std::vector<char> parseByteArray(Cursor& cursor) {
     return res;
 }
 
-std::string parseString(Cursor& cursor) {
+std::string NBT::parseString(Cursor& cursor) {
     uint16_t size = cursor.readu16();
     return cursor.readString(size);
 }
