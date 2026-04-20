@@ -5,24 +5,23 @@
     -length byte string : Name of the NBT
     -payload depending on the tagID
 */
-void NBT::parseNBT(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
+void NBT::parseNBT(Cursor& cursor,std::stringstream& ss) {
     uint8_t tagTypeID = cursor.readu8();
-    uint16_t nameLength = tagTypeID == 0 ? 0 : cursor.readu16();
     if (tagTypeID < 0 || tagTypeID > 12) {
-        ss << "Invalid type : " << (int)tagTypeID << "\n";
-        assert(false);
+        std::cerr << "Invalid type : " << (int)tagTypeID << "\n";
+        return;
     }
+    uint16_t nameLength = cursor.readu16();
     const std::string& name = cursor.readString(nameLength);
-    for(int i=0;i<depth;i++)ss << '\t';
     
     if(nameLength != 0){
         ss << "\"" << name << "\"" << ":";
     }
 
-    parseTag(tagTypeID, cursor,ss,depth);
+    parseTag(tagTypeID, cursor,ss);
 }
 //Parse only payload of the NBT
-void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss,uint32_t depth) {
+void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss) {
     //ss << "(" << types[tagID] << "):";
     switch (tagID) {
         case 1: {
@@ -50,65 +49,53 @@ void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss,uint32_t 
             ss << "\"" << parseString(cursor) << "\"";
         }break;
         case 9: {
-            parseList(cursor,ss,depth+1);
+            parseList(cursor,ss);
         }break;
         case 10: {
-            parseCompound(cursor,ss,depth+1);
+            parseCompound(cursor,ss);
         }break;
         case 11: {
             //Unhandled
             uint32_t size = (int)cursor.readu32();
-            ss << "size:" << size << "\n";
+            //ss << "size:" << size << "\n";
             cursor.skip(size * 4);
         }break;
         case 12: {
             //Unhandled
             uint32_t size = (int)cursor.readu32();
-            ss << "size:" << size << "\n";
+            //ss << "size:" << size << "\n";
             cursor.skip(size * 8);
         }break;
         default: {
-            ss << "Invalid TAG\n";
-            assert(false);
-        }
+            std::cerr << "Invalid TAG\n";
+        }break;
     }
 }
 //Parse a compund of NBTs
-void NBT::parseCompound(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
-    if(cursor.peeku8() == 0){
-        ss << "{}";
-        cursor.skip(1);
-        return;
-    }
-    ss << "{\n";
+void NBT::parseCompound(Cursor& cursor,std::stringstream& ss) {
+    ss << "{";
     while (cursor.peeku8() != 0) {
-        parseNBT(cursor,ss,depth);
+        parseNBT(cursor,ss);
         if(cursor.peeku8() != 0){
-            ss << ",\n";
-        }else{
-            ss << "\n";
+            ss << ",";
         }
     }
-    for(int i=0;i<depth-1;i++)ss << '\t';
     ss << "}";
     cursor.skip(1);
 }
 //Parse a list of NBTs
-void NBT::parseList(Cursor& cursor,std::stringstream& ss,uint32_t depth) {
+void NBT::parseList(Cursor& cursor,std::stringstream& ss) {
     uint8_t listTagID = cursor.readu8();
     uint32_t size = cursor.readu32();
-    if(size == 0){
+    if(listTagID < 1 || listTagID > 12){
         ss << "[]";
         return;
-    }
-    ss << "[\n";
+    };
+    ss << '[';
     for (int i = 0;i < size;i++) {
-        for(int j=0;j<depth;j++)ss << '\t';
-        parseTag(listTagID, cursor,ss,depth);
-        if(i != (size-1))ss <<",\n";
-        else ss << "\n";
+        parseTag(listTagID, cursor,ss);
+        if(i != (size-1))ss <<',';
     }
-    for(int i=0;i<depth-1;i++)ss << '\t';
     ss << ']';
 }
 

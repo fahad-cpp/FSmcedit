@@ -4,10 +4,9 @@
 #include <vector>
 #include <cstring>
 #include <nlohmann/json.hpp>
+using json = nlohmann::json;
 #include "Cursor.h"
-
 namespace NBT{
-    using json = nlohmann::json;
     const std::string types[13] = {
         "END",
         "Byte",
@@ -23,11 +22,11 @@ namespace NBT{
         "IntArray",
         "LongArray"
     };
-    void parseNBT(Cursor& cursor,std::stringstream&,uint32_t depth=0);
+    void parseNBT(Cursor& cursor,std::stringstream&);
     //sequences
-    void parseTag(uint8_t tagID, Cursor& cursor,std::stringstream&,uint32_t depth=0);
-    void parseCompound(Cursor&,std::stringstream&,uint32_t depth=0);
-    void parseList(Cursor&,std::stringstream& ss,uint32_t depth=0);
+    void parseTag(uint8_t tagID, Cursor& cursor,std::stringstream&);
+    void parseCompound(Cursor&,std::stringstream&);
+    void parseList(Cursor&,std::stringstream& ss);
     //types
     uint8_t parseByte(Cursor& cursor);
     uint16_t parseShort(Cursor& cursor);

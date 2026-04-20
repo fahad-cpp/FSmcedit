@@ -4,7 +4,7 @@ A simple minecraft bedrock edition save file format decoder (work in progress)
 Current Progress:
 - draw and export chunk structure, example from my testworld:
 
-![chunk structure image](worldData/chunks.png)
+<img src="worldData/chunks.png" width="256">
 
 - export parsed world/player data in:
 
@@ -14,4 +14,8 @@ Current Progress:
 
 - export chunk data in
 
-[worldData/chunk_x_y.json](worldData/chunk_20_1.json)
+[worldData/chunk_x_y.json](worldData/chunk_0_0.json)
+
+- export other player's data on server in
+
+[worldData/player_server_<Id>.json](worldData/player_server_4a91b90d-1047-42d0-a2ed-d17a1f48638e.json)
