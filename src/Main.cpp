@@ -110,6 +110,16 @@ void parseDB(const std::string& dbPath) {
             json playerJson = json::parse(ss);
             ofs << playerJson.dump(4);
             ofs.close();
+        }else if(it->key().ToString().contains("player_")){
+            std::string playerId = it->key().ToString().substr(7,it->key().ToString().length() - 7);
+            Cursor cursor((uint8_t*)it->value().data());
+            std::stringstream ss;
+            NBT::parseNBT(cursor,ss);
+            std::string filename = "worldData/player_" + playerId + ".json";
+            std::ofstream ofs(filename);
+            json playerJson = json::parse(ss);
+            ofs << playerJson.dump(4);
+            ofs.close();
         }
         else if (it->key().ToString().contains("actorprefix")) {
             // Cursor cursor((uint8_t*)it->key().data(), 11);
