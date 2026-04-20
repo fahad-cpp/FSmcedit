@@ -3,11 +3,16 @@
 #include <iostream>
 #include <fstream>
 #include <leveldb/db.h>
+#include <leveldb/filter_policy.h>
+#include <leveldb/cache.h>
+#include <leveldb/env.h>
+#include <leveldb/zlib_compressor.h>
+#include <leveldb/decompress_allocator.h>
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 #include "NBT.h"
 
-std::vector<std::pair<int,int>> chunks = {};
+std::vector<std::pair<int,int>> chunks;
 const std::vector<std::string> keyPrefs = {
     "~local_player",
     "player_",
@@ -53,10 +58,24 @@ const std::map<uint8_t, const std::string> tagName{
 };
 void parseDB(const std::string& dbPath) {
     using json = nlohmann::json;
-    leveldb::DB* db;
-    leveldb::Options options;
+    class NullLogger : public leveldb::Logger {
+	public:
+		void Logv(const char*, va_list) override {
+		}
+	};
+
+	leveldb::Options options;
+	options.filter_policy = leveldb::NewBloomFilterPolicy(10);
+	options.block_cache = leveldb::NewLRUCache(40 * 1024 * 1024);
+	options.write_buffer_size = 4 * 1024 * 1024;
+	options.info_log = new NullLogger();
     options.create_if_missing = false;
-    options.compression = leveldb::kZlibRawCompression;
+	options.compressors[0] = new leveldb::ZlibCompressorRaw(-1);
+	options.compressors[1] = new leveldb::ZlibCompressor();
+	leveldb::ReadOptions readOptions;
+	readOptions.decompress_allocator = new leveldb::DecompressAllocator();
+
+    leveldb::DB* db;
     leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
     if (!status.ok()) {
         std::cerr << status.ToString() << "\n";
@@ -71,15 +90,7 @@ void parseDB(const std::string& dbPath) {
         std::cerr << it->status().ToString() << "\n";
         delete it;
         delete db;
-        //repair
-        leveldb::RepairDB(dbPath,options);
-        status = leveldb::DB::Open(options,dbPath,&db);
-        it = db->NewIterator(leveldb::ReadOptions());
-
-        if(!it->status().ok()){
-            std::cerr << "Still failed after repair\n";
-            return;
-        }
+        return;
     }
     for (it->SeekToFirst();it->Valid();it->Next()) {
         bool chunkKey = true;
@@ -101,28 +112,28 @@ void parseDB(const std::string& dbPath) {
             ofs.close();
         }
         else if (it->key().ToString().contains("actorprefix")) {
-            Cursor cursor((uint8_t*)it->key().data(), 11);
-            int64_t id = (int64_t)cursor.readu64();
-            std::cout << "id:" << id << "\n";
-            Cursor valueCursor((uint8_t*)it->value().data());
-            std::stringstream ss;
-            NBT::parseNBT(valueCursor,ss);
+            // Cursor cursor((uint8_t*)it->key().data(), 11);
+            // int64_t id = (int64_t)cursor.readu64();
+            // std::cout << "id:" << id << "\n";
+            // Cursor valueCursor((uint8_t*)it->value().data());
+            // std::stringstream ss;
+            //NBT::parseNBT(valueCursor,ss);
 
-            json actorJson = json::parse(ss);
+            //json actorJson = json::parse(ss);
 
         }else if (it->key().ToString().contains("digp")) {
-            Cursor cursor((uint8_t*)it->key().data(), 4);
-            int x = cursor.readu32();
-            int y = cursor.readu32();
-            std::cout << "x:" << x << " y:" << y << "\n";
-            Cursor valueCursor((uint8_t*)it->value().data());
-            uint32_t entitySize = it->value().size() / 8;
-            std::vector<int64_t> entityIDs = {};
-            entityIDs.reserve(entitySize);
-            for(int i=0;i<entitySize;i++){
-                entityIDs.emplace_back((int64_t)valueCursor.readu64());
-                std::cout << "ID " << i << ": " << entityIDs.at(i) << "\n";
-            }
+            // Cursor cursor((uint8_t*)it->key().data(), 4);
+            // int x = cursor.readu32();
+            // int y = cursor.readu32();
+            // std::cout << "x:" << x << " y:" << y << "\n";
+            // Cursor valueCursor((uint8_t*)it->value().data());
+            // uint32_t entitySize = it->value().size() / 8;
+            // std::vector<int64_t> entityIDs = {};
+            // entityIDs.reserve(entitySize);
+            // for(int i=0;i<entitySize;i++){
+            //     entityIDs.emplace_back((int64_t)valueCursor.readu64());
+            //     std::cout << "ID " << i << ": " << entityIDs.at(i) << "\n";
+            // }
         }
         if (!chunkKey)continue;
 
@@ -141,85 +152,87 @@ void parseDB(const std::string& dbPath) {
         //std::cout << "keySize:" << keySize << "\n";
         int x = (int)keyCursor.readu32();
         int z = (int)keyCursor.readu32();
-        if (std::find(chunks.begin(),chunks.end(),std::pair{x,z}) == chunks.end()){
-            chunks.push_back(std::pair{x,z});
-        }
         std::cout << "\tX:" << x;
         std::cout << "\tZ:" << z << "\n";
         // std::cout << "\tWX:" << x * 16;
         // std::cout << "\tWZ:" << z * 16 << "\n";
-
+        
         uint8_t record = keyCursor.readu8();
 
+        
         std::string recordName =
-            tagName.find(record) == tagName.end() ?
-            "InvalidRecord:" + std::to_string((int)record)
-            : tagName.at(record);
+        tagName.find(record) == tagName.end() ?
+        "InvalidRecord:" + std::to_string((int)record)
+        : tagName.at(record);
         std::cout << "\tRecord :" << recordName << "\n";
-
+        
+        if ((recordName == "SubChunkPrefix") && (std::find(chunks.begin(),chunks.end(),std::pair{x,z}) == chunks.end())){
+            chunks.push_back(std::pair{x,z});
+        }
+        
         Cursor valueCursor(valueData);
         if (recordName == "BlockEntity" || recordName == "Entity") {
-            std::stringstream ss;
-            NBT::parseNBT(valueCursor,ss);
+            // std::stringstream ss;
+            // NBT::parseNBT(valueCursor,ss);
 
-            entityJson = json::parse(ss);
+            // entityJson = json::parse(ss);
         }
         else if (recordName == "Version") {
             uint8_t version = valueCursor.readu8();
         }
         else if (recordName == "SubChunkPrefix") {
-            std::stringstream ss;
-            uint8_t version = valueCursor.readu8();
-            uint8_t numStorage = 0;
-            if (version == 1) {
-                numStorage = 1;
-            }
-            else if (version < 8) {
-                std::cout << "Unsupported Version\n";
-                assert(false);
-                continue;
-            }
-            else {
-                numStorage = valueCursor.readu8();
-            }
-            uint8_t subChunkIndex = 0;
-            if (version >= 9) {
-                subChunkIndex = valueCursor.readu8();
-            }
-            ss << '[';
-            for (uint8_t i = 0;i < numStorage;i++) {
-                uint8_t flags = valueCursor.readu8();
-                uint8_t bitsPerBlock = flags >> 1;
-                uint32_t blocksPerWord = floor(32.f / (float)bitsPerBlock);
-                uint32_t blockStateCount = ceil(4096.f / (float)blocksPerWord);
-                valueCursor.skip(blockStateCount * 4);
-                uint32_t paletteSize = valueCursor.readu32();
-                ss << "{\n\t\"palette\":[\n";
-                for (uint32_t j = 0;j < paletteSize;j++) {
-                    NBT::parseNBT(valueCursor,ss,2);
-                    if(j != (paletteSize-1)){
-                        ss << ",\n";
-                    }else{
-                        ss <<'\n';
-                    }
-                }
-                ss << "\t]\n}";
-                if(i != (numStorage - 1)){
-                    ss << ',';
-                }
-            }
-            ss << ']';
-            std::string key = "subchunk-" + std::to_string(subChunkIndex);
-            try{
-                chunkJson[key] = json::parse(ss);
-            }catch(json::exception e){
-                std::cerr << "Json error:" << e.what() << "\n";
-                return;
-            }
-            std::string filename = "worldData/chunk_" + std::to_string(x) + "_" + std::to_string(z) + ".json";
-            std::ofstream ofs(filename);
-            ofs << chunkJson.dump(4);
-            ofs.close();
+            //std::stringstream ss;
+            // uint8_t version = valueCursor.readu8();
+            // uint8_t numStorage = 0;
+            // if (version == 1) {
+            //     numStorage = 1;
+            // }
+            // else if (version < 8) {
+            //     std::cout << "Unsupported Version\n";
+            //     assert(false);
+            //     continue;
+            // }
+            // else {
+            //     numStorage = valueCursor.readu8();
+            // }
+            // uint8_t subChunkIndex = 0;
+            // if (version >= 9) {
+            //     subChunkIndex = valueCursor.readu8();
+            // }
+            //ss << '[';
+            //for (uint8_t i = 0;i < numStorage;i++) {
+                // uint8_t flags = valueCursor.readu8();
+                // uint8_t bitsPerBlock = flags >> 1;
+                // uint32_t blocksPerWord = floor(32.f / (float)bitsPerBlock);
+                // uint32_t blockStateCount = ceil(4096.f / (float)blocksPerWord);
+                // valueCursor.skip(blockStateCount * 4);
+                // uint32_t paletteSize = valueCursor.readu32();
+                // ss << "{\n\t\"palette\":[\n";
+                // for (uint32_t j = 0;j < paletteSize;j++) {
+                //     NBT::parseNBT(valueCursor,ss,2);
+                //     if(j != (paletteSize-1)){
+                //         ss << ",\n";
+                //     }else{
+                //         ss <<'\n';
+                //     }
+                // }
+                // ss << "\t]\n}";
+                // if(i != (numStorage - 1)){
+                //     ss << ',';
+                // }
+            //}
+            //ss << ']';
+            //std::string key = "subchunk-" + std::to_string(subChunkIndex);
+            // try{
+            //     //chunkJson[key] = json::parse(ss);
+            // }catch(json::exception e){
+            //     std::cerr << "Json error:" << e.what() << "\n";
+            //     return;
+            // }
+            // std::string filename = "worldData/chunk_" + std::to_string(x) + "_" + std::to_string(z) + ".json";
+            // std::ofstream ofs(filename);
+            // ofs << chunkJson.dump(4);
+            // ofs.close();
         }
         free(valueData);
         free(keyData);
@@ -269,6 +282,7 @@ void drawChunkImage(std::vector<std::pair<int,int>> chunks){
     }
     
     //xcords is sorted by default
+    std::sort(xcords.begin(),xcords.end());
     std::sort(zcords.begin(),zcords.end());
     
     //Remove Duplicate
@@ -278,6 +292,7 @@ void drawChunkImage(std::vector<std::pair<int,int>> chunks){
     //offset to make minx=0 minz=0
     int xmin = xcords.at(std::min_element(xcords.begin(),xcords.end()) - xcords.begin());
     int zmin = zcords.at(std::min_element(zcords.begin(),zcords.end()) - zcords.begin());
+    std::cout << "xmin: " << xmin << " zmin: " << zmin << "\n";
     for(int i=0;i<xcords.size();i++){
         xcords[i] -= xmin;
     }
@@ -286,16 +301,16 @@ void drawChunkImage(std::vector<std::pair<int,int>> chunks){
     }
     std::cout << "All chunks\n";
     for(int i=0;i<chunks.size();i++){
-        chunks[i] = {chunks[i].first - xmin,chunks[i].second - zmin};
+        chunks[i] = std::pair{chunks[i].first - xmin,chunks[i].second - zmin};
         std::cout << "X:"<<chunks[i].first<<" Z:" << chunks[i].second << "\n";
     }
     
-    int xdiff = (xcords.at(xcords.size()-1) - xcords.at(0)) + 1;
-    int zdiff = (zcords.at(zcords.size()-1) - zcords.at(0)) + 1;
+    int xdiff = abs(xcords.at(xcords.size()-1) - xcords.at(0)) + 1;
+    int zdiff = abs(zcords.at(zcords.size()-1) - zcords.at(0)) + 1;
     
     int width = xdiff*16;
     int height = zdiff*16;
-    
+    std::cout << "width:" << width << " height:" << height << "\n";
     //Render chunks on image
     uint32_t* image = (uint32_t*)malloc(width*height*sizeof(uint32_t));
     for(int i=0;i<width*height;i++)image[i] = 0x00000000;
@@ -313,8 +328,9 @@ void drawChunkImage(std::vector<std::pair<int,int>> chunks){
 
 }
 int main() {
+    std::cout << "Parsing db...\n";
     parseDB("tmp/testworld/db");
-    drawChunkImage(chunks);
     parseDAT("tmp/testworld/level.dat");
+    drawChunkImage(chunks);
     return 0;
 }

@@ -2,8 +2,9 @@
 if not exist build mkdir build
 pushd build
 if "%1" == "clean" del CMakeCache.txt
-if not exist CMakeCache.txt cmake .. -DCMAKE_BUILD_TYPE=Release
+if not exist CMakeCache.txt cmake .. -G "Visual Studio 18 2026" -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release --parallel
 popd
+if exist worldData del /f /q "worldData"
 if not exist worldData mkdir worldData
-build\FSmcedit.exe > worldData/plain.txt
+build\Release\FSmcedit.exe
