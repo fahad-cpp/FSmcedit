@@ -5,7 +5,9 @@
 #include <algorithm>
 #include <map>
 #include <vector>
+#include "Minecraft.h"
 class Parser{
+    std::vector<Entity> entities;
     const std::map<const uint8_t, const std::string> tagName{
     //Terrain & Biome Data
     {43,"Data3D"},
@@ -40,7 +42,7 @@ public:
     void parseLocalPlayer(uint8_t* value);
     void parseDigp(uint8_t* key,uint8_t* value,uint32_t valueSize);
     void parseActorPrefix(uint8_t* key, uint8_t* value);
-    void parseChunk(uint8_t* key,uint8_t* value);
+    void parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize);
     void parseRemotePlayer(std::string key,uint8_t* value);
     void parseDAT(const std::string& path);
     void drawChunkImage();

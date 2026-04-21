@@ -73,11 +73,11 @@ void parseDB(const std::string& dbPath) {
             //parser.parseActorPrefix((uint8_t*)it->key().data(),(uint8_t*)it->value().data());
 
         }else if (it->key().ToString().contains("digp")) {
-            //parser.parseDigp((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->value().size());
+            parser.parseDigp((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->value().size());
         }
         if (!chunkKey)continue;
 
-        parser.parseChunk((uint8_t*)it->key().data(),(uint8_t*)it->value().data());
+        parser.parseChunk((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->key().size());
     }
     parser.drawChunkImage();
     delete it;
@@ -87,5 +87,4 @@ int main() {
     parseDB("tmp/testworld/db");
     Parser parser;
     parser.parseDAT("tmp/testworld/level.dat");
-    return 0;
 }

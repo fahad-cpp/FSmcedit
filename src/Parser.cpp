@@ -15,21 +15,25 @@ void Parser::parseLocalPlayer(uint8_t* value){
     }catch(json::exception e){
         std::cerr << e.what() << "\n";
     }
-    ofs << playerJson.dump(4);
+    ofs << playerJson.dump(2);
     ofs.close();
 }
 
 void Parser::parseDigp(uint8_t* key,uint8_t* value,uint32_t valueSize) {
+    std::cout << "digp\n";
     Cursor keyCursor(key, 4);
     Cursor valueCursor(value);
 
     int x = keyCursor.readu32();
-    int y = keyCursor.readu32();
+    int z = keyCursor.readu32();
     uint32_t entitySize = valueSize / 8;
     std::vector<int64_t> entityIDs = {};
     entityIDs.reserve(entitySize);
+    std::stringstream ss;
     for(int i=0;i<entitySize;i++){
-        entityIDs.emplace_back((int64_t)valueCursor.readu64());
+        int64_t id = (int64_t)valueCursor.readu64();
+        entities.push_back(Entity{id,x,z});
+        entityIDs.emplace_back(id);
     }
 }
 
@@ -43,7 +47,8 @@ void Parser::parseActorPrefix(uint8_t* key,uint8_t* value) {
     json actorJson = json::parse(ss);
 }
 
-void Parser::parseChunk(uint8_t* key,uint8_t* value) {
+void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
+    std::cout << keySize << "\n";
     Cursor keyCursor(key);
     Cursor valueCursor(value);
     
@@ -64,8 +69,10 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value) {
 
 
     if (recordName == "BlockEntity" || recordName == "Entity") {
-        // std::stringstream ss;
-        // NBT::parseNBT(valueCursor,ss);
+        std::stringstream ss;
+        NBT::parseNBT(valueCursor,ss);
+        std::cout << ss.str() << "\n";
+        
 
         // entityJson = json::parse(ss);
     }
@@ -73,45 +80,47 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value) {
         uint8_t version = valueCursor.readu8();
     }
     else if (recordName == "SubChunkPrefix") {
-        // std::stringstream ss;
-        // uint8_t version = valueCursor.readu8();
-        // uint8_t numStorage = 0;
-        // if (version == 1) {
-        //     numStorage = 1;
-        // }
-        // else if (version < 8) {
-        //     std::cerr << "Unsupported Version\n";
-        //     assert(false);
-        //     return;
-        // }
-        // else {
-        //     numStorage = valueCursor.readu8();
-        // }
-        // int8_t subChunkIndex = 0;
-        // if (version >= 9) {
-        //     subChunkIndex = (int8_t)valueCursor.readu8();
-        // }
-        // ss << '[';
-        // for (uint8_t i = 0;i < numStorage;i++) {
-        //     uint8_t flags = valueCursor.readu8();
-        //     uint8_t bitsPerBlock = flags >> 1;
-        //     uint32_t blocksPerWord = floor(32.f / (float)bitsPerBlock);
-        //     uint32_t blockStateCount = ceil(4096.f / (float)blocksPerWord);
-        //     valueCursor.skip(blockStateCount * 4);
-        //     uint32_t paletteSize = valueCursor.readu32();
-        //     ss << "{\"palette\":[";
-        //     for (uint32_t j = 0;j < paletteSize;j++) {
-        //         NBT::parseNBT(valueCursor,ss);
-        //         if(j != (paletteSize-1)){
-        //             ss << ",";
-        //         }
-        //     }
-        //     ss << "]}";
-        //     if(i != (numStorage - 1)){
-        //         ss << ',';
-        //     }
-        // }
-        // ss << ']';
+        std::stringstream ss;
+        uint8_t version = valueCursor.readu8();
+        uint8_t numStorage = 0;
+        if (version == 1) {
+            numStorage = 1;
+        }
+        else if (version < 8) {
+            std::cerr << "Unsupported Version\n";
+            assert(false);
+            return;
+        }
+        else {
+            numStorage = valueCursor.readu8();
+        }
+        int8_t subChunkIndex = 0;
+        if (version >= 9) {
+            subChunkIndex = (int8_t)valueCursor.readu8();
+        }
+        ss << '[';
+        for (uint8_t i = 0;i < numStorage;i++) {
+            uint8_t flags = valueCursor.readu8();
+            uint8_t bitsPerBlock = flags >> 1;
+            uint32_t blocksPerWord = floor(32.f / (float)bitsPerBlock);
+            uint32_t blockStateCount = ceil(4096.f / (float)blocksPerWord);
+            valueCursor.skip(blockStateCount * 4);
+            ss << "{\"palette\":[";
+            if(bitsPerBlock != 0){
+                uint32_t paletteSize = valueCursor.readu32();
+                for (uint32_t j = 0;j < paletteSize;j++) {
+                    NBT::parseNBT(valueCursor,ss);
+                    if(j != (paletteSize-1)){
+                        ss << ",";
+                    }
+                }
+            }
+            ss << "]}";
+            if(i != (numStorage - 1)){
+                ss << ',';
+            }
+        }
+        ss << ']';
         // std::string key = "subchunk-" + std::to_string(subChunkIndex);
         // try{
         //     chunkJson[key] = json::parse(ss);
@@ -121,7 +130,7 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value) {
         // }
         // std::string filename = "worldData/chunk_" + std::to_string(x) + "_" + std::to_string(z) + ".json";
         // std::ofstream ofs(filename);
-        // ofs << chunkJson.dump(4);
+        // ofs << chunkJson.dump(2);
         // ofs.close();
     }
 }
@@ -134,7 +143,7 @@ void Parser::parseRemotePlayer(std::string key,uint8_t* value) {
     std::string filename = "worldData/player_" + playerId + ".json";
     std::ofstream ofs(filename);
     json playerJson = json::parse(ss);
-    ofs << playerJson.dump(4);
+    ofs << playerJson.dump(2);
     ofs.close();
 }
 
@@ -171,7 +180,7 @@ void Parser::parseDAT(const std::string& path) {
         std::cerr << "Json error" << e.what() << "\n";
         return;
     }
-    ofs << levelJson.dump(4);
+    ofs << levelJson.dump(2);
 }
 
 void Parser::drawChunkImage(){

@@ -57,12 +57,16 @@ void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss) {
         case 11: {
             //Unhandled
             uint32_t size = (int)cursor.readu32();
+            ss << "\"UnhandledIntArray\"";
+            std::cerr << "IntArray\n";
             //ss << "size:" << size << "\n";
             cursor.skip(size * 4);
         }break;
         case 12: {
             //Unhandled
             uint32_t size = (int)cursor.readu32();
+            ss << "\"UnhandledLongArray\"";
+            std::cerr << "LongArray\n";
             //ss << "size:" << size << "\n";
             cursor.skip(size * 8);
         }break;
