@@ -2,7 +2,6 @@
 #include "NBT.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
-// std::vector<std::pair<int,int>> chunks;
 
 void Parser::parseLocalPlayer(uint8_t* value){
     Cursor cursor(value);

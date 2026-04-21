@@ -1,10 +1,10 @@
 #include "Parser.h"
 #include <iostream>
 #include <leveldb/db.h>
-#include <leveldb/cache.h>
-#include <leveldb/zlib_compressor.h>
 #include <leveldb/filter_policy.h>
+#include <leveldb/cache.h>
 #include <leveldb/env.h>
+#include <leveldb/zlib_compressor.h>
 #include <leveldb/decompress_allocator.h>
 
 std::vector<std::pair<int,int>> chunks;
@@ -20,36 +20,6 @@ const std::vector<std::string> keyPrefs = {
     "digp",
     "mobevents",
     "scoreboard"
-};
-
-const std::map<uint8_t, const std::string> tagName{
-    //Terrain & Biome Data
-    {43,"Data3D"},
-    {44,"Version"},
-    {45,"Data2D"},
-    {46,"Data2DLegacy"},
-    {47,"SubChunkPrefix"},
-    {48,"LegacyTerrain"},
-    //Entity & Block Entity Data
-    {49,"BlockEntity"},
-    {50,"Entity"},
-    {51,"PendingTicks"},
-    {58,"RandomTicks"},
-    //World State & Features
-    {52,"LegacyBlockExtraData"},
-    {53,"BiomeState"},
-    {54,"FinalizedState"},
-    {56,"BorderBlocks"},
-    {57,"HardcodedSpawners"},
-    {59,"Checksums"},
-    {61,"MetaDataHash"},
-    {62,"GeneratedPreCavesAndCliffsBlending"},
-    {63,"BlendingBiomeHeight"},
-    {64,"BlendingData"},
-    {65,"ActorDigestVersion"},
-    //Legacy & Deprecated Records
-    {55,"ConversionData"},
-    {118,"LegacyVersion"},
 };
 void parseDB(const std::string& dbPath) {
     Parser parser;
@@ -69,7 +39,6 @@ void parseDB(const std::string& dbPath) {
 	options.compressors[1] = new leveldb::ZlibCompressor();
 	leveldb::ReadOptions readOptions;
 	readOptions.decompress_allocator = new leveldb::DecompressAllocator();
-
     leveldb::DB* db;
     leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
     if (!status.ok()) {
