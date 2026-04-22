@@ -75,7 +75,7 @@ uint64_t Cursor::readBEu64() {
 std::string Cursor::readString(uint32_t length) {
     std::string str = "";
     for (int i = 0;i < length;i++) {
-        if((char)ptr[offset] < 32 || (char)ptr[offset] == '\"'){
+        if((char)ptr[offset] < 32 || (char)ptr[offset] == '\"' || (char)ptr[offset] == '\\'){
             str += "\u0000";
         }else{
             str += (char)ptr[offset];

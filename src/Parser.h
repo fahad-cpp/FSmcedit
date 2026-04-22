@@ -11,6 +11,7 @@ using json = nlohmann::json;
 class Parser{
     std::vector<Entity> entities;
     std::vector<BlockEntity> blockEntities;
+    std::vector<Chunk> chunks;
     const std::map<const uint8_t, const std::string> tagName{
     //Terrain & Biome Data
     {43,"Data3D"},
@@ -42,7 +43,6 @@ class Parser{
 };
 public:
     static void parseDAT(const std::string& path);
-    std::vector<std::pair<int,int>> chunks;
     ~Parser();
     void parseLocalPlayer(uint8_t* value);
     void parseDigp(uint8_t* key,uint8_t* value,uint32_t valueSize);

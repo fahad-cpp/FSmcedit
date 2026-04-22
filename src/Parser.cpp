@@ -4,7 +4,7 @@
 #include "stb_image_write.h"
 
 void Parser::parseLocalPlayer(uint8_t* value){
-    std::cout << "~local_player\n";
+    //std::cout << "~local_player\n";
     Cursor cursor(value);
 
     std::stringstream ss;
@@ -22,7 +22,7 @@ void Parser::parseLocalPlayer(uint8_t* value){
 }
 
 void Parser::parseDigp(uint8_t* key,uint8_t* value,uint32_t valueSize) {
-    std::cout << "digp\n";
+    //std::cout << "digp\n";
     Cursor keyCursor(key, 4);
     Cursor valueCursor(value);
 
@@ -37,7 +37,7 @@ void Parser::parseDigp(uint8_t* key,uint8_t* value,uint32_t valueSize) {
 }
 
 void Parser::parseActorPrefix(uint8_t* key,uint8_t* value) {
-    std::cout << "actorprefix\n";
+    //std::cout << "actorprefix\n";
     Cursor keyCursor(key);
     Cursor valueCursor(value);
 
@@ -48,6 +48,7 @@ void Parser::parseActorPrefix(uint8_t* key,uint8_t* value) {
     try{
         actorJson = json::parse(ss);
     }catch(json::exception e){
+        std::cerr << ss.str() << "\n";
         std::cerr << "Error parsing actorprefix:\n";
         std::cerr << e.what() << "\n";
     }
@@ -67,10 +68,7 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
     "InvalidRecord:" + std::to_string((int)record)
     : tagName.at(record);
     
-    std::cout << "x: " << x << " z: " << z << " :" << recordName << "\n";
-    if ((recordName == "SubChunkPrefix") && (std::find(chunks.begin(),chunks.end(),std::pair{x,z}) == chunks.end())){
-        chunks.push_back(std::pair{x,z});
-    }
+    //std::cout << "x: " << x << " z: " << z << " :" << recordName << "\n";
 
 
     if (recordName == "BlockEntity" || recordName == "Entity") {
@@ -133,23 +131,20 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
             }
         }
         ss << ']';
-        // std::string key = "subchunk-" + std::to_string(subChunkIndex);
-        // try{
-        //     chunkJson[key] = json::parse(ss);
-        // }catch(json::exception e){
-        //     std::cerr << "Error parsing subchunk:\n";
-        //     std::cerr << e.what() << "\n";
-        //     return;
-        // }
-        // std::string filename = "worldData/chunk_" + std::to_string(x) + "_" + std::to_string(z) + ".json";
-        // std::ofstream ofs(filename);
-        // ofs << chunkJson.dump(2);
-        // ofs.close();
+        json chunkJson;
+        try{
+            chunkJson = json::parse(ss);
+            chunks.emplace_back(x,z,subChunkIndex,chunkJson);
+        }catch(json::exception e){
+            std::cerr << "Error parsing subchunk:\n";
+            std::cerr << e.what() << "\n";
+            return;
+        }
     }
 }
 
 void Parser::parseRemotePlayer(std::string key,uint8_t* value) {
-    std::cout << key << "\n";
+    //std::cout << key << "\n";
     Cursor valueCursor(value);
     std::string playerId = key.substr(7,key.length() - 7);
     std::stringstream ss;
@@ -168,7 +163,7 @@ void Parser::parseRemotePlayer(std::string key,uint8_t* value) {
 }
 
 void Parser::parseDAT(const std::string& path) {
-    std::cout << path << "\n";
+    //std::cout << path << "\n";
     std::stringstream ss;
     std::ifstream ifs(path, std::ios::binary | std::ios::ate);
     if(!ifs.is_open()){
@@ -210,9 +205,9 @@ void Parser::drawChunkImage(){
     std::cout << "Drawing image\n";
     std::vector<int> xcords = {};
     std::vector<int> zcords = {};
-    for(const std::pair<int,int>& chunk : chunks){
-        xcords.emplace_back(chunk.first);
-        zcords.emplace_back(chunk.second);
+    for(const Chunk& chunk : chunks){
+        xcords.emplace_back(chunk.cx);
+        zcords.emplace_back(chunk.cz);
     }
     
     std::sort(xcords.begin(),xcords.end());
@@ -231,9 +226,9 @@ void Parser::drawChunkImage(){
     for(int i=0;i<zcords.size();i++){
         zcords[i] -= zmin;
     }
-
+    std::vector<std::pair<int,int>> offsetchunks = {};
     for(int i=0;i<chunks.size();i++){
-        chunks[i] = std::pair{chunks[i].first - xmin,chunks[i].second - zmin};
+        offsetchunks.emplace_back(chunks[i].cx - xmin,chunks[i].cz - zmin);
     }
     
     int xdiff = abs(xcords.at(xcords.size()-1) - xcords.at(0)) + 1;
@@ -244,7 +239,7 @@ void Parser::drawChunkImage(){
     //Render chunks on image
     uint32_t* image = (uint32_t*)malloc(width*height*sizeof(uint32_t));
     for(int i=0;i<width*height;i++)image[i] = 0x00000000;
-    for(const std::pair<int,int>& chunk : chunks){
+    for(const std::pair<int,int>& chunk : offsetchunks){
         int xstart=chunk.first*16;
         int zstart=chunk.second*16;
         for(int x=xstart;x<(xstart+16);x++){
@@ -276,5 +271,28 @@ Parser::~Parser(){
     }
     ofs << entitiesJson.dump(4);
     ofs.close();
+
+
     std::cout << entities.size() << " entitites parsed.\n";
+
+    ofs.open("worldData/chunks.json");
+    if(!ofs.is_open()){
+        std::cerr << "Failed to open worldData/chunks.json\n";
+        return;
+    }
+    json chunksJson;
+    try{
+        for(const Chunk& chunk : chunks){
+            std::string key = std::to_string(chunk.cx) + '_' + std::to_string(chunk.cz);
+            json palette;
+            palette[std::to_string(chunk.subchunkIndex)] = chunk.palette;
+            chunksJson[key].push_back(palette);
+        }
+    }catch(json::exception e){
+        std::cerr << "Error parsing chunksJson:\n";
+        std::cerr << e.what() << "\n";
+    }
+    ofs << chunksJson.dump();
+
+    std::cout << chunks.size() << " chunks parsed.\n";
 }

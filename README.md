@@ -14,7 +14,7 @@ Current Progress:
 
 - export chunk data in:
 
-[worldData/chunk_x_y.json](worldData/chunk_0_0.json)
+[worldData/chunks.json](worldData/chunks.json) (dumped without indent to save space)
 
 - export other player's data on server in:
 

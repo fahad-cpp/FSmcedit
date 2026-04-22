@@ -11,6 +11,7 @@ struct BlockEntity{
 };
 struct Chunk{
     int32_t cx,cz;
+    int8_t subchunkIndex;
     json palette;
     std::vector<Entity> entities;
 };
