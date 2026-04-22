@@ -284,9 +284,7 @@ Parser::~Parser(){
     try{
         for(const Chunk& chunk : chunks){
             std::string key = std::to_string(chunk.cx) + '_' + std::to_string(chunk.cz);
-            json palette;
-            palette[std::to_string(chunk.subchunkIndex)] = chunk.palette;
-            chunksJson[key].push_back(palette);
+            chunksJson[key][std::to_string(chunk.subchunkIndex)].push_back(std::move(chunk.palette));
         }
     }catch(json::exception e){
         std::cerr << "Error parsing chunksJson:\n";
