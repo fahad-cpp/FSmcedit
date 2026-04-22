@@ -3,8 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
+#include <sstream>
 #include "Cursor.h"
 namespace NBT{
     const std::string types[13] = {
@@ -34,7 +33,7 @@ namespace NBT{
     uint64_t parseLong(Cursor& cursor);
     float parseFloat(Cursor& cursor);
     double parseDouble(Cursor& cursor);
-    std::vector<char> parseByteArray(Cursor& cursor);
+    std::vector<uint8_t> parseByteArray(Cursor& cursor);
     std::string parseString(Cursor& cursor);
 }
 #endif

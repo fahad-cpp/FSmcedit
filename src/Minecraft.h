@@ -6,7 +6,7 @@ struct Entity{
     int32_t cx,cz;
 };
 struct BlockEntity{
-    std::string id;
+    int32_t cx,cz;
     json nbt;
 };
 struct Chunk{

@@ -12,10 +12,14 @@ Current Progress:
 [worldData/player.json](worldData/player.json) <- ~local_player<br>
 [worldData/plain.txt](worldData/plain.txt) <- FSmcedit.exe stdoutput
 
-- export chunk data in
+- export chunk data in:
 
 [worldData/chunk_x_y.json](worldData/chunk_0_0.json)
 
-- export other player's data on server in
+- export other player's data on server in:
 
 [worldData/player_server_<Id>.json](worldData/player_server_4a91b90d-1047-42d0-a2ed-d17a1f48638e.json)
+
+- export entity data in:
+
+[worldData/entities.json](worldData/entities.json)

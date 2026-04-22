@@ -43,7 +43,15 @@ void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss) {
             ss << std::fixed << parseDouble(cursor);
         }break;
         case 7: {
-            std::vector<char> byteArray = parseByteArray(cursor);
+            std::vector<uint8_t> byteArray = parseByteArray(cursor);
+            ss << '[';
+            for(uint32_t i=0;i<byteArray.size();i++){
+                ss << (int)byteArray[i];
+                if(i != (byteArray.size() - 1)){
+                    ss << ',';
+                }
+            }
+            ss << ']';
         }break;
         case 8: {
             ss << "\"" << parseString(cursor) << "\"";
@@ -133,15 +141,14 @@ double NBT::parseDouble(Cursor& cursor) {
     return res;
 }
 
-std::vector<char> NBT::parseByteArray(Cursor& cursor) {
-    std::vector<char> res;
+std::vector<uint8_t> NBT::parseByteArray(Cursor& cursor) {
+    std::vector<uint8_t> res = {};
     uint32_t size = (int)cursor.readu32();
     res.reserve(size);
     //ss << "size:" << size << "\n";
     for (int i = 0;i < size;i++) {
-        res.emplace_back(cursor.readu8());
+        res.push_back(cursor.readu8());
     }
-
     return res;
 }
 

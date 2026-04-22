@@ -70,7 +70,7 @@ void parseDB(const std::string& dbPath) {
             parser.parseRemotePlayer(it->key().ToString(),(uint8_t*)it->value().data());
         }
         else if (it->key().ToString().contains("actorprefix")) {
-            //parser.parseActorPrefix((uint8_t*)it->key().data(),(uint8_t*)it->value().data());
+            parser.parseActorPrefix((uint8_t*)it->key().data(),(uint8_t*)it->value().data());
 
         }else if (it->key().ToString().contains("digp")) {
             parser.parseDigp((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->value().size());
@@ -85,6 +85,5 @@ void parseDB(const std::string& dbPath) {
 }
 int main() {
     parseDB("tmp/testworld/db");
-    Parser parser;
-    parser.parseDAT("tmp/testworld/level.dat");
+    Parser::parseDAT("tmp/testworld/level.dat");
 }

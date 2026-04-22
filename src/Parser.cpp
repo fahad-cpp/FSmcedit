@@ -4,6 +4,7 @@
 #include "stb_image_write.h"
 
 void Parser::parseLocalPlayer(uint8_t* value){
+    std::cout << "~local_player\n";
     Cursor cursor(value);
 
     std::stringstream ss;
@@ -13,6 +14,7 @@ void Parser::parseLocalPlayer(uint8_t* value){
     try{
         playerJson = json::parse(ss);
     }catch(json::exception e){
+        std::cerr << "Error parsing ~local_player:\n";
         std::cerr << e.what() << "\n";
     }
     ofs << playerJson.dump(2);
@@ -27,28 +29,31 @@ void Parser::parseDigp(uint8_t* key,uint8_t* value,uint32_t valueSize) {
     int x = keyCursor.readu32();
     int z = keyCursor.readu32();
     uint32_t entitySize = valueSize / 8;
-    std::vector<int64_t> entityIDs = {};
-    entityIDs.reserve(entitySize);
     std::stringstream ss;
     for(int i=0;i<entitySize;i++){
         int64_t id = (int64_t)valueCursor.readu64();
-        entities.push_back(Entity{id,x,z});
-        entityIDs.emplace_back(id);
+        entities.emplace_back(id,x,z);
     }
 }
 
 void Parser::parseActorPrefix(uint8_t* key,uint8_t* value) {
+    std::cout << "actorprefix\n";
     Cursor keyCursor(key);
     Cursor valueCursor(value);
 
     std::stringstream ss;
     int64_t id = (int64_t)keyCursor.readu64();
     NBT::parseNBT(valueCursor,ss);
-    json actorJson = json::parse(ss);
+    json actorJson;
+    try{
+        actorJson = json::parse(ss);
+    }catch(json::exception e){
+        std::cerr << "Error parsing actorprefix:\n";
+        std::cerr << e.what() << "\n";
+    }
 }
 
 void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
-    std::cout << keySize << "\n";
     Cursor keyCursor(key);
     Cursor valueCursor(value);
     
@@ -71,10 +76,17 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
     if (recordName == "BlockEntity" || recordName == "Entity") {
         std::stringstream ss;
         NBT::parseNBT(valueCursor,ss);
-        std::cout << ss.str() << "\n";
-        
-
-        // entityJson = json::parse(ss);
+        json nbt;
+        BlockEntity blockEntity;
+        try{
+            nbt = json::parse(ss);
+            blockEntities.emplace_back(x,z,nbt);
+        }catch(json::exception e){
+            std::cerr << ss.str() << "\n";
+            std::cerr << "Error parsing BlockEntity:\n";
+            std::cerr << e.what() << "\n";
+            std::cin.get();
+        }
     }
     else if (recordName == "Version") {
         uint8_t version = valueCursor.readu8();
@@ -125,7 +137,8 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
         // try{
         //     chunkJson[key] = json::parse(ss);
         // }catch(json::exception e){
-        //     std::cerr << "Json error:" << e.what() << "\n";
+        //     std::cerr << "Error parsing subchunk:\n";
+        //     std::cerr << e.what() << "\n";
         //     return;
         // }
         // std::string filename = "worldData/chunk_" + std::to_string(x) + "_" + std::to_string(z) + ".json";
@@ -136,18 +149,26 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
 }
 
 void Parser::parseRemotePlayer(std::string key,uint8_t* value) {
+    std::cout << key << "\n";
     Cursor valueCursor(value);
     std::string playerId = key.substr(7,key.length() - 7);
     std::stringstream ss;
     NBT::parseNBT(valueCursor,ss);
     std::string filename = "worldData/player_" + playerId + ".json";
     std::ofstream ofs(filename);
-    json playerJson = json::parse(ss);
+    json playerJson;
+    try{
+        playerJson = json::parse(ss);
+    }catch(json::exception e){
+        std::cerr << "Error parsing remote player: player_" << playerId << ":\n";
+        std::cerr << e.what() << "\n"; 
+    }
     ofs << playerJson.dump(2);
     ofs.close();
 }
 
 void Parser::parseDAT(const std::string& path) {
+    std::cout << path << "\n";
     std::stringstream ss;
     std::ifstream ifs(path, std::ios::binary | std::ios::ate);
     if(!ifs.is_open()){
@@ -177,20 +198,21 @@ void Parser::parseDAT(const std::string& path) {
     try{
         levelJson = json::parse(ss);
     }catch(json::exception e){
-        std::cerr << "Json error" << e.what() << "\n";
+        std::cerr << "Error parsing level.dat:\n";
+        std::cerr << e.what() << "\n";
         return;
     }
     ofs << levelJson.dump(2);
 }
 
 void Parser::drawChunkImage(){
-    std::cout << "Drawing image\n";
     if(!chunks.size())return;
+    std::cout << "Drawing image\n";
     std::vector<int> xcords = {};
     std::vector<int> zcords = {};
     for(const std::pair<int,int>& chunk : chunks){
-        xcords.push_back(chunk.first);
-        zcords.push_back(chunk.second);
+        xcords.emplace_back(chunk.first);
+        zcords.emplace_back(chunk.second);
     }
     
     std::sort(xcords.begin(),xcords.end());
@@ -233,5 +255,26 @@ void Parser::drawChunkImage(){
     }
     stbi_write_png("worldData/chunks.png",width,height,4,image,width*4);
     free(image);
+}
 
+Parser::~Parser(){
+    if(!entities.size())return;
+    std::ofstream ofs("worldData/entities.json");
+    if(!ofs.is_open()){
+        std::cerr << "Failed to open worldData/entities.json";
+        return;
+    }
+    json entitiesJson;
+    try{
+        for(const Entity& entity : entities){
+            std::string key = std::to_string(entity.cx) + "_" + std::to_string(entity.cz);
+            entitiesJson[key].push_back(entity.id);
+        }
+    }catch(json::exception e){
+        std::cerr << "Error parsing entityJson:\n";
+        std::cerr << e.what() << "\n";
+    }
+    ofs << entitiesJson.dump(4);
+    ofs.close();
+    std::cout << entities.size() << " entitites parsed.\n";
 }
