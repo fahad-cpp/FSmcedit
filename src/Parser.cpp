@@ -9,16 +9,14 @@ void Parser::parseLocalPlayer(uint8_t* value){
 
     std::stringstream ss;
     NBT::parseNBT(cursor,ss);
-    std::ofstream ofs("worldData/player.json");
-    json playerJson;
+    std::string id = "local_player";
     try{
-        playerJson = json::parse(ss);
+        playersJson[id] = json::parse(ss);
     }catch(json::exception e){
         std::cerr << "Error parsing ~local_player:\n";
         std::cerr << e.what() << "\n";
     }
-    ofs << playerJson.dump(2);
-    ofs.close();
+    playerCount++;
 }
 
 void Parser::parseDigp(uint8_t* key,uint8_t* value,uint32_t valueSize) {
@@ -146,20 +144,16 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
 void Parser::parseRemotePlayer(std::string key,uint8_t* value) {
     //std::cout << key << "\n";
     Cursor valueCursor(value);
-    std::string playerId = key.substr(7,key.length() - 7);
     std::stringstream ss;
     NBT::parseNBT(valueCursor,ss);
-    std::string filename = "worldData/player_" + playerId + ".json";
-    std::ofstream ofs(filename);
-    json playerJson;
+    std::string filename = "worldData/" + key + ".json";
     try{
-        playerJson = json::parse(ss);
+        playersJson[key] = json::parse(ss);
     }catch(json::exception e){
-        std::cerr << "Error parsing remote player: player_" << playerId << ":\n";
-        std::cerr << e.what() << "\n"; 
+        std::cerr << "Error parsing remote player:\n";
+        std::cerr << e.what() << "\n";
     }
-    ofs << playerJson.dump(2);
-    ofs.close();
+    playerCount++;
 }
 
 void Parser::parseDAT(const std::string& path) {
@@ -291,6 +285,18 @@ Parser::~Parser(){
         std::cerr << e.what() << "\n";
     }
     ofs << chunksJson.dump();
+    ofs.close();
 
     std::cout << chunks.size() << " chunks parsed.\n";
+    ofs.open("worldData/players.json");
+    if(!ofs.is_open()){
+        std::cerr << "Failed to open worldData/players.json\n";
+        return;
+    }
+
+    ofs << playersJson.dump(2);
+
+    ofs.close();
+
+    std::cout << playerCount << " players parsed.\n";
 }

@@ -6,19 +6,18 @@ Current Progress:
 
 <img src="worldData/chunks.png" width="256">
 
-- export parsed world/player data in:
+- export parsed world data in:
 
 [worldData/level.json](worldData/level.json) <- level.dat<br>
-[worldData/player.json](worldData/player.json) <- ~local_player<br>
 [worldData/plain.txt](worldData/plain.txt) <- FSmcedit.exe stdoutput
 
 - export chunk data in:
 
-[worldData/chunks.json](worldData/chunks.json) (dumped without indent to save space)
+[worldData/chunks.json](worldData/chunks.json) (dumped without indent to save space) (large file)
 
-- export other player's data on server in:
+- export players' data on server in:
 
-[worldData/player_server_<Id>.json](worldData/player_server_4a91b90d-1047-42d0-a2ed-d17a1f48638e.json)
+[worldData/players.json](worldData/players.json)
 
 - export entity data in:
 

@@ -12,6 +12,8 @@ class Parser{
     std::vector<Entity> entities;
     std::vector<BlockEntity> blockEntities;
     std::vector<Chunk> chunks;
+    json playersJson;
+    uint32_t playerCount = 0;
     const std::map<const uint8_t, const std::string> tagName{
     //Terrain & Biome Data
     {43,"Data3D"},
