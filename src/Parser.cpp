@@ -21,9 +21,9 @@ void Parser::parseLocalPlayer(uint8_t* value){
 void Parser::parseDigp(uint8_t* key,uint8_t* value,uint32_t valueSize) {
     Cursor keyCursor(key, 4);
     Cursor valueCursor(value);
-
     int x = keyCursor.readu32();
     int z = keyCursor.readu32();
+    chunks.emplace_back(x,z,0,json{});
     uint32_t entitySize = valueSize / 8;
     std::stringstream ss;
     for(int i=0;i<entitySize;i++){
@@ -56,6 +56,9 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
     json chunkJson;
     int x = (int)keyCursor.readu32();
     int z = (int)keyCursor.readu32();
+    if(x < 32767 && z < 32767){
+        chunks.emplace_back(x,z,0,json{});
+    }
     uint8_t record = keyCursor.readu8();
     
     std::string recordName =
