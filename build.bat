@@ -1,6 +1,6 @@
 @echo off
 if not exist build mkdir build
-if exist build\Release\FSmcedit.exe del build\Release\FSmcedit.exe
+if exist build\FSmcedit.exe del build\FSmcedit.exe
 pushd build
 if "%1" == "clean" del CMakeCache.txt
 if not exist CMakeCache.txt cmake .. -G "Ninja" -DCMAKE_BUILD_TYPE=Release

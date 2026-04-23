@@ -68,9 +68,13 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
         std::stringstream ss;
         NBT::parseNBT(valueCursor,ss);
         json nbt;
-        BlockEntity blockEntity;
         try{
             nbt = json::parse(ss);
+            if(nbt.contains("id")){
+                nbt = {
+                    {nbt["id"].get<std::string>(),nbt}
+                };
+            }
             blockEntities.emplace_back(x,z,nbt);
         }catch(json::exception e){
             std::cerr << ss.str() << '\n';
@@ -231,7 +235,7 @@ void Parser::drawChunkImage(){
         int zstart=chunk.second*16;
         for(int x=xstart;x<(xstart+16);x++){
             for(int z=zstart;z<(zstart+16);z++){
-                image[width*z + x] = 0xff0000ff; //red
+                image[width*z + x] = 0xffff00ff; //red
             }
         }
     }
@@ -240,6 +244,7 @@ void Parser::drawChunkImage(){
 }
 Parser::~Parser(){
     //Export entities
+    if(!chunks.size())return;
     std::ofstream ofs("worldData/entities.json");
     if(!ofs.is_open()){
         std::cerr << "Failed to open worldData/entities.json";
@@ -260,6 +265,27 @@ Parser::~Parser(){
 
 
     std::cout << entities.size() << " entitites parsed.\n";
+
+    //Export BlockEntities
+    ofs.open("worldData/blockEntities.json");
+    if(!ofs.is_open()){
+        std::cerr << "Failed to open worldData/blockEntities.json\n";
+        return;
+    }
+    json blockEntitiesJson;
+    try{
+        for(const BlockEntity& blockEntity : blockEntities){
+            std::string key = std::to_string(blockEntity.cx) + "_" + std::to_string(blockEntity.cz);
+            blockEntitiesJson[key].push_back(blockEntity.nbt);
+        }
+    }catch(json::exception e){
+        std::cerr << "Error parsing blockEntitiesJson:\n";
+        std::cerr << e.what() << '\n';
+    }
+
+    ofs << blockEntitiesJson.dump(4);
+    ofs.close();
+    std::cout << blockEntities.size() << " block entities parsed.\n";
 
     //Export chunks
     ofs.open("worldData/chunks.json");
