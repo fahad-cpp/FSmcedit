@@ -8,27 +8,26 @@
 void NBT::parseNBT(Cursor& cursor,std::stringstream& ss) {
     uint8_t tagTypeID = cursor.readu8();
     if (tagTypeID < 0 || tagTypeID > 12) {
-        std::cerr << "Invalid type : " << (int)tagTypeID << "\n";
+        std::cerr << "Invalid type : " << (int32_t)tagTypeID << '\n';
         return;
     }
     uint16_t nameLength = cursor.readu16();
     const std::string& name = cursor.readString(nameLength);
     
     if(nameLength != 0){
-        ss << "\"" << name << "\"" << ":";
+        ss << '\"' << name << '\"' << ':';
     }
 
     parseTag(tagTypeID, cursor,ss);
 }
 //Parse only payload of the NBT
 void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss) {
-    //ss << "(" << types[tagID] << "):";
     switch (tagID) {
         case 1: {
-            ss << (int)parseByte(cursor);
+            ss << (int32_t)parseByte(cursor);
         }break;
         case 2: {
-            ss << (int)parseShort(cursor);
+            ss << (int32_t)parseShort(cursor);
         }break;
         case 3: {
             ss << parseInt(cursor);
@@ -46,7 +45,7 @@ void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss) {
             std::vector<uint8_t> byteArray = parseByteArray(cursor);
             ss << '[';
             for(uint32_t i=0;i<byteArray.size();i++){
-                ss << (int)byteArray[i];
+                ss << (int32_t)byteArray[i];
                 if(i != (byteArray.size() - 1)){
                     ss << ',';
                 }
@@ -54,7 +53,7 @@ void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss) {
             ss << ']';
         }break;
         case 8: {
-            ss << "\"" << parseString(cursor) << "\"";
+            ss << '\"' << parseString(cursor) << '\"';
         }break;
         case 9: {
             parseList(cursor,ss);
@@ -63,20 +62,26 @@ void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss) {
             parseCompound(cursor,ss);
         }break;
         case 11: {
-            //Unhandled
-            uint32_t size = (int)cursor.readu32();
-            ss << "\"UnhandledIntArray\"";
-            std::cerr << "IntArray\n";
-            //ss << "size:" << size << "\n";
-            cursor.skip(size * 4);
+            std::vector<int32_t> intArray = parseIntArray(cursor);
+            ss << '[';
+            for(uint32_t i=0;i<intArray.size();i++){
+                ss << intArray[i];
+                if(i != (intArray.size() - 1)){
+                    ss << ',';
+                }
+            }
+            ss << ']';
         }break;
         case 12: {
-            //Unhandled
-            uint32_t size = (int)cursor.readu32();
-            ss << "\"UnhandledLongArray\"";
-            std::cerr << "LongArray\n";
-            //ss << "size:" << size << "\n";
-            cursor.skip(size * 8);
+            std::vector<int64_t> longArray = parseLongArray(cursor);
+            ss << '[';
+            for(uint32_t i=0;i<longArray.size();i++){
+                ss << longArray[i];
+                if(i != (longArray.size() - 1)){
+                    ss << ',';
+                }
+            }
+            ss << ']';
         }break;
         default: {
             std::cerr << "Invalid TAG\n";
@@ -85,14 +90,14 @@ void NBT::parseTag(uint8_t tagID, Cursor& cursor,std::stringstream& ss) {
 }
 //Parse a compund of NBTs
 void NBT::parseCompound(Cursor& cursor,std::stringstream& ss) {
-    ss << "{";
+    ss << '{';
     while (cursor.peeku8() != 0) {
         parseNBT(cursor,ss);
         if(cursor.peeku8() != 0){
-            ss << ",";
+            ss << ',';
         }
     }
-    ss << "}";
+    ss << '}';
     cursor.skip(1);
 }
 //Parse a list of NBTs
@@ -104,23 +109,25 @@ void NBT::parseList(Cursor& cursor,std::stringstream& ss) {
         return;
     };
     ss << '[';
-    for (int i = 0;i < size;i++) {
+    for (int32_t i = 0;i < size;i++) {
         parseTag(listTagID, cursor,ss);
-        if(i != (size-1))ss <<',';
+        if(i != (size-1)){
+            ss <<',';
+        }
     }
     ss << ']';
 }
 
 uint8_t NBT::parseByte(Cursor& cursor) {
-    return (int)cursor.readu8();
+    return (int32_t)cursor.readu8();
 }
 
 uint16_t NBT::parseShort(Cursor& cursor) {
-    return (int)cursor.readu16();
+    return (int32_t)cursor.readu16();
 }
 
-int NBT::parseInt(Cursor& cursor) {
-    return (int)cursor.readu32();
+int32_t NBT::parseInt(Cursor& cursor) {
+    return (int32_t)cursor.readu32();
 }
 
 uint64_t NBT::parseLong(Cursor& cursor) {
@@ -143,11 +150,30 @@ double NBT::parseDouble(Cursor& cursor) {
 
 std::vector<uint8_t> NBT::parseByteArray(Cursor& cursor) {
     std::vector<uint8_t> res = {};
-    uint32_t size = (int)cursor.readu32();
+    uint32_t size = (int32_t)cursor.readu32();
     res.reserve(size);
-    //ss << "size:" << size << "\n";
-    for (int i = 0;i < size;i++) {
+    for (int32_t i = 0;i < size;i++) {
         res.push_back(cursor.readu8());
+    }
+    return res;
+}
+
+std::vector<int32_t> NBT::parseIntArray(Cursor& cursor) {
+    std::vector<int32_t> res = {};
+    uint32_t size = (int32_t)cursor.readu32();
+    res.reserve(size);
+    for (int32_t i = 0;i < size;i++) {
+        res.push_back((int32_t)cursor.readu32());
+    }
+    return res;
+}
+
+std::vector<int64_t> NBT::parseLongArray(Cursor& cursor) {
+    std::vector<int64_t> res = {};
+    uint32_t size = (int32_t)cursor.readu32();
+    res.reserve(size);
+    for (int32_t i = 0;i < size;i++) {
+        res.push_back((int32_t)cursor.readu64());
     }
     return res;
 }
