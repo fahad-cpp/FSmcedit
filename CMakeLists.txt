@@ -1,6 +1,6 @@
 set(CMAKE_CXX_STANDARD 23)
 cmake_minimum_required(VERSION 3.10)
-add_definitions(-DDLLX=)
+
 project(FSmcedit)
 
 file(GLOB SOURCES src/*.cpp)

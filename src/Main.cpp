@@ -21,18 +21,13 @@ const std::vector<std::string> keyPrefs = {
     "mobevents",
     "scoreboard"
 };
-void parseDB(const std::string& dbPath) {
-    Parser parser;
-    class NullLogger : public leveldb::Logger {
-	public:
-		void Logv(const char*, va_list) override {
-		}
-	};
-
-	leveldb::Options options;
-	options.filter_policy = leveldb::NewBloomFilterPolicy(10);
-	options.block_cache = leveldb::NewLRUCache(40 * 1024 * 1024);
-	options.write_buffer_size = 4 * 1024 * 1024;
+class NullLogger : public leveldb::Logger {
+public:
+    void Logv(const char*, va_list) override {
+    }
+};
+leveldb::DB* initLevelDB(const std::string& path){
+    leveldb::Options options;
 	options.info_log = new NullLogger();
     options.create_if_missing = false;
 	options.compressors[0] = new leveldb::ZlibCompressorRaw(-1);
@@ -40,12 +35,19 @@ void parseDB(const std::string& dbPath) {
 	leveldb::ReadOptions readOptions;
 	readOptions.decompress_allocator = new leveldb::DecompressAllocator();
     leveldb::DB* db;
-    leveldb::Status status = leveldb::DB::Open(options, dbPath, &db);
+    leveldb::Status status = leveldb::DB::Open(options, path, &db);
     if (!status.ok()) {
         std::cerr << status.ToString() << "\n";
         assert(false);
-        return;
+        return nullptr;
     }
+
+    return db;
+}
+void parseDB(const std::string& dbPath) {
+    Parser parser;
+
+	leveldb::DB* db = initLevelDB(dbPath);
 
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
     it->SeekToFirst();
@@ -71,7 +73,6 @@ void parseDB(const std::string& dbPath) {
         }
         else if (it->key().ToString().contains("actorprefix")) {
             parser.parseActorPrefix((uint8_t*)it->key().data(),(uint8_t*)it->value().data());
-
         }else if (it->key().ToString().contains("digp")) {
             parser.parseDigp((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->value().size());
         }

@@ -6,4 +6,4 @@
 	url = https://github.com/madler/zlib.git
 [submodule "vendor/leveldb"]
 	path = vendor/leveldb
-	url = https://github.com/Amulet-Team/leveldb-mcpe
+	url = https://github.com/fahad-cpp/leveldb-mcpe
