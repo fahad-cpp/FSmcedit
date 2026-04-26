@@ -38,10 +38,10 @@ void Parser::parseActorPrefix(uint8_t* key,uint8_t* value) {
 
     std::stringstream ss;
     int64_t id = (int64_t)keyCursor.readu64();
-    NBT::parseNBT(valueCursor,ss);
+    //NBT::parseNBT(valueCursor,ss);
     json actorJson;
     try{
-        actorJson = json::parse(ss);
+        //actorJson = json::parse(ss);
     }catch(json::exception e){
         std::cerr << ss.str() << '\n';
         std::cerr << "Error parsing actorprefix:\n";
@@ -56,11 +56,13 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
     json chunkJson;
     int x = (int)keyCursor.readu32();
     int z = (int)keyCursor.readu32();
-    if(x < 32767 && z < 32767){
-        chunks.emplace_back(x,z,0,json{});
-    }
     uint8_t record = keyCursor.readu8();
-    
+    if((x < 1875000) && (x > -1875000) && (z < 1875000) && (z > -1875000) && (record != 47)){
+        chunks.emplace_back(x,z,0,json{});
+    }else if((record != 47)){
+        return;
+    }
+
     std::string recordName =
     tagName.find(record) == tagName.end() ?
     "InvalidRecord:" + std::to_string((int)record)
@@ -306,7 +308,7 @@ Parser::~Parser(){
         std::cerr << "Error parsing chunksJson:\n";
         std::cerr << e.what() << '\n';
     }
-    ofs << chunksJson.dump();
+    ofs << chunksJson.dump(4);
     ofs.close();
     std::cout << chunks.size() << " chunks parsed.\n";
 

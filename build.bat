@@ -8,4 +8,5 @@ cmake --build . --config Release --parallel
 popd
 if exist worldData del /f /q "worldData"
 if not exist worldData mkdir worldData
-build\FSmcedit.exe
+REM build\FSmcedit.exe
+build\FSmcedit.exe > worldData/plain.txt

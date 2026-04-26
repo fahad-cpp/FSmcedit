@@ -1,4 +1,5 @@
 #include "Parser.h"
+#include "Timer.h"
 #include <iostream>
 #include <leveldb/db.h>
 #include <leveldb/filter_policy.h>
@@ -45,19 +46,20 @@ leveldb::DB* initLevelDB(const std::string& path){
     return db;
 }
 void parseDB(const std::string& dbPath) {
+    Timer timer;
     Parser parser;
-
 	leveldb::DB* db = initLevelDB(dbPath);
-
+    
     leveldb::Iterator* it = db->NewIterator(leveldb::ReadOptions());
     it->SeekToFirst();
-    if(!it->Valid() && !it->status().ok()){
+    if(!it->Valid()){
         std::cerr << "Failed to open database\n";
         std::cerr << it->status().ToString() << "\n";
         delete it;
         delete db;
         return;
     }
+    timer.start();
     for (it->SeekToFirst();it->Valid();it->Next()) {
         bool chunkKey = true;
         //Temporary (TODO:Handle all cases)
@@ -77,10 +79,12 @@ void parseDB(const std::string& dbPath) {
             parser.parseDigp((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->value().size());
         }
         if (!chunkKey)continue;
-
+        
         parser.parseChunk((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->key().size());
     }
     parser.drawChunkImage();
+    double diff = timer.getDiff();
+    std::cout << "Parsing took:" << diff << "ms.\n";
     delete it;
     delete db;
 }
