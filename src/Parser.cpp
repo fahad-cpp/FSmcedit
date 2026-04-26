@@ -302,13 +302,15 @@ Parser::~Parser(){
     try{
         for(const Chunk& chunk : chunks){
             std::string key = std::to_string(chunk.cx) + '_' + std::to_string(chunk.cz);
-            chunksJson[key][std::to_string(chunk.subchunkIndex)].push_back(std::move(chunk.palette));
+            if(!chunk.palette.empty()){
+                chunksJson[key][std::to_string(chunk.subchunkIndex)].push_back(std::move(chunk.palette));
+            }
         }
     }catch(json::exception e){
         std::cerr << "Error parsing chunksJson:\n";
         std::cerr << e.what() << '\n';
     }
-    ofs << chunksJson.dump(4);
+    ofs << chunksJson.dump();
     ofs.close();
     std::cout << chunks.size() << " chunks parsed.\n";
 

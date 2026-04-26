@@ -1,5 +1,5 @@
 Drawing image
-Parsing took:4636.05ms.
+Parsing took:4598.56ms.
 474 entitites parsed.
 366 block entities parsed.
 60612 chunks parsed.
