@@ -1,5 +1,6 @@
 #include "Parser.h"
 #include "NBT.h"
+#include "Timer.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
@@ -214,8 +215,8 @@ void Parser::drawChunkImage(){
     zcords.erase(std::unique(zcords.begin(),zcords.end()),zcords.end());
     
     //offset to make minx=0 minz=0
-    int xmin = xcords.at(std::min_element(xcords.begin(),xcords.end()) - xcords.begin());
-    int zmin = zcords.at(std::min_element(zcords.begin(),zcords.end()) - zcords.begin());
+    int xmin = xcords.at(0);
+    int zmin = zcords.at(0);
     for(int i=0;i<xcords.size();i++){
         xcords[i] -= xmin;
     }
@@ -240,7 +241,7 @@ void Parser::drawChunkImage(){
         int zstart=chunk.second*16;
         for(int x=xstart;x<(xstart+16);x++){
             for(int z=zstart;z<(zstart+16);z++){
-                image[width*z + x] = 0xffff00ff; //red
+                image[width*z + x] = 0xffff00ff; //pink
             }
         }
     }
@@ -248,6 +249,8 @@ void Parser::drawChunkImage(){
     free(image);
 }
 Parser::~Parser(){
+    Timer timer;
+    timer.start();
     //Export entities
     if(!chunks.size())return;
     std::ofstream ofs("worldData/entities.json");
@@ -324,4 +327,6 @@ Parser::~Parser(){
     ofs.close();
 
     std::cout << playerCount << " players parsed.\n";
+    double diff = timer.getDiff();
+    std::cout << "Exporting took: " << diff << "ms.\n";
 }
