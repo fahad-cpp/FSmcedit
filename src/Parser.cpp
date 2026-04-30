@@ -313,7 +313,7 @@ Parser::~Parser(){
         std::cerr << "Error parsing chunksJson:\n";
         std::cerr << e.what() << '\n';
     }
-    ofs << chunksJson.dump();
+    ofs << chunksJson.dump(4);
     ofs.close();
     std::cout << chunks.size() << " chunks parsed.\n";
 
