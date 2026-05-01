@@ -6,4 +6,5 @@ fi
 [ ! -f CMakeCache.txt ] && cmake -S .. -DCMAKE_BUILD_TYPE="Release"
 cmake --build . --config Release --parallel
 cd ..
-./build/FSmcedit > world_data.txt
+mkdir -p "worldData"
+./build/FSmcedit > worldData/plain.txt

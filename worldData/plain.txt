@@ -1,7 +1,7 @@
 Drawing image
-Parsing took:4607.05ms.
+Parsing took:2491.85ms.
 474 entitites parsed.
 366 block entities parsed.
 60612 chunks parsed.
 13 players parsed.
-Exporting took: 1463.05ms.
+Exporting took: 710.134ms.
