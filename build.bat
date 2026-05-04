@@ -6,7 +6,6 @@ if "%1" == "clean" del CMakeCache.txt
 if not exist CMakeCache.txt cmake .. -G "Ninja" -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release --parallel
 popd
-if exist worldData del /f /q "worldData"
 if not exist worldData mkdir worldData
 REM build\FSmcedit.exe
 build\FSmcedit.exe > worldData/plain.txt

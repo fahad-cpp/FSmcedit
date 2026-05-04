@@ -195,6 +195,7 @@ void Parser::parseDAT(const std::string& path) {
         return;
     }
     ofs << levelJson.dump(4);
+    ofs.close();
 }
 
 void Parser::drawChunkImage(){
