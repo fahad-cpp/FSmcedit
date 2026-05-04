@@ -8,4 +8,4 @@ cmake --build . --config Release --parallel
 popd
 if not exist worldData mkdir worldData
 REM build\FSmcedit.exe
-build\FSmcedit.exe > worldData/plain.txt
+build\FSmcedit.exe
