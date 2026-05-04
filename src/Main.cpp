@@ -91,4 +91,5 @@ void parseDB(const std::string& dbPath) {
 int main() {
     parseDB("tmp/testworld/db");
     Parser::parseDAT("tmp/testworld/level.dat");
+    Parser::parseStructure("TestStructure.mcstructure");
 }

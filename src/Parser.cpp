@@ -248,6 +248,33 @@ void Parser::drawChunkImage(){
     stbi_write_png("worldData/chunks.png",width,height,4,image,width*4);
     free(image);
 }
+void Parser::parseStructure(const std::string& filepath){
+    std::ifstream ifs(filepath, std::ios::binary | std::ios::ate);
+    if(!ifs.is_open()){
+        std::cerr << "Failed to open structure file\n";
+        return;
+    }
+    uint32_t size = ifs.tellg();
+    ifs.seekg(0);
+    uint8_t* data = (uint8_t *)malloc(size * sizeof(uint8_t));
+    ifs.read((char*)data,size);
+
+    Cursor cursor(data);
+    std::stringstream ss;
+    NBT::parseNBT(cursor,ss);
+    ifs.close();
+    std::ofstream ofs("worldData/structure.json");
+    if(!ofs.is_open()){
+        std::cerr << "Failed to open structure.json\n";
+    }
+    try{
+        json strucJson = json::parse(ss);
+        ofs << strucJson.dump(4);
+    }catch(json::exception& e){
+        std::cerr << ss.str();
+        std::cerr << e.what() << "\n";
+    }
+}
 Parser::~Parser(){
     Timer timer;
     timer.start();

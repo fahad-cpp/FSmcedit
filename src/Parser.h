@@ -45,6 +45,7 @@ class Parser{
 };
 public:
     static void parseDAT(const std::string& path);
+    static void parseStructure(const std::string& filepath);
     ~Parser();
     void parseLocalPlayer(uint8_t* value);
     void parseDigp(uint8_t* key,uint8_t* value,uint32_t valueSize);
