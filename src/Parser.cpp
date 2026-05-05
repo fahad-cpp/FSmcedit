@@ -59,21 +59,20 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
     json chunkJson;
     int x = (int)keyCursor.readu32();
     int z = (int)keyCursor.readu32();
-    liveLog("Chunk:" + std::to_string(x) + "-" + std::to_string(z));
-    uint8_t record = keyCursor.readu8();
-    if((x < 1875000) && (x > -1875000) && (z < 1875000) && (z > -1875000) && (record != 47)){
+    TAG record = (TAG)keyCursor.readu8();
+    if((x < 1875000) && (x > -1875000) && (z < 1875000) && (z > -1875000) && (record != TAG::SubChunkPrefix)){
         chunks.emplace_back(x,z,0,json{});
-    }else if((record != 47)){
+    }else if(record != TAG::SubChunkPrefix){
         return;
     }
 
-    std::string recordName =
-    tagName.find(record) == tagName.end() ?
-    "InvalidRecord:" + std::to_string((int)record)
-    : tagName.at(record);
+    // std::string recordName =
+    // tagName.find(record) == tagName.end() ?
+    // "InvalidRecord:" + std::to_string((int)record)
+    // : tagName.at(record);
 
 
-    if (recordName == "BlockEntity" || recordName == "Entity") {
+    if (record == TAG::BlockEntity || record == TAG::Entity) {
         std::stringstream ss;
         NBT::parseNBT(valueCursor,ss);
         json nbt;
@@ -92,10 +91,10 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
             std::cin.get();
         }
     }
-    else if (recordName == "Version") {
+    else if (record == TAG::Version) {
         uint8_t version = valueCursor.readu8();
     }
-    else if (recordName == "SubChunkPrefix") {
+    else if (record == TAG::SubChunkPrefix) {
         std::stringstream ss;
         uint8_t version = valueCursor.readu8();
         uint8_t numStorage = 0;
@@ -164,6 +163,7 @@ void Parser::parseRemotePlayer(std::string key,uint8_t* value) {
 }
 
 void Parser::parseDAT(const std::string& path) {
+    liveLog("Parsing level.dat...");
     std::stringstream ss;
     std::ifstream ifs(path, std::ios::binary | std::ios::ate);
     if(!ifs.is_open()){
@@ -203,7 +203,7 @@ void Parser::parseDAT(const std::string& path) {
 
 void Parser::drawChunkImage(){
     if(!chunks.size())return;
-    std::cout << "Drawing image" << std::flush << "\r";
+    liveLog("Drawing Chunk image...");
     std::vector<int> xcords = {};
     std::vector<int> zcords = {};
     for(const Chunk& chunk : chunks){
@@ -279,18 +279,8 @@ void Parser::parseStructure(const std::string& filepath){
         std::cerr << e.what() << "\n";
     }
 }
-
-Parser::~Parser(){
-    Timer timer;
-    timer.start();
-    //Export entities
-    if(!chunks.size())return;
-    liveLog("Exporting " + std::to_string(entities.size()) + " entities...");
-    std::ofstream ofs("worldData/entities.json");
-    if(!ofs.is_open()){
-        std::cerr << "Failed to open worldData/entities.json";
-        return;
-    }
+void exportEntities(const std::vector<Entity>& entities,const std::string& path){
+    std::ofstream ofs(path);
     json entitiesJson;
     try{
         for(const Entity& entity : entities){
@@ -303,12 +293,9 @@ Parser::~Parser(){
     }
     ofs << entitiesJson.dump(4);
     ofs.close();
-    
-    
-    
-    liveLog("Exporting " + std::to_string(blockEntities.size()) + " block entities...");
-    //Export BlockEntities
-    ofs.open("worldData/blockEntities.json");
+}
+void exportBlockEntities(const std::vector<BlockEntity>& blockEntities,const std::string& path){
+    std::ofstream ofs(path);
     if(!ofs.is_open()){
         std::cerr << "Failed to open worldData/blockEntities.json\n";
         return;
@@ -326,10 +313,9 @@ Parser::~Parser(){
     
     ofs << blockEntitiesJson.dump(4);
     ofs.close();
-    
-    //Export chunks
-    liveLog("Exporting " + std::to_string(chunks.size()) + " chunks...");
-    ofs.open("worldData/chunks.json");
+}
+void exportChunks(const std::vector<Chunk>& chunks,const std::string& path){
+    std::ofstream ofs(path);
     if(!ofs.is_open()){
         std::cerr << "Failed to open worldData/chunks.json\n";
         return;
@@ -348,17 +334,36 @@ Parser::~Parser(){
     }
     ofs << chunksJson.dump(4);
     ofs.close();
-    
-    //Export Players
-    liveLog("Exporting " + std::to_string(playerCount) + " players...");
-    ofs.open("worldData/players.json");
+}
+void exportPlayers(const json& playersJson,const std::string& path){
+    std::ofstream ofs(path);
     if(!ofs.is_open()){
         std::cerr << "Failed to open worldData/players.json\n";
         return;
     }
     ofs << playersJson.dump(4);
     ofs.close();
+}
+Parser::~Parser(){
+    Timer timer;
+    timer.start();
+    if(!chunks.size())return;
+    //Export chunks
+    liveLog("Exporting " + std::to_string(chunks.size()) + " chunks...");
+    exportChunks(chunks,"worldData/chunks.json");
+    
+    //Export BlockEntities
+    liveLog("Exporting " + std::to_string(blockEntities.size()) + " block entities...");
+    exportBlockEntities(blockEntities,"worldData/blockEntities.json");
+    
+    //Export entities
+    liveLog("Exporting " + std::to_string(entities.size()) + " entities...");
+    exportEntities(entities,"worldData/entities.json");
+    
+    //Export Players
+    liveLog("Exporting " + std::to_string(playerCount) + " players...");
+    exportPlayers(playersJson,"worldData/players.json");
+    
     liveLog("Exported.");
     double diff = timer.getDiff();
-    //std::cout << "Exporting took: " << diff << "ms.\n";
 }

@@ -65,12 +65,12 @@ int main(int argc,char* argv[]) {
 
     std::string dbpath = options.worldPath + "/db";
     if(options.worldPath.length()){
-        std::cout << "World:" << options.worldPath << "\n";
+        std::cout << "World: " << options.worldPath << "\n";
         parseDB(dbpath);
         Parser::parseDAT(options.worldPath + "/level.dat");
     }
     if(options.structPath.length()){
-        std::cout << "Structure:" << options.structPath << "\n";
+        std::cout << "Structure: " << options.structPath << "\n";
         Parser::parseStructure(options.structPath);
     }
     return 0;

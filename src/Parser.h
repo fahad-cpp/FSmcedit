@@ -14,35 +14,31 @@ class Parser{
     std::vector<Chunk> chunks;
     json playersJson;
     uint32_t playerCount = 0;
-    const std::map<const uint8_t, const std::string> tagName{
-    //Terrain & Biome Data
-    {43,"Data3D"},
-    {44,"Version"},
-    {45,"Data2D"},
-    {46,"Data2DLegacy"},
-    {47,"SubChunkPrefix"},
-    {48,"LegacyTerrain"},
-    //Entity & Block Entity Data
-    {49,"BlockEntity"},
-    {50,"Entity"},
-    {51,"PendingTicks"},
-    {58,"RandomTicks"},
-    //World State & Features
-    {52,"LegacyBlockExtraData"},
-    {53,"BiomeState"},
-    {54,"FinalizedState"},
-    {56,"BorderBlocks"},
-    {57,"HardcodedSpawners"},
-    {59,"Checksums"},
-    {61,"MetaDataHash"},
-    {62,"GeneratedPreCavesAndCliffsBlending"},
-    {63,"BlendingBiomeHeight"},
-    {64,"BlendingData"},
-    {65,"ActorDigestVersion"},
-    //Legacy & Deprecated Records
-    {55,"ConversionData"},
-    {118,"LegacyVersion"},
-};
+    enum class TAG{
+        Data3D = 43,
+        Version,
+        Data2D,
+        Data2DLegacy,
+        SubChunkPrefix,
+        LegacyTerrain,
+        BlockEntity,
+        Entity,
+        PendingTicks,
+        LegacyBlockExtraData,
+        BiomeState,
+        FinalizedState,
+        ConversionData,
+        BorderBlocks,
+        HardcodedSpawners,
+        RandomTicks,
+        Checksums,
+        MetaDataHash = 61,
+        GeneratedPreCavesAndCliffsBlending,
+        BlendingBiomeHeight,
+        BlendingData,
+        ActorDigestVersion,
+        LegacyVersion = 118
+    };
 public:
     static void parseDAT(const std::string& path);
     static void parseStructure(const std::string& filepath);
