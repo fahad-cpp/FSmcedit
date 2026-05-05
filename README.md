@@ -22,3 +22,11 @@ Current Progress:
 - export entity data in:
 
 [worldData/entities.json](worldData/entities.json)
+
+
+## Usage
+
+At least one option should be specified
+```bash
+FSmcedit --world <world_folder> --struct <mcstructure_file>
+```

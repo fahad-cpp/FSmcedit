@@ -12,8 +12,8 @@ set(ZLIB_LIBRARY zlib)
 
 # Mojang's Leveldb
 add_subdirectory(vendor/leveldb)
-
 add_subdirectory(vendor/json)
 
+target_compile_options(FSmcedit PRIVATE -O3)
 target_link_libraries(FSmcedit PRIVATE leveldb_mcpe nlohmann_json::nlohmann_json)
 target_include_directories(FSmcedit PRIVATE vendor/leveldb/include)

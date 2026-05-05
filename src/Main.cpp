@@ -2,6 +2,8 @@
 #include "Parser.h"
 #include "Timer.h"
 #include "DB.h"
+#include "Options.h"
+#include "Log.h"
 
 std::vector<std::pair<int,int>> chunks;
 const std::vector<std::string> keyPrefs = {
@@ -54,11 +56,22 @@ void parseDB(const std::string& dbPath) {
     }
     parser.drawChunkImage();
     double diff = timer.getDiff();
-    std::cout << "Parsing took:" << diff << "ms.\n";
+    //std::cout << "Parsing took:" << diff << "ms.\n";
     delete it;
 }
-int main() {
-    parseDB("tmp/testworld/db");
-    Parser::parseDAT("tmp/testworld/level.dat");
-    Parser::parseStructure("TestStructure.mcstructure");
+int main(int argc,char* argv[]) {
+    FSmceditOptions options = Options::parse(argc,argv);
+    if(!options.ok)return 0;
+
+    std::string dbpath = options.worldPath + "/db";
+    if(options.worldPath.length()){
+        std::cout << "World:" << options.worldPath << "\n";
+        parseDB(dbpath);
+        Parser::parseDAT(options.worldPath + "/level.dat");
+    }
+    if(options.structPath.length()){
+        std::cout << "Structure:" << options.structPath << "\n";
+        Parser::parseStructure(options.structPath);
+    }
+    return 0;
 }

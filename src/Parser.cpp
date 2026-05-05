@@ -3,6 +3,8 @@
 #include "Timer.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
+#include "Log.h"
+#include <thread>
 
 void Parser::parseLocalPlayer(uint8_t* value){
     Cursor cursor(value);
@@ -57,6 +59,7 @@ void Parser::parseChunk(uint8_t* key,uint8_t* value,uint32_t keySize) {
     json chunkJson;
     int x = (int)keyCursor.readu32();
     int z = (int)keyCursor.readu32();
+    liveLog("Chunk:" + std::to_string(x) + "-" + std::to_string(z));
     uint8_t record = keyCursor.readu8();
     if((x < 1875000) && (x > -1875000) && (z < 1875000) && (z > -1875000) && (record != 47)){
         chunks.emplace_back(x,z,0,json{});
@@ -200,7 +203,7 @@ void Parser::parseDAT(const std::string& path) {
 
 void Parser::drawChunkImage(){
     if(!chunks.size())return;
-    std::cout << "Drawing image\n";
+    std::cout << "Drawing image" << std::flush << "\r";
     std::vector<int> xcords = {};
     std::vector<int> zcords = {};
     for(const Chunk& chunk : chunks){
@@ -272,15 +275,17 @@ void Parser::parseStructure(const std::string& filepath){
         json strucJson = json::parse(ss);
         ofs << strucJson.dump(4);
     }catch(json::exception& e){
-        std::cerr << ss.str();
+        std::cerr << "Error parsing strucJson:\n";
         std::cerr << e.what() << "\n";
     }
 }
+
 Parser::~Parser(){
     Timer timer;
     timer.start();
     //Export entities
     if(!chunks.size())return;
+    liveLog("Exporting " + std::to_string(entities.size()) + " entities...");
     std::ofstream ofs("worldData/entities.json");
     if(!ofs.is_open()){
         std::cerr << "Failed to open worldData/entities.json";
@@ -298,10 +303,10 @@ Parser::~Parser(){
     }
     ofs << entitiesJson.dump(4);
     ofs.close();
-
-
-    std::cout << entities.size() << " entitites parsed.\n";
-
+    
+    
+    
+    liveLog("Exporting " + std::to_string(blockEntities.size()) + " block entities...");
     //Export BlockEntities
     ofs.open("worldData/blockEntities.json");
     if(!ofs.is_open()){
@@ -318,12 +323,12 @@ Parser::~Parser(){
         std::cerr << "Error parsing blockEntitiesJson:\n";
         std::cerr << e.what() << '\n';
     }
-
+    
     ofs << blockEntitiesJson.dump(4);
     ofs.close();
-    std::cout << blockEntities.size() << " block entities parsed.\n";
-
+    
     //Export chunks
+    liveLog("Exporting " + std::to_string(chunks.size()) + " chunks...");
     ofs.open("worldData/chunks.json");
     if(!ofs.is_open()){
         std::cerr << "Failed to open worldData/chunks.json\n";
@@ -343,9 +348,9 @@ Parser::~Parser(){
     }
     ofs << chunksJson.dump(4);
     ofs.close();
-    std::cout << chunks.size() << " chunks parsed.\n";
-
+    
     //Export Players
+    liveLog("Exporting " + std::to_string(playerCount) + " players...");
     ofs.open("worldData/players.json");
     if(!ofs.is_open()){
         std::cerr << "Failed to open worldData/players.json\n";
@@ -353,8 +358,7 @@ Parser::~Parser(){
     }
     ofs << playersJson.dump(4);
     ofs.close();
-
-    std::cout << playerCount << " players parsed.\n";
+    liveLog("Exported.");
     double diff = timer.getDiff();
-    std::cout << "Exporting took: " << diff << "ms.\n";
+    //std::cout << "Exporting took: " << diff << "ms.\n";
 }

@@ -8,4 +8,5 @@ cmake --build . --config Release --parallel
 popd
 if not exist worldData mkdir worldData
 REM build\FSmcedit.exe
-build\FSmcedit.exe
+@echo on
+build\FSmcedit.exe shouldBeIgnored --world tmp\testworld --struct TestStructure.mcstructure
