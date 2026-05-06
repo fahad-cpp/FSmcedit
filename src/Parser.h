@@ -14,7 +14,7 @@ class Parser{
     std::vector<Chunk> chunks;
     json playersJson;
     uint32_t playerCount = 0;
-    enum class TAG{
+    enum class TAG : uint8_t{
         Data3D = 43,
         Version,
         Data2D,
