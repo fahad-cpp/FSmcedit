@@ -7,6 +7,5 @@ if not exist CMakeCache.txt cmake .. -G "Ninja" -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release --parallel
 popd
 if not exist worldData mkdir worldData
-REM build\FSmcedit.exe
 @echo on
-build\FSmcedit.exe shouldBeIgnored --world tmp\testworld --struct TestStructure.mcstructure
+bin\FSmcedit.exe shouldBeIgnored --world tmp\testworld --struct TestStructure.mcstructure
