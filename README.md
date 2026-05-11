@@ -30,3 +30,7 @@ At least one option should be specified
 ```bash
 FSmcedit --world <world_folder> --struct <mcstructure_file>
 ```
+
+passing `--struct` and a .mcstructure file will give you material list for that structure.
+
+and passing `--world` and world folder path will parse world folder and output parsed data in worldData
