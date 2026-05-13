@@ -317,6 +317,7 @@ void Parser::parseStructure(const std::string& filepath) {
             materialList[blocks[i]] = blockCount;
         }
 
+        std::cout << "Material List:\n";
         for(auto pair : materialList){
             std::cout << pair.first << " : " << pair.second << "\n";
         }
