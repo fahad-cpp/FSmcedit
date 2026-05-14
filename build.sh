@@ -7,4 +7,4 @@ cd build
 cmake --build . --config Release --parallel
 cd ..
 mkdir -p "worldData"
-./build/FSmcedit > worldData/plain.txt
+./bin/FSmcedit shouldBeIgnored --struct TestStructure.mcstructure --world tmp/testworld
