@@ -1,6 +1,5 @@
 #ifndef NBT_H
 #define NBT_H
-#include <iostream>
 #include <vector>
 #include <cstring>
 #include <sstream>

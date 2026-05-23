@@ -1,4 +1,5 @@
 #include "Log.h"
+#include <iostream>
 void liveLog(const std::string& message){
     static uint32_t lastLogLength = 0;
     std::cout << message;

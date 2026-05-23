@@ -3,7 +3,6 @@
 #include "Timer.h"
 #include "DB.h"
 #include "Options.h"
-#include "Log.h"
 
 std::vector<std::pair<int,int>> chunks;
 const std::vector<std::string> keyPrefs = {
@@ -51,7 +50,7 @@ void parseDB(const std::string& dbPath) {
             parser.parseDigp((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->value().size());
         }
         if (!chunkKey)continue;
-        
+
         parser.parseChunk((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->key().size());
     }
     parser.drawChunkImage();

@@ -1,5 +1,6 @@
 #include <stdint.h>
-#include "NBT.h"
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
 
 struct Entity{
     int64_t id;

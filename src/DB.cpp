@@ -1,4 +1,5 @@
 #include "DB.h"
+#include <iostream>
 
 DB::DB(const std::string& dbPath){
     mOptions.info_log = new NullLogger();

@@ -1,4 +1,5 @@
 #include "NBT.h"
+#include <iostream>
 /*Parse NBT with the following structure:
     -1 byte : tagID
     -2 byte : length
@@ -13,7 +14,7 @@ void NBT::parseNBT(Cursor& cursor,std::stringstream& ss) {
     }
     uint16_t nameLength = cursor.readu16();
     const std::string& name = cursor.readString(nameLength);
-    
+
     if(nameLength != 0){
         ss << '\"' << name << '\"' << ':';
     }

@@ -1,6 +1,5 @@
 #ifndef FSDB
 #define FSDB
-#include <iostream>
 #include <leveldb/db.h>
 #include <leveldb/filter_policy.h>
 #include <leveldb/cache.h>

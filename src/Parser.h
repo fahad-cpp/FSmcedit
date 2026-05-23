@@ -2,11 +2,7 @@
 #define PARSER_H
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
-#include <fstream>
-#include <algorithm>
-#include <map>
 #include <vector>
-#include "Cursor.h"
 #include "Minecraft.h"
 class Parser{
     std::vector<Entity> entities;

@@ -1,10 +1,12 @@
-#include "Parser.h"
-#include "NBT.h"
-#include "Timer.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
+#include <iostream>
+#include <fstream>
+
+#include "Parser.h"
+#include "NBT.h"
 #include "Log.h"
-#include <thread>
+#include "Timer.h"
 
 void Parser::parseLocalPlayer(uint8_t* value) {
     Cursor cursor(value);
