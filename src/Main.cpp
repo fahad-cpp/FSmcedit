@@ -1,10 +1,10 @@
-#include <iostream>
-#include "Parser.h"
-#include "Timer.h"
 #include "DB.h"
 #include "Options.h"
+#include "Parser.h"
+#include "Timer.h"
+#include <iostream>
 
-std::vector<std::pair<int,int>> chunks;
+std::vector<std::pair<int, int>> chunks;
 const std::vector<std::string> keyPrefs = {
     "~local_player",
     "player_",
@@ -18,57 +18,58 @@ const std::vector<std::string> keyPrefs = {
     "mobevents",
     "scoreboard"
 };
-void parseDB(const std::string& dbPath) {
+void parseDB(const std::string &dbPath) {
     Timer timer;
     Parser parser;
-	DB db(dbPath);
-    leveldb::Iterator* it = db.newIterator();
+    DB db(dbPath);
+    leveldb::Iterator *it = db.newIterator();
     it->SeekToFirst();
-    if(!it->Valid()){
+    if (!it->Valid()) {
         std::cerr << "Failed to open database\n";
         std::cerr << it->status().ToString() << "\n";
         delete it;
         return;
     }
     timer.start();
-    for (it->SeekToFirst();it->Valid();it->Next()) {
+    for (it->SeekToFirst(); it->Valid(); it->Next()) {
         bool chunkKey = true;
-        //Temporary (TODO:Handle all cases)
-        for (int i = 0;i < keyPrefs.size();i++) {
+        // Temporary (TODO:Handle all cases)
+        for (int i = 0; i < keyPrefs.size(); i++) {
             if (it->key().ToString().contains(keyPrefs[i])) {
                 chunkKey = false;
             }
         }
         if (it->key().ToString() == "~local_player") {
-            parser.parseLocalPlayer((uint8_t*)it->value().data());
-        }else if(it->key().ToString().contains("player_")){
-            parser.parseRemotePlayer(it->key().ToString(),(uint8_t*)it->value().data());
+            parser.parseLocalPlayer((uint8_t *)it->value().data());
+        } else if (it->key().ToString().contains("player_")) {
+            parser.parseRemotePlayer(it->key().ToString(), (uint8_t *)it->value().data());
+        } else if (it->key().ToString().contains("actorprefix")) {
+            parser.parseActorPrefix((uint8_t *)it->key().data(), (uint8_t *)it->value().data());
+        } else if (it->key().ToString().contains("digp")) {
+            parser.parseDigp((uint8_t *)it->key().data(), (uint8_t *)it->value().data(), it->value().size());
         }
-        else if (it->key().ToString().contains("actorprefix")) {
-            parser.parseActorPrefix((uint8_t*)it->key().data(),(uint8_t*)it->value().data());
-        }else if (it->key().ToString().contains("digp")) {
-            parser.parseDigp((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->value().size());
-        }
-        if (!chunkKey)continue;
+        if (!chunkKey)
+            continue;
 
-        parser.parseChunk((uint8_t*)it->key().data(),(uint8_t*)it->value().data(),it->key().size());
+        parser.parseChunk((uint8_t *)it->key().data(), (uint8_t *)it->value().data(), it->key().size());
     }
     parser.drawChunkImage();
     double diff = timer.getDiff();
-    //std::cout << "Parsing took:" << diff << "ms.\n";
+    // std::cout << "Parsing took:" << diff << "ms.\n";
     delete it;
 }
-int main(int argc,char* argv[]) {
-    FSmceditOptions options = Options::parse(argc,argv);
-    if(!options.ok)return 0;
+int main(int argc, char *argv[]) {
+    FSmceditOptions options = Options::parse(argc, argv);
+    if (!options.ok)
+        return 0;
 
     std::string dbpath = options.worldPath + "/db";
-    if(options.worldPath.length()){
+    if (options.worldPath.length()) {
         std::cout << "World: " << options.worldPath << "\n";
         parseDB(dbpath);
         Parser::parseDAT(options.worldPath + "/level.dat");
     }
-    if(options.structPath.length()){
+    if (options.structPath.length()) {
         std::cout << "Structure: " << options.structPath << "\n";
         Parser::parseStructure(options.structPath);
     }

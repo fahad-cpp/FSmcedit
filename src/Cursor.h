@@ -4,10 +4,11 @@
 #include <string>
 
 class Cursor {
-    const uint8_t* ptr;
+    const uint8_t *ptr;
     uint32_t offset;
-public:
-    Cursor(const uint8_t* ptr, uint32_t offset = 0) {
+
+  public:
+    Cursor(const uint8_t *ptr, uint32_t offset = 0) {
         this->ptr = ptr;
         this->offset = offset;
     }
@@ -23,7 +24,7 @@ public:
     std::string readString(uint32_t length);
 
     uint32_t getOffset();
-    const uint8_t* getPtr();
+    const uint8_t *getPtr();
     void skip(uint32_t count);
 };
 #endif

@@ -1,25 +1,26 @@
 #ifndef FSDB
 #define FSDB
-#include <leveldb/db.h>
-#include <leveldb/filter_policy.h>
 #include <leveldb/cache.h>
-#include <leveldb/env.h>
-#include <leveldb/zlib_compressor.h>
+#include <leveldb/db.h>
 #include <leveldb/decompress_allocator.h>
+#include <leveldb/env.h>
+#include <leveldb/filter_policy.h>
+#include <leveldb/zlib_compressor.h>
 class NullLogger : public leveldb::Logger {
-public:
-    void Logv(const char*, va_list) override {
+  public:
+    void Logv(const char *, va_list) override {
     }
 };
-class DB{
-    private:
-    leveldb::DB* mDb = nullptr;
-	leveldb::ReadOptions mReadOptions;
+class DB {
+  private:
+    leveldb::DB *mDb = nullptr;
+    leveldb::ReadOptions mReadOptions;
     leveldb::Options mOptions;
-    public:
-    DB(const std::string& dbPath);
+
+  public:
+    DB(const std::string &dbPath);
     ~DB();
-    //You need to delete the iterator
-    leveldb::Iterator* newIterator();
+    // You need to delete the iterator
+    leveldb::Iterator *newIterator();
 };
 #endif

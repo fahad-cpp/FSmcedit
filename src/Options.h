@@ -1,13 +1,13 @@
 #ifndef OPTIONS_H
 #define OPTIONS_H
 #include <string>
-struct FSmceditOptions{
+struct FSmceditOptions {
     std::string worldPath;
     std::string structPath;
-    bool ok=true;
+    bool ok = true;
 };
-class Options{
-    public:
-    static FSmceditOptions parse(int argc,char* argv[]);
+class Options {
+  public:
+    static FSmceditOptions parse(int argc, char *argv[]);
 };
 #endif
